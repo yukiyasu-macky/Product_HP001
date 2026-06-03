@@ -126,7 +126,7 @@ export default function Home() {
             {[
               { display: '20-30%', label: '業務効率向上', desc: 'AI導入による業務効率化の実証値' },
               { end: 22, suffix: '万社', label: 'TAM市場規模', desc: '建設・不動産・運送業の対象企業数' },
-              { end: 100, suffix: '+件', label: '創業者実績', desc: 'CEOによるAI・DX導入支援件数' },
+              { end: 100, suffix: '件以上', label: '創業者実績', desc: 'CEOによるAI・DX導入支援件数' },
             ].map((s, i) => (
               <FadeIn key={i} delay={i * 100}>
                 <div className="card-hover text-center p-10 rounded-xl border border-gray-100">
