@@ -39,10 +39,10 @@ export default function AboutPage() {
               ].map(({ dt, dd }, i) => (
                 <div
                   key={dt}
-                  className={`flex flex-col sm:flex-row py-4 gap-2 ${i % 2 === 0 ? 'bg-gray-50 px-3 rounded' : ''}`}
+                  className={`flex flex-col md:flex-row py-4 gap-0.5 md:gap-2 ${i % 2 === 0 ? 'bg-gray-50 px-3 rounded' : ''}`}
                 >
-                  <dt className="text-navy font-semibold sm:w-40 shrink-0">{dt}</dt>
-                  <dd className="text-gray-700">{dd}</dd>
+                  <dt className="text-navy text-xs font-semibold tracking-wide md:text-sm md:w-40 md:shrink-0 md:pt-0.5">{dt}</dt>
+                  <dd className="text-gray-700 text-sm md:text-base">{dd}</dd>
                 </div>
               ))}
             </dl>
