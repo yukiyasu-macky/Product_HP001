@@ -174,9 +174,14 @@ export default function ServicePage() {
             {/* LEFT: features */}
             <FadeIn delay={100}>
               <ConstructionIcon className="text-gold w-14 h-14 mb-6" />
-              <h2 className="text-3xl font-bold text-white mb-6">
+              <h2 className="text-3xl font-bold text-white mb-4">
                 建設業向けAIプラットフォーム
               </h2>
+              <p className="text-white/55 text-sm leading-relaxed mb-6">
+                見積作成、工程管理、報告書作成、安全管理などの業務をAIで効率化。
+                現場監督や管理職の事務負担を削減し、
+                限られた人員でも高品質な施工管理を実現します。
+              </p>
               <ul className="space-y-5">
                 {constructionFeatures.map((f) => (
                   <li key={f.name} className="flex items-start gap-4">
@@ -259,9 +264,13 @@ export default function ServicePage() {
             {/* RIGHT: features */}
             <FadeIn delay={200}>
               <RealEstateIcon className="text-gold w-14 h-14 mb-6" />
-              <h2 className="text-3xl font-bold text-white mb-6">
+              <h2 className="text-3xl font-bold text-white mb-4">
                 不動産業向けAIプラットフォーム
               </h2>
+              <p className="text-white/55 text-sm leading-relaxed mb-6">
+                物件情報整理、顧客対応、契約関連業務、営業資料作成をAIで自動化。
+                営業担当者が顧客提案や成約活動に集中できる環境を構築します。
+              </p>
               <ul className="space-y-5">
                 {realEstateFeatures.map((f) => (
                   <li key={f.name} className="flex items-start gap-4">
@@ -293,9 +302,13 @@ export default function ServicePage() {
             {/* LEFT: features */}
             <FadeIn delay={100}>
               <LogisticsIcon className="text-gold w-14 h-14 mb-6" />
-              <h2 className="text-3xl font-bold text-white mb-6">
+              <h2 className="text-3xl font-bold text-white mb-4">
                 運送・物流業向けAIプラットフォーム
               </h2>
+              <p className="text-white/55 text-sm leading-relaxed mb-6">
+                配車計画、運行管理、問い合わせ対応、日報処理などをAIで最適化。
+                ドライバー不足への対応と運行効率向上を同時に実現します。
+              </p>
               <ul className="space-y-5">
                 {logisticsFeatures.map((f) => (
                   <li key={f.name} className="flex items-start gap-4">
@@ -455,6 +468,50 @@ export default function ServicePage() {
               </p>
             </div>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* ── COMPETITIVE ADVANTAGE ── */}
+      <section className="bg-navy py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <p className="text-gold text-xs tracking-[0.4em] mb-4 uppercase">Why Arcrise</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">競合優位性</h2>
+            <div className="section-divider mt-5 mb-12" style={{ marginLeft: 0 }} />
+          </FadeIn>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <FadeIn direction="left">
+              <p className="text-white/70 text-lg leading-relaxed">
+                Arcrise Laboは、AI技術だけでなく
+                <span className="text-gold font-semibold">「経営」と「現場」</span>の両方を理解しています。
+                100件以上の経営支援実績を持つCEOと、
+                大規模AI開発を統括してきたCTOが連携し、
+                業界特化型AIを短期間で実装します。
+              </p>
+              <p className="text-white/70 text-lg leading-relaxed mt-6">
+                一般的なSI開発のような高額・長期プロジェクトではなく、
+                成果創出までを見据えた実践型導入を提供できることが
+                <span className="text-gold font-semibold">最大の強み</span>です。
+              </p>
+            </FadeIn>
+            <FadeIn direction="right">
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { label: '価格', value: '1/5', sub: '大手SIer比' },
+                  { label: '期間', value: '1/3', sub: '大手SIer比' },
+                  { label: '支援実績', value: '100+', sub: 'CEO実績件数' },
+                  { label: '稼働まで', value: '6ヶ月', sub: '標準導入期間' },
+                ].map((item) => (
+                  <div key={item.label}
+                    className="card-hover border border-gold/15 bg-white/[0.02] rounded-lg p-6 text-center">
+                    <div className="gradient-text-gold glow-gold-sm font-black text-3xl mb-1">{item.value}</div>
+                    <div className="text-white text-sm font-semibold">{item.label}</div>
+                    <div className="text-white/35 text-xs mt-0.5">{item.sub}</div>
+                  </div>
+                ))}
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
 

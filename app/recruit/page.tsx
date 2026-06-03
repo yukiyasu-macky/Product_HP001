@@ -21,7 +21,14 @@ export default function RecruitPage() {
           </h2>
           <div className="w-16 h-1 bg-gold mb-8" />
           <p className="text-white/80 text-lg leading-relaxed max-w-3xl">
-            私たちは「優秀な人」ではなく「覚悟のある人」を探しています。地方企業の現場に入り込み、AIで業務を変え、その企業の未来を一緒に作り上げる。それがArcrise Laboのスタイルです。大企業のブランドより、自分の手で何かを変えたい方に来てほしい。
+            AI技術は、それだけでは社会を変えられません。
+            必要なのは、現場を理解し、経営課題を解決し、
+            実際に成果へつなげる力です。<br /><br />
+            Arcrise Laboは、建設・不動産・物流といった
+            日本を支える産業の変革に挑戦しています。
+            私たちが目指すのは、現場にAIを根付かせ、
+            地方から日本の産業を再生することです。<br /><br />
+            その挑戦を、共に担える仲間を探しています。
           </p>
         </div>
       </section>

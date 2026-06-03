@@ -61,9 +61,25 @@ export default function AboutPage() {
               <h2 className="text-navy text-2xl font-bold mb-1">内海 暢介</h2>
               <p className="text-gray-500 mb-6">代表取締役CEO</p>
               <div className="w-16 h-1 bg-gold mb-8" />
-              <p className="text-gray-700 leading-relaxed">
-                私が地方企業のAI導入に取り組む理由は、現場で見てきた「優れた技術を持ちながら、人手不足と非効率な業務に苦しむ地方企業」の姿にあります。東京の大手コンサルやSIerには頼れない、でも変わらなければ生き残れない。その中間にいる22万社のために、私たちArcrise
-                Laboは存在しています。業界特化のAIを、大手の1/5の価格で、1/3の期間で届ける。これが私たちの約束です。
+              <p className="text-gray-700 leading-relaxed mb-6">
+                日本の地方には、優れた技術や豊富な経験を持ちながらも、
+                人材不足や業務負荷の増加に苦しむ企業が数多く存在します。
+                私はこれまで100件を超える経営・事業支援の現場に携わり、
+                「本当に必要なのは、現場で使われる仕組みである」と
+                確信してきました。
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Arcrise Laboは、最先端AIを地方中堅企業の実務へ落とし込み、
+                経営成果へ直結させるために創業しました。
+                私たちは単なるシステム導入会社ではありません。
+                現場と経営を理解し、企業の未来を共に創るパートナーです。
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                地方から日本を変える。その挑戦を、
+                私たちは本気で実現していきます。
+              </p>
+              <p className="text-navy font-semibold text-sm tracking-wider">
+                代表取締役 CEO　内海 暢介
               </p>
             </div>
           </div>

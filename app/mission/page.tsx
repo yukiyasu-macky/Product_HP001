@@ -65,10 +65,13 @@ export default function MissionPage() {
               </span>
             </h2>
 
-            <p className="text-white/45 text-lg leading-relaxed max-w-2xl mx-auto mt-10">
-              私たちは、大企業だけがAIの恩恵を享受する時代に終止符を打ちます。
-              地方に根ざした中堅企業こそが日本経済の真の担い手であり、
-              その現場にAIを実装することで、産業全体の再生を目指します。
+            <p className="text-white/55 text-lg leading-relaxed max-w-2xl mx-auto mt-10">
+              私たちは、AIの力を地方中堅企業へ届けることで、<br className="hidden md:block" />
+              日本の基幹産業を再生します。建設、不動産、物流など<br className="hidden md:block" />
+              地域経済を支える企業の生産性向上を実現し、<br className="hidden md:block" />
+              人手不足や事業承継といった社会課題の解決に挑戦します。<br className="hidden md:block" />
+              テクノロジーを現場の力へ変え、<br className="hidden md:block" />
+              日本の未来を支える産業基盤を強くします。
             </p>
           </FadeIn>
         </div>

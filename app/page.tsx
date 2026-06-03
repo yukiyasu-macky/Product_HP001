@@ -82,22 +82,21 @@ export default function Home() {
           <FadeIn delay={120}>
             <h1 className="font-black leading-[0.88] mb-8 select-none">
               <span className="block text-white" style={{ fontSize: 'clamp(2.8rem, 10vw, 6rem)' }}>
-                地方事業者に
+                地方産業を、
               </span>
               <span className="block gradient-text-gold glow-gold"
                 style={{ fontSize: 'clamp(5rem, 18vw, 11rem)' }}>
-                AI
+                AIで
               </span>
               <span className="block text-white" style={{ fontSize: 'clamp(2.8rem, 10vw, 6rem)' }}>
-                を届ける
+                拓く。
               </span>
             </h1>
           </FadeIn>
 
           <FadeIn delay={250}>
             <p className="text-white/55 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
-              地方中堅企業の業務を変革する、業界特化型AIプラットフォーム。<br className="hidden sm:block" />
-              大手SIerの<span className="text-gold/80">1/5の価格</span>・<span className="text-gold/80">1/3の期間</span>で実現。
+              <span className="text-gold/80">1/5価格</span>で、経営成果まで伴走する。
             </p>
           </FadeIn>
 
