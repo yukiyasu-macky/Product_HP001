@@ -1,266 +1,482 @@
+import Link from 'next/link'
+import FadeIn from '@/components/FadeIn'
+import CountUp from '@/components/CountUp'
+
 export const dynamic = 'force-static'
 
+function ConstructionIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className={className}>
+      {/* Crane arm */}
+      <line x1="8" y1="40" x2="8" y2="8" />
+      <line x1="8" y1="10" x2="36" y2="10" />
+      <line x1="36" y1="10" x2="36" y2="20" />
+      <line x1="8" y1="10" x2="14" y2="4" />
+      {/* Hook */}
+      <line x1="28" y1="10" x2="28" y2="18" />
+      <path d="M25 18 Q24 22 27 22 Q30 22 30 19" />
+      {/* Building frame */}
+      <rect x="14" y="22" width="26" height="18" />
+      <line x1="14" y1="30" x2="40" y2="30" />
+      <line x1="22" y1="22" x2="22" y2="40" />
+      <line x1="32" y1="22" x2="32" y2="40" />
+      {/* Ground */}
+      <line x1="4" y1="40" x2="44" y2="40" />
+      {/* Workers */}
+      <circle cx="10" cy="36" r="1.5" fill="currentColor" stroke="none" />
+      <circle cx="43" cy="36" r="1.5" fill="currentColor" stroke="none" />
+    </svg>
+  )
+}
+
+function RealEstateIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className={className}>
+      {/* Main building */}
+      <rect x="10" y="14" width="28" height="26" />
+      {/* Roof line */}
+      <polyline points="6,14 24,4 42,14" />
+      {/* Floors */}
+      <line x1="10" y1="22" x2="38" y2="22" />
+      <line x1="10" y1="30" x2="38" y2="30" />
+      {/* Windows floor 1 */}
+      <rect x="14" y="16" width="5" height="4" />
+      <rect x="29" y="16" width="5" height="4" />
+      {/* Windows floor 2 */}
+      <rect x="14" y="24" width="5" height="4" />
+      <rect x="29" y="24" width="5" height="4" />
+      {/* Door */}
+      <rect x="20" y="32" width="8" height="8" />
+      {/* Ground */}
+      <line x1="4" y1="40" x2="44" y2="40" />
+    </svg>
+  )
+}
+
+function LogisticsIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className={className}>
+      {/* Truck body */}
+      <rect x="2" y="18" width="28" height="18" />
+      {/* Truck cab */}
+      <path d="M30 26 L30 36 L46 36 L46 28 L40 18 L30 18 L30 26 Z" />
+      {/* Cab window */}
+      <path d="M32 20 L40 20 L44 26 L32 26 Z" />
+      {/* Wheels */}
+      <circle cx="10" cy="38" r="4" />
+      <circle cx="22" cy="38" r="4" />
+      <circle cx="38" cy="38" r="4" />
+      {/* Route dots */}
+      <circle cx="6" cy="12" r="2" fill="currentColor" stroke="none" />
+      <circle cx="16" cy="8" r="2" fill="currentColor" stroke="none" />
+      <circle cx="26" cy="12" r="2" fill="currentColor" stroke="none" />
+      <path d="M6 12 Q11 6 16 8 Q21 10 26 12" strokeDasharray="2 2" />
+    </svg>
+  )
+}
+
 export default function ServicePage() {
+  const constructionFeatures = [
+    { name: '見積AI', desc: '過去案件データから精度の高い見積を自動生成' },
+    { name: '工程管理AI', desc: '最適な工程スケジュールを自動計画' },
+    { name: '書類自動化', desc: '申請書類・報告書の自動生成' },
+  ]
+
+  const realEstateFeatures = [
+    { name: '物件マッチングAI', desc: '顧客ニーズと物件の高精度マッチング' },
+    { name: '営業LTV最適化', desc: '顧客生涯価値を最大化する営業戦略' },
+    { name: '市場分析AI', desc: 'リアルタイム市場動向分析' },
+  ]
+
+  const logisticsFeatures = [
+    { name: '配車最適化AI', desc: 'リアルタイムで最適な配車計画を生成' },
+    { name: '需要予測AI', desc: '配送需要を予測し在庫・人員を最適化' },
+    { name: 'ルート最適化', desc: '燃料コストと時間を最小化' },
+  ]
+
+  const steps = [
+    { num: '01', label: 'ヒアリング', period: 'Week 1–2' },
+    { num: '02', label: '課題分析', period: 'Week 3–4' },
+    { num: '03', label: '設計', period: 'Month 2' },
+    { num: '04', label: '開発', period: 'Month 3–4' },
+    { num: '05', label: 'テスト', period: 'Month 5' },
+    { num: '06', label: '稼働', period: 'Month 6' },
+  ]
+
   return (
     <>
-      {/* Hero */}
-      <section className="bg-navy pt-32 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-gold text-sm font-semibold tracking-widest uppercase mb-4">SERVICE</p>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">サービス・事業内容</h1>
-          <div className="w-16 h-1 bg-gold mb-6" />
-          <p className="text-xl text-white/80">業界特化型AIプラットフォーム</p>
+      {/* ── HERO ── */}
+      <section
+        className="bg-navy pt-40 pb-24 relative overflow-hidden"
+        style={{
+          backgroundImage:
+            'radial-gradient(circle at 20% 50%, rgba(201,169,110,0.06) 0%, transparent 60%), radial-gradient(circle at 80% 20%, rgba(201,169,110,0.04) 0%, transparent 50%)',
+        }}
+      >
+        {/* Particle grid overlay */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage:
+              'radial-gradient(circle, #C9A96E 1px, transparent 1px)',
+            backgroundSize: '48px 48px',
+          }}
+        />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <FadeIn>
+            <p className="text-gold text-xs tracking-[0.4em] mb-4 uppercase">SERVICE</p>
+            <h1
+              className="font-black text-white leading-none mb-4"
+              style={{ fontSize: 'clamp(2.5rem,6vw,4.5rem)' }}
+            >
+              サービス・事業内容
+            </h1>
+            <div className="section-divider mt-5 mb-6" style={{ marginLeft: 0 }} />
+            <p className="text-white/50 text-xl mt-4">業界特化型AIプラットフォーム</p>
+          </FadeIn>
         </div>
       </section>
 
-      {/* Platform Overview */}
-      <section className="bg-navy py-20 border-t border-gold/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-gold text-sm font-semibold tracking-widest uppercase mb-4">PLATFORM</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">業界特化型AIプラットフォームとは</h2>
-          <div className="w-16 h-1 bg-gold mb-8" />
-          <p className="text-white/70 text-lg max-w-3xl mb-12">
-            Palantirの手法を参考にした、業界ごとにカスタマイズされたAIプラットフォーム。汎用AIではなく、各業界の業務プロセスに最適化されたソリューションを提供します。
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="border border-gold/30 bg-white/5 rounded-lg p-6 text-center">
-              <p className="text-gold text-4xl font-black mb-2">1/5</p>
-              <p className="text-white font-semibold">大手SIerの価格</p>
-            </div>
-            <div className="border border-gold/30 bg-white/5 rounded-lg p-6 text-center">
-              <p className="text-gold text-4xl font-black mb-2">1/3</p>
-              <p className="text-white font-semibold">大手SIerの期間</p>
-            </div>
-            <div className="border border-gold/30 bg-white/5 rounded-lg p-6 text-center">
-              <p className="text-gold text-4xl font-black mb-2">6ヶ月</p>
-              <p className="text-white font-semibold">で稼働</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section A: 建設業 */}
-      <section className="bg-light py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <span className="inline-block bg-gold/10 text-gold border border-gold/30 text-sm px-3 py-1 rounded mb-6">
-            建設業 / CONSTRUCTION
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">建設業向けAIプラットフォーム</h2>
-          <div className="w-16 h-1 bg-gold mb-10" />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-            {/* Features */}
-            <div className="space-y-6">
-              <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-                <h3 className="text-navy font-bold text-lg mb-2">見積AI</h3>
-                <p className="text-gray-600">過去案件データから精度の高い見積を自動生成</p>
-              </div>
-              <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-                <h3 className="text-navy font-bold text-lg mb-2">工程管理AI</h3>
-                <p className="text-gray-600">最適な工程スケジュールを自動計画</p>
-              </div>
-              <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-                <h3 className="text-navy font-bold text-lg mb-2">書類自動化</h3>
-                <p className="text-gray-600">申請書類・報告書の自動生成</p>
-              </div>
-            </div>
-            {/* Stats */}
-            <div className="bg-navy text-white rounded-lg p-8">
-              <h3 className="text-gold font-bold text-lg mb-6">導入効果・市場規模</h3>
-              <div className="space-y-6">
-                <div className="border-b border-gold/20 pb-4">
-                  <p className="text-white/60 text-sm mb-1">業務効率</p>
-                  <p className="text-gold text-3xl font-black">+20-30%</p>
-                </div>
-                <div className="border-b border-gold/20 pb-4">
-                  <p className="text-white/60 text-sm mb-1">対象企業数</p>
-                  <p className="text-gold text-3xl font-black">4万社</p>
-                </div>
-                <div>
-                  <p className="text-white/60 text-sm mb-1">米国実例</p>
-                  <p className="text-white font-semibold">Palantir × Jacobs Engineering</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section B: 不動産業 */}
-      <section className="bg-navy py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <span className="inline-block bg-gold/10 text-gold border border-gold/30 text-sm px-3 py-1 rounded mb-6">
-            不動産業 / REAL ESTATE
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">不動産業向けAIプラットフォーム</h2>
-          <div className="w-16 h-1 bg-gold mb-10" />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-            {/* Stats */}
-            <div className="bg-white/5 border border-gold/30 rounded-lg p-8">
-              <h3 className="text-gold font-bold text-lg mb-6">導入効果・市場規模</h3>
-              <div className="space-y-6">
-                <div className="border-b border-gold/20 pb-4">
-                  <p className="text-white/60 text-sm mb-1">営業効率</p>
-                  <p className="text-gold text-3xl font-black">5倍</p>
-                </div>
-                <div className="border-b border-gold/20 pb-4">
-                  <p className="text-white/60 text-sm mb-1">対象企業数</p>
-                  <p className="text-gold text-3xl font-black">12万社</p>
-                </div>
-                <div>
-                  <p className="text-white/60 text-sm mb-1">米国実例</p>
-                  <p className="text-white font-semibold">Palantir × Lowe's</p>
-                </div>
-              </div>
-            </div>
-            {/* Features */}
-            <div className="space-y-6">
-              <div className="border border-gold/30 bg-white/5 rounded-lg p-6">
-                <h3 className="text-white font-bold text-lg mb-2">物件マッチングAI</h3>
-                <p className="text-white/60">顧客ニーズと物件の高精度マッチング</p>
-              </div>
-              <div className="border border-gold/30 bg-white/5 rounded-lg p-6">
-                <h3 className="text-white font-bold text-lg mb-2">営業LTV最適化</h3>
-                <p className="text-white/60">顧客生涯価値を最大化する営業戦略</p>
-              </div>
-              <div className="border border-gold/30 bg-white/5 rounded-lg p-6">
-                <h3 className="text-white font-bold text-lg mb-2">市場分析AI</h3>
-                <p className="text-white/60">リアルタイム市場動向分析</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section C: 運送・物流業 */}
-      <section className="bg-light py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <span className="inline-block bg-gold/10 text-gold border border-gold/30 text-sm px-3 py-1 rounded mb-6">
-            運送・物流業 / LOGISTICS
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">運送・物流業向けAIプラットフォーム</h2>
-          <div className="w-16 h-1 bg-gold mb-10" />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-            {/* Features */}
-            <div className="space-y-6">
-              <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-                <h3 className="text-navy font-bold text-lg mb-2">配車最適化AI</h3>
-                <p className="text-gray-600">リアルタイムで最適な配車計画を生成</p>
-              </div>
-              <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-                <h3 className="text-navy font-bold text-lg mb-2">需要予測AI</h3>
-                <p className="text-gray-600">配送需要を予測し在庫・人員を最適化</p>
-              </div>
-              <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-                <h3 className="text-navy font-bold text-lg mb-2">ルート最適化</h3>
-                <p className="text-gray-600">燃料コストと時間を最小化</p>
-              </div>
-            </div>
-            {/* Stats */}
-            <div className="bg-navy text-white rounded-lg p-8">
-              <h3 className="text-gold font-bold text-lg mb-6">導入効果・市場規模</h3>
-              <div className="space-y-6">
-                <div className="border-b border-gold/20 pb-4">
-                  <p className="text-white/60 text-sm mb-1">コスト削減</p>
-                  <p className="text-gold text-3xl font-black">+15-25%</p>
-                </div>
-                <div className="border-b border-gold/20 pb-4">
-                  <p className="text-white/60 text-sm mb-1">対象企業数</p>
-                  <p className="text-gold text-3xl font-black">6万社</p>
-                </div>
-                <div>
-                  <p className="text-white/60 text-sm mb-1">米国実例</p>
-                  <p className="text-white font-semibold">Palantir × Uber Freight</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Market Size */}
-      <section className="bg-navy py-20 border-t border-gold/20">
+      {/* ── PLATFORM OVERVIEW ── */}
+      <section style={{ background: '#060D14' }} className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">市場規模</h2>
-          <div className="w-16 h-1 bg-gold mb-10 mx-auto" />
-          <p className="text-7xl font-black text-gold mb-4">22万社</p>
-          <p className="text-white/60 text-lg mb-10">建設4万 + 不動産12万 + 運送6万</p>
-          {/* Visual bar */}
-          <div className="max-w-2xl mx-auto">
-            <div className="flex rounded-full overflow-hidden h-8 mb-4">
-              <div
-                className="bg-gold flex items-center justify-center text-navy text-xs font-bold"
-                style={{ width: '18.2%' }}
-              >
-                建設
-              </div>
-              <div
-                className="bg-gold/60 flex items-center justify-center text-navy text-xs font-bold"
-                style={{ width: '54.5%' }}
-              >
-                不動産
-              </div>
-              <div
-                className="bg-gold/30 flex items-center justify-center text-white text-xs font-bold"
-                style={{ width: '27.3%' }}
-              >
-                運送
-              </div>
-            </div>
-            <div className="flex justify-between text-white/60 text-sm">
-              <span>4万社 (18%)</span>
-              <span>12万社 (55%)</span>
-              <span>6万社 (27%)</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Implementation Process */}
-      <section className="bg-light py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">導入プロセス</h2>
-          <div className="w-16 h-1 bg-gold mb-10" />
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-4 mb-8">
-            {[
-              { step: '01', label: 'ヒアリング', period: 'Week 1-2' },
-              { step: '02', label: '課題分析', period: 'Week 3-4' },
-              { step: '03', label: '設計', period: 'Month 2' },
-              { step: '04', label: '開発', period: 'Month 3-4' },
-              { step: '05', label: 'テスト', period: 'Month 5' },
-              { step: '06', label: '稼働', period: 'Month 6' },
-            ].map((item, index) => (
-              <div key={index} className="relative">
-                <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm text-center">
-                  <p className="text-gold font-black text-xl mb-1">{item.step}</p>
-                  <p className="text-navy font-bold text-sm mb-2">{item.label}</p>
-                  <p className="text-gray-500 text-xs">{item.period}</p>
-                </div>
-                {index < 5 && (
-                  <div className="hidden md:block absolute top-1/2 -right-2 w-4 h-0.5 bg-gold z-10 -translate-y-1/2" />
-                )}
-              </div>
-            ))}
-          </div>
-          <div className="bg-white border border-gold/30 rounded-lg p-6 shadow-sm text-center">
-            <p className="text-navy font-bold text-lg">
-              大手SIerの<span className="text-gold">1/3の期間</span>、
-              <span className="text-gold">1/5の価格</span>で実現
+          <FadeIn>
+            <p className="text-gold text-xs tracking-[0.4em] mb-4 uppercase">PLATFORM</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">なぜ業界特化か</h2>
+            <div className="section-divider mx-auto mt-5 mb-6" />
+            <p className="text-white/60 text-lg max-w-2xl mx-auto mb-10">
+              Palantirの手法を参考にした、業界ごとにカスタマイズされたAIプラットフォーム。汎用AIではなく、各業界の業務プロセスに最適化されたソリューションを提供します。
             </p>
+            <div className="flex gap-4 flex-wrap justify-center mt-8">
+              <span className="border border-gold/40 text-gold px-6 py-2 rounded-full text-sm tracking-wide">
+                大手SIerの1/5価格
+              </span>
+              <span className="border border-gold/40 text-gold px-6 py-2 rounded-full text-sm tracking-wide">
+                大手SIerの1/3期間
+              </span>
+              <span className="bg-gold text-navy px-6 py-2 rounded-full text-sm font-bold tracking-wide">
+                6ヶ月で稼働
+              </span>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ── SECTION A: 建設業 ── */}
+      <section className="bg-navy py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <span className="inline-block bg-gold/10 border border-gold/30 text-gold text-xs px-4 py-1.5 rounded-full mb-6 tracking-widest uppercase">
+              建設業 / CONSTRUCTION
+            </span>
+          </FadeIn>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mt-2">
+            {/* LEFT: features */}
+            <FadeIn delay={100}>
+              <ConstructionIcon className="text-gold w-14 h-14 mb-6" />
+              <h2 className="text-3xl font-bold text-white mb-6">
+                建設業向けAIプラットフォーム
+              </h2>
+              <ul className="space-y-5">
+                {constructionFeatures.map((f) => (
+                  <li key={f.name} className="flex items-start gap-4">
+                    <span
+                      className="mt-1.5 shrink-0 w-2 h-2 rounded-full bg-gold"
+                      style={{ boxShadow: '0 0 6px #C9A96E' }}
+                    />
+                    <div>
+                      <p className="text-white font-semibold">{f.name}</p>
+                      <p className="text-white/50 text-sm mt-0.5">{f.desc}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-gold/40 text-xs tracking-wider mt-8 uppercase">
+                米国実例: Palantir × Jacobs Engineering
+              </p>
+            </FadeIn>
+            {/* RIGHT: stats */}
+            <FadeIn delay={200}>
+              <div className="border border-gold/20 bg-white/[0.03] rounded-lg p-10 card-hover">
+                <p className="text-white/40 text-xs tracking-widest uppercase mb-3">導入効果</p>
+                <div
+                  className="font-black gradient-text-gold glow-gold"
+                  style={{ fontSize: 'clamp(3.5rem,7vw,5rem)', lineHeight: 1 }}
+                >
+                  <CountUp end={30} suffix="%" />
+                </div>
+                <p className="text-white/60 text-base mt-2">業務効率向上</p>
+                <div className="border-t border-gold/10 my-6" />
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span className="text-white/40 text-sm">対象企業数</span>
+                    <span className="text-gold font-bold">4万社</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-white/40 text-sm">稼働期間</span>
+                    <span className="text-gold font-bold">6ヶ月</span>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-navy py-20">
+      {/* ── SECTION B: 不動産業 ── */}
+      <section style={{ background: '#060D14' }} className="py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <span className="inline-block bg-gold/10 border border-gold/30 text-gold text-xs px-4 py-1.5 rounded-full mb-6 tracking-widest uppercase">
+              不動産業 / REAL ESTATE
+            </span>
+          </FadeIn>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mt-2">
+            {/* LEFT: stats */}
+            <FadeIn delay={100}>
+              <div className="border border-gold/20 bg-white/[0.04] rounded-lg p-10 card-hover">
+                <p className="text-white/40 text-xs tracking-widest uppercase mb-3">導入効果</p>
+                <div
+                  className="font-black gradient-text-gold glow-gold"
+                  style={{ fontSize: 'clamp(3.5rem,7vw,5rem)', lineHeight: 1 }}
+                >
+                  5×
+                </div>
+                <p className="text-white/60 text-base mt-2">営業効率向上</p>
+                <div className="border-t border-gold/10 my-6" />
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span className="text-white/40 text-sm">対象企業数</span>
+                    <span className="text-gold font-bold">12万社</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-white/40 text-sm">米国実例</span>
+                    <span className="text-gold font-bold text-xs">Palantir × Lowe's</span>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+            {/* RIGHT: features */}
+            <FadeIn delay={200}>
+              <RealEstateIcon className="text-gold w-14 h-14 mb-6" />
+              <h2 className="text-3xl font-bold text-white mb-6">
+                不動産業向けAIプラットフォーム
+              </h2>
+              <ul className="space-y-5">
+                {realEstateFeatures.map((f) => (
+                  <li key={f.name} className="flex items-start gap-4">
+                    <span
+                      className="mt-1.5 shrink-0 w-2 h-2 rounded-full bg-gold"
+                      style={{ boxShadow: '0 0 6px #C9A96E' }}
+                    />
+                    <div>
+                      <p className="text-white font-semibold">{f.name}</p>
+                      <p className="text-white/50 text-sm mt-0.5">{f.desc}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION C: 運送・物流業 ── */}
+      <section className="bg-navy py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <span className="inline-block bg-gold/10 border border-gold/30 text-gold text-xs px-4 py-1.5 rounded-full mb-6 tracking-widest uppercase">
+              運送・物流業 / LOGISTICS
+            </span>
+          </FadeIn>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mt-2">
+            {/* LEFT: features */}
+            <FadeIn delay={100}>
+              <LogisticsIcon className="text-gold w-14 h-14 mb-6" />
+              <h2 className="text-3xl font-bold text-white mb-6">
+                運送・物流業向けAIプラットフォーム
+              </h2>
+              <ul className="space-y-5">
+                {logisticsFeatures.map((f) => (
+                  <li key={f.name} className="flex items-start gap-4">
+                    <span
+                      className="mt-1.5 shrink-0 w-2 h-2 rounded-full bg-gold"
+                      style={{ boxShadow: '0 0 6px #C9A96E' }}
+                    />
+                    <div>
+                      <p className="text-white font-semibold">{f.name}</p>
+                      <p className="text-white/50 text-sm mt-0.5">{f.desc}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-gold/40 text-xs tracking-wider mt-8 uppercase">
+                米国実例: Palantir × Uber Freight
+              </p>
+            </FadeIn>
+            {/* RIGHT: stats */}
+            <FadeIn delay={200}>
+              <div className="border border-gold/20 bg-white/[0.03] rounded-lg p-10 card-hover">
+                <p className="text-white/40 text-xs tracking-widest uppercase mb-3">コスト削減効果</p>
+                <div
+                  className="font-black gradient-text-gold glow-gold"
+                  style={{ fontSize: 'clamp(3.5rem,7vw,5rem)', lineHeight: 1 }}
+                >
+                  <CountUp end={25} suffix="%" />
+                </div>
+                <p className="text-white/60 text-base mt-2">コスト削減（+15–25%）</p>
+                <div className="border-t border-gold/10 my-6" />
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span className="text-white/40 text-sm">対象企業数</span>
+                    <span className="text-gold font-bold">6万社</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-white/40 text-sm">稼働期間</span>
+                    <span className="text-gold font-bold">6ヶ月</span>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* ── MARKET SIZE ── */}
+      <section style={{ background: '#060D14' }} className="py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">導入を検討されている企業様へ</h2>
-          <div className="w-16 h-1 bg-gold mb-8 mx-auto" />
-          <a
-            href="/contact"
-            className="inline-block bg-gold text-navy font-bold px-8 py-3 rounded hover:opacity-90 transition"
-          >
-            無料相談はこちら
-          </a>
+          <FadeIn>
+            <p className="text-gold text-xs tracking-[0.4em] mb-4 uppercase">MARKET SIZE</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">市場規模</h2>
+            <div className="section-divider mx-auto mt-5 mb-10" />
+            <div
+              className="font-black gradient-text-gold glow-gold"
+              style={{ fontSize: 'clamp(5rem,12vw,8rem)', lineHeight: 1 }}
+            >
+              <CountUp end={22} suffix="万社" />
+            </div>
+            <p className="text-white/40 text-base mt-4 mb-12 tracking-wider">
+              建設 4万 + 不動産 12万 + 運送 6万
+            </p>
+          </FadeIn>
+
+          {/* Progress bars */}
+          <FadeIn delay={100}>
+            <div className="max-w-2xl mx-auto space-y-6">
+              {/* 建設業 */}
+              <div>
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-white/60 text-sm">建設業</span>
+                  <span className="text-gold text-sm font-bold">4万社</span>
+                </div>
+                <div className="h-2 bg-white/5 rounded-full overflow-hidden">
+                  <div className="h-2 bg-gold rounded-full" style={{ width: '18%' }} />
+                </div>
+              </div>
+              {/* 不動産業 */}
+              <div>
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-white/60 text-sm">不動産業</span>
+                  <span className="text-gold text-sm font-bold">12万社</span>
+                </div>
+                <div className="h-2 bg-white/5 rounded-full overflow-hidden">
+                  <div className="h-2 bg-gold rounded-full" style={{ width: '55%' }} />
+                </div>
+              </div>
+              {/* 運送業 */}
+              <div>
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-white/60 text-sm">運送業</span>
+                  <span className="text-gold text-sm font-bold">6万社</span>
+                </div>
+                <div className="h-2 bg-white/5 rounded-full overflow-hidden">
+                  <div className="h-2 bg-gold rounded-full" style={{ width: '27%' }} />
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ── IMPLEMENTATION PROCESS ── */}
+      <section className="bg-navy py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <p className="text-gold text-xs tracking-[0.4em] mb-4 uppercase">PROCESS</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">導入プロセス</h2>
+            <div className="section-divider mt-5 mb-14" style={{ marginLeft: 0 }} />
+          </FadeIn>
+
+          {/* Horizontal steps (sm+) */}
+          <FadeIn delay={100}>
+            <div className="hidden sm:flex items-start">
+              {steps.map((s, i) => (
+                <div key={s.num} className="flex items-start flex-1 min-w-0">
+                  <div className="flex flex-col items-center flex-1">
+                    <div className="w-10 h-10 rounded-full border-2 border-gold flex items-center justify-center text-gold font-bold text-sm shrink-0">
+                      {s.num}
+                    </div>
+                    <p className="text-white text-xs font-semibold mt-3 text-center">{s.label}</p>
+                    <p className="text-white/30 text-xs mt-1 text-center">{s.period}</p>
+                  </div>
+                  {i < steps.length - 1 && (
+                    <div className="flex-1 h-px bg-gold/20 mt-5 min-w-0" />
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Vertical steps (mobile) */}
+            <div className="sm:hidden space-y-6">
+              {steps.map((s, i) => (
+                <div key={s.num} className="flex items-start gap-4">
+                  <div className="flex flex-col items-center">
+                    <div className="w-10 h-10 rounded-full border-2 border-gold flex items-center justify-center text-gold font-bold text-sm shrink-0">
+                      {s.num}
+                    </div>
+                    {i < steps.length - 1 && (
+                      <div className="w-px flex-1 bg-gold/20 mt-2 h-6" />
+                    )}
+                  </div>
+                  <div className="pt-2">
+                    <p className="text-white font-semibold">{s.label}</p>
+                    <p className="text-white/40 text-xs mt-0.5">{s.period}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12 border border-gold/15 bg-white/[0.02] rounded-lg p-6 text-center">
+              <p className="text-white/80 text-base">
+                大手SIerの
+                <span className="text-gold font-bold"> 1/3の期間</span>、
+                <span className="text-gold font-bold"> 1/5の価格</span>
+                で実現
+              </p>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section style={{ background: '#060D14' }} className="py-20 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <p className="text-gold text-xs tracking-[0.4em] mb-4 uppercase">CONTACT</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              導入を検討されている企業様へ
+            </h2>
+            <div className="section-divider mx-auto mt-5 mb-6" />
+            <p className="text-white/50 text-base mb-10 max-w-xl mx-auto">
+              業界特化型AIプラットフォームについて、まずはお気軽にご相談ください。専門チームが貴社の課題をヒアリングし、最適なプランをご提案します。
+            </p>
+            <Link
+              href="/contact"
+              className="inline-block bg-gold text-navy font-bold px-8 py-3.5 rounded text-sm tracking-wider hover:opacity-90 transition"
+            >
+              無料相談はこちら
+            </Link>
+          </FadeIn>
         </div>
       </section>
     </>
