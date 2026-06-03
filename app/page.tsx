@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import ParticleBackground from '@/components/ParticleBackground'
 import CountUp from '@/components/CountUp'
 import FadeIn from '@/components/FadeIn'
@@ -61,13 +62,21 @@ const ctaLinks = [
 export default function Home() {
   return (
     <>
-      {/* ── HERO (dark navy — unchanged) ── */}
+      {/* ── HERO ── */}
       <section className="relative min-h-screen flex items-center justify-center bg-navy overflow-hidden pt-16">
+        {/* Layer 1: background image */}
+        <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 0 }}>
+          <Image src="/images/hero-bg.jpg" alt="" fill className="object-cover" priority />
+        </div>
+        {/* Layer 2: navy overlay */}
+        <div className="absolute inset-0 pointer-events-none"
+          style={{ zIndex: 1, background: 'rgba(13, 27, 42, 0.5)' }} />
+        {/* Layer 3: particles (z-index 2 set inside component) */}
         <ParticleBackground />
         <div className="absolute inset-0 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,169,110,0.06) 0%, transparent 70%)' }} />
+          style={{ zIndex: 3, background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,169,110,0.06) 0%, transparent 70%)' }} />
         <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
-          style={{ background: 'linear-gradient(to bottom, transparent, #0D1B2A)' }} />
+          style={{ zIndex: 3, background: 'linear-gradient(to bottom, transparent, #0D1B2A)' }} />
 
         <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="hero-appear text-gold tracking-[0.5em] text-xs font-medium uppercase mb-8"

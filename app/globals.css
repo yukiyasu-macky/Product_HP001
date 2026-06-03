@@ -76,7 +76,7 @@ body {
 }
 .hero-appear {
   opacity: 0;
-  animation: hero-fade-up 0.75s ease forwards;
+  animation: hero-fade-up 0.3s ease forwards;
 }
 
 /* ── Scrollbar ── */

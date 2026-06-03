@@ -44,7 +44,7 @@ export default function FadeIn({ children, delay = 0, direction = 'up', classNam
       style={mounted ? {
         opacity: visible ? 1 : 0,
         transform: visible ? 'none' : t[direction],
-        transition: `opacity 0.75s ease ${delay}ms, transform 0.75s ease ${delay}ms`,
+        transition: `opacity 0.3s ease ${delay}ms, transform 0.3s ease ${delay}ms`,
       } : {}}
     >
       {children}

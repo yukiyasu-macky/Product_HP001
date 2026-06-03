@@ -45,7 +45,7 @@ export default function ParticleBackground() {
       canvas.style.left = '0'
       canvas.style.width = '100%'
       canvas.style.height = '100%'
-      canvas.style.zIndex = '0'
+      canvas.style.zIndex = '2'
       el.appendChild(canvas)
 
       // ── Particle data ───────────────────────────────────────────────────
@@ -196,7 +196,7 @@ export default function ParticleBackground() {
     <div
       ref={mountRef}
       className="absolute inset-0 w-full h-full pointer-events-none"
-      style={{ zIndex: 0 }}
+      style={{ zIndex: 2 }}
     />
   )
 }
