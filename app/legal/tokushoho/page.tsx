@@ -1,3 +1,5 @@
+import FadeIn from '@/components/FadeIn'
+
 export const dynamic = 'force-static'
 
 const rows = [
@@ -21,41 +23,39 @@ export default function TokushohoPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy pt-32 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-gold text-sm font-semibold tracking-widest uppercase mb-4">
-            LEGAL
-          </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+      <section className="bg-[#F8F9FA] pt-32 pb-16">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">Legal</p>
+          <h1 className="text-3xl font-bold text-navy mb-2">
             特定商取引法に基づく表記
           </h1>
-          <div className="w-16 h-1 bg-gold" />
+          <p className="text-gold text-sm">最終更新日：2026年6月3日</p>
         </div>
       </section>
 
       {/* Content */}
       <section className="bg-white py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-gold text-sm mb-8">
-            最終更新日: 2026年6月3日
-          </p>
+        <FadeIn>
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <dl className="divide-y divide-gray-100">
+              {rows.map(({ dt, dd }) => (
+                <div key={dt} className="flex flex-col sm:flex-row py-5 gap-2">
+                  <dt className="text-navy font-semibold sm:w-48 shrink-0 text-sm">{dt}</dt>
+                  <dd className="text-gray-700 leading-relaxed text-sm">{dd}</dd>
+                </div>
+              ))}
+            </dl>
 
-          <dl className="divide-y divide-gray-100">
-            {rows.map(({ dt, dd }) => (
-              <div key={dt} className="flex flex-col sm:flex-row py-5 gap-2">
-                <dt className="text-navy font-semibold sm:w-48 shrink-0">{dt}</dt>
-                <dd className="text-gray-700 leading-relaxed">{dd}</dd>
-              </div>
-            ))}
-          </dl>
-
-          <p className="text-gray-700 leading-relaxed mb-4 mt-12">
-            本表記は特定商取引に関する法律第11条に基づき掲載しています。記載内容に変更が生じた場合は、本ページを更新します。
-          </p>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            ご不明な点がございましたら、メールアドレス（info@arcrise-labo.com）までお問い合わせください。
-          </p>
-        </div>
+            <div className="border-t border-gray-100 mt-12 pt-8">
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm">
+                本表記は特定商取引に関する法律第11条に基づき掲載しています。記載内容に変更が生じた場合は、本ページを更新します。
+              </p>
+              <p className="text-gray-700 leading-relaxed text-sm">
+                ご不明な点がございましたら、メールアドレス（info@arcrise-labo.com）までお問い合わせください。
+              </p>
+            </div>
+          </div>
+        </FadeIn>
       </section>
     </>
   )
