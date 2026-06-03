@@ -218,7 +218,7 @@ export default function ServicePage() {
                   className="font-black text-navy"
                   style={{ fontSize: 'clamp(3.5rem,7vw,5rem)', lineHeight: 1 }}
                 >
-                  5×
+                  ×5
                 </div>
                 <p className="text-gray-600 text-base mt-2">営業効率向上</p>
                 <div className="border-t border-gray-100 my-6" />

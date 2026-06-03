@@ -38,7 +38,7 @@ const services = [
     num: '02', icon: <RealEstateIcon />,
     industry: '不動産業', en: 'REAL ESTATE',
     desc: '物件情報整理、顧客対応、営業資料作成をAIで自動化。営業担当者が成約活動に集中できる環境を構築。',
-    stat: '5×', statLabel: '営業効率向上',
+    stat: '×5', statLabel: '営業効率向上',
     ref: 'Palantir × Lowe\'s',
   },
   {
@@ -85,7 +85,7 @@ export default function Home() {
           </p>
           <h1 className="hero-appear font-black mb-6 select-none"
             style={{ fontSize: 'clamp(2.25rem, 5.5vw, 4.5rem)', lineHeight: 1.15, animationDelay: '150ms', opacity: 0 }}>
-            <span style={{ color: '#FFFFFF' }}>地方産業を、</span>
+            <span style={{ color: '#FFFFFF' }}>地方産業を </span>
             <span style={{ color: '#C9A96E', textShadow: '0 0 15px rgba(201,169,110,0.45)' }}>AI</span>
             <span style={{ color: '#FFFFFF' }}>で拓く。</span>
           </h1>
@@ -126,7 +126,7 @@ export default function Home() {
             {[
               { display: '20-30%', label: '業務効率向上', desc: 'AI導入による業務効率化の実証値' },
               { end: 22, suffix: '万社', label: 'TAM市場規模', desc: '建設・不動産・運送業の対象企業数' },
-              { end: 100, suffix: '+', label: '創業者実績', desc: 'CEOによるAI・DX導入支援件数' },
+              { end: 100, suffix: '+件', label: '創業者実績', desc: 'CEOによるAI・DX導入支援件数' },
             ].map((s, i) => (
               <FadeIn key={i} delay={i * 100}>
                 <div className="card-hover text-center p-10 rounded-xl border border-gray-100">
