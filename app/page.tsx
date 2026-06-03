@@ -84,7 +84,7 @@ export default function Home() {
             Arcrise Labo Inc.
           </p>
           <h1 className="hero-appear font-black mb-6 select-none"
-            style={{ fontSize: 'clamp(2.25rem, 5.5vw, 4.5rem)', lineHeight: 1.15, animationDelay: '150ms', opacity: 0 }}>
+            style={{ fontSize: 'clamp(1.75rem, 0.8rem + 4vw, 4.5rem)', lineHeight: 1.15, animationDelay: '150ms', opacity: 0 }}>
             <span style={{ color: '#FFFFFF' }}>地方産業を </span>
             <span style={{ color: '#C9A96E', textShadow: '0 0 15px rgba(201,169,110,0.45)' }}>AI</span>
             <span style={{ color: '#FFFFFF' }}>で拓く。</span>
