@@ -80,23 +80,22 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={120}>
-            <h1 className="font-black leading-[0.88] mb-8 select-none">
-              <span className="block text-white" style={{ fontSize: 'clamp(2.8rem, 10vw, 6rem)' }}>
-                地方産業を、
-              </span>
-              <span className="block gradient-text-gold glow-gold"
-                style={{ fontSize: 'clamp(5rem, 18vw, 11rem)' }}>
-                AIで
-              </span>
-              <span className="block text-white" style={{ fontSize: 'clamp(2.8rem, 10vw, 6rem)' }}>
-                拓く。
-              </span>
+            <h1
+              className="font-black mb-6 select-none whitespace-nowrap"
+              style={{ fontSize: 'clamp(2.25rem, 5.5vw, 4.5rem)', lineHeight: 1.15 }}
+            >
+              <span className="text-white">地方産業を、</span>
+              <span className="text-gold glow-gold-sm">AI</span>
+              <span className="text-white">で拓く。</span>
             </h1>
           </FadeIn>
 
           <FadeIn delay={250}>
-            <p className="text-white/55 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
-              <span className="text-gold/80">1/5価格</span>で、経営成果まで伴走する。
+            <p
+              className="text-base sm:text-lg max-w-2xl mx-auto mb-12 leading-relaxed"
+              style={{ color: '#C9A96E', opacity: 0.9 }}
+            >
+              1/5価格で、経営成果まで伴走する。
             </p>
           </FadeIn>
 
