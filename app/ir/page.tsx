@@ -12,7 +12,7 @@ export default function IRPage() {
           <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">
             INVESTOR RELATIONS
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-navy mb-4">
+          <h1 className="h1-fluid font-bold text-navy mb-4">
             投資家情報
           </h1>
           <div className="section-divider mt-3" />
@@ -26,7 +26,7 @@ export default function IRPage() {
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">
               投資家の皆様へ
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">
+            <h2 className="h2-fluid font-bold text-navy mb-2">
               代表メッセージ
             </h2>
             <div className="section-divider mt-3 mb-10" />
@@ -44,7 +44,7 @@ export default function IRPage() {
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">
               CAPITAL STRUCTURE
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">
+            <h2 className="h2-fluid font-bold text-navy mb-2">
               資本構成
             </h2>
             <div className="section-divider mt-3 mb-10" />
@@ -109,7 +109,7 @@ export default function IRPage() {
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">
               FUNDRAISING
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">
+            <h2 className="h2-fluid font-bold text-navy mb-2">
               調達計画
             </h2>
             <div className="section-divider mt-3 mb-10" />
@@ -165,7 +165,7 @@ export default function IRPage() {
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">
               INVESTMENT HIGHLIGHTS
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">
+            <h2 className="h2-fluid font-bold text-navy mb-2">
               投資ハイライト
             </h2>
             <div className="section-divider mt-3 mb-10" />
@@ -222,7 +222,7 @@ export default function IRPage() {
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">
               CONTACT
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+            <h2 className="h2-fluid font-bold text-white mb-2">
               投資家・パートナーの方へ
             </h2>
             <div className="section-divider mt-3 mb-8 mx-auto" />

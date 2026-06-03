@@ -76,7 +76,7 @@ export default function TeamPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">TEAM</p>
-            <h1 className="text-5xl font-black text-navy mb-2">チーム</h1>
+            <h1 className="h1-fluid font-black text-navy mb-2">チーム</h1>
             <p className="text-gray-500 text-xl mt-2">経営×AI×営業の3ピース</p>
             <div className="section-divider mt-3 mb-10" />
           </FadeIn>
@@ -88,7 +88,7 @@ export default function TeamPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">FOUNDERS</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">創業メンバー</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">創業メンバー</h2>
             <div className="section-divider mt-3 mb-10" />
           </FadeIn>
 
@@ -140,7 +140,7 @@ export default function TeamPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">WHY JOIN</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">なぜArcrise Laboか</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">なぜArcrise Laboか</h2>
             <div className="section-divider mt-3 mb-10" />
           </FadeIn>
 
@@ -165,7 +165,7 @@ export default function TeamPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">CULTURE</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">カルチャー</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">カルチャー</h2>
             <div className="section-divider mt-3 mb-10" />
           </FadeIn>
 
@@ -187,7 +187,7 @@ export default function TeamPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">JOIN US</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="h2-fluid font-bold text-white mb-4">
               チームに加わりませんか？
             </h2>
             <p className="text-white/50 text-sm mb-10 max-w-xl mx-auto">

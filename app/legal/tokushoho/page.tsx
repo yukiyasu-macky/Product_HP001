@@ -26,7 +26,7 @@ export default function TokushohoPage() {
       <section className="bg-[#F8F9FA] pt-32 pb-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">Legal</p>
-          <h1 className="text-3xl font-bold text-navy mb-2">
+          <h1 className="h2-fluid font-bold text-navy mb-2">
             特定商取引法に基づく表記
           </h1>
           <p className="text-gold text-sm">最終更新日：2026年6月3日</p>

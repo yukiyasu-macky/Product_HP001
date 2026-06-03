@@ -118,7 +118,7 @@ export default function Home() {
           <FadeIn>
             <div className="text-center mb-16">
               <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">Proven Results</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-navy">実証された成果</h2>
+              <h2 className="h2-fluid font-bold text-navy">実証された成果</h2>
               <div className="section-divider mx-auto mt-5" />
             </div>
           </FadeIn>
@@ -149,7 +149,7 @@ export default function Home() {
           <FadeIn>
             <div className="text-center mb-16">
               <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">Our Services</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-navy">業界特化型AIプラットフォーム</h2>
+              <h2 className="h2-fluid font-bold text-navy">業界特化型AIプラットフォーム</h2>
               <div className="section-divider mx-auto mt-5" />
             </div>
           </FadeIn>
@@ -193,7 +193,7 @@ export default function Home() {
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.5em] uppercase mb-8">Our Mission</p>
             <div className="text-[6rem] font-black leading-none text-gold/[0.07] select-none -mb-4">&ldquo;</div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight mb-6">
+            <h2 className="h2-hero font-black text-white leading-tight mb-6">
               地方中堅企業にAIを届け、<br />
               <span className="glow-gold gradient-text-gold">日本の産業を再生する</span>
             </h2>

@@ -127,7 +127,7 @@ export default function ServicePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">PLATFORM</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">なぜ業界特化か</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">なぜ業界特化か</h2>
             <div className="section-divider mx-auto mt-3 mb-10" />
             <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-10">
               Palantirの手法を参考にした、業界ごとにカスタマイズされたAIプラットフォーム。汎用AIではなく、各業界の業務プロセスに最適化されたソリューションを提供します。
@@ -159,7 +159,7 @@ export default function ServicePage() {
             {/* LEFT: features */}
             <FadeIn delay={100}>
               <ConstructionIcon className="text-gold w-14 h-14 mb-6" />
-              <h2 className="text-3xl font-bold text-navy mb-4">
+              <h2 className="h2-fluid font-bold text-navy mb-4">
                 建設業向けAIプラットフォーム
               </h2>
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
@@ -228,7 +228,7 @@ export default function ServicePage() {
             {/* RIGHT: features */}
             <FadeIn delay={200}>
               <RealEstateIcon className="text-gold w-14 h-14 mb-6" />
-              <h2 className="text-3xl font-bold text-navy mb-4">
+              <h2 className="h2-fluid font-bold text-navy mb-4">
                 不動産業向けAIプラットフォーム
               </h2>
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
@@ -263,7 +263,7 @@ export default function ServicePage() {
             {/* LEFT: features */}
             <FadeIn delay={100}>
               <LogisticsIcon className="text-gold w-14 h-14 mb-6" />
-              <h2 className="text-3xl font-bold text-navy mb-4">
+              <h2 className="h2-fluid font-bold text-navy mb-4">
                 運送・物流業向けAIプラットフォーム
               </h2>
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
@@ -309,7 +309,7 @@ export default function ServicePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">MARKET SIZE</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">市場規模</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">市場規模</h2>
             <div className="section-divider mx-auto mt-3 mb-10" />
             <div
               className="font-black text-navy"
@@ -365,7 +365,7 @@ export default function ServicePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">PROCESS</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">導入プロセス</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">導入プロセス</h2>
             <div className="section-divider mt-3 mb-14" />
           </FadeIn>
 
@@ -425,7 +425,7 @@ export default function ServicePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">WHY ARCRISE</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">競合優位性</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">競合優位性</h2>
             <div className="section-divider mt-3 mb-12" />
           </FadeIn>
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -469,7 +469,7 @@ export default function ServicePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">CONTACT</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="h2-fluid font-bold text-white mb-4">
               導入を検討されている企業様へ
             </h2>
             <div className="section-divider mx-auto mt-3 mb-6" />

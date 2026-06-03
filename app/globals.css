@@ -79,6 +79,11 @@ body {
   animation: hero-fade-up 0.3s ease forwards;
 }
 
+/* ── Responsive heading sizes ── */
+.h1-fluid { font-size: clamp(1.5rem, 5vw, 3rem); }
+.h2-fluid { font-size: clamp(1.25rem, 4vw, 2.5rem); }
+.h2-hero  { font-size: clamp(1.4rem, 4vw, 3.75rem); }
+
 /* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: #F8F9FA; }

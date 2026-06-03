@@ -10,7 +10,7 @@ export default function RecruitPage() {
       <section className="bg-navy pt-32 pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">RECRUIT</p>
-          <h1 className="text-5xl font-black text-white mb-4">採用情報</h1>
+          <h1 className="h1-fluid font-black text-white mb-4">採用情報</h1>
           <p className="text-white/80 text-2xl mt-4">経営×AI×現場を変えたい人へ</p>
           <div className="section-divider mt-6" />
         </div>
@@ -21,7 +21,7 @@ export default function RecruitPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">MESSAGE</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">
+            <h2 className="h2-fluid font-bold text-navy mb-2">
               Arcrise Laboが求めるもの
             </h2>
             <div className="section-divider mt-3 mb-8" />
@@ -44,7 +44,7 @@ export default function RecruitPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">POSITIONS</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">募集ポジション</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">募集ポジション</h2>
             <div className="section-divider mt-3 mb-10" />
           </FadeIn>
           <div className="grid grid-cols-1 gap-6">
@@ -138,7 +138,7 @@ export default function RecruitPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">BENEFITS</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">待遇・福利厚生</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">待遇・福利厚生</h2>
             <div className="section-divider mt-3 mb-10" />
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -200,7 +200,7 @@ export default function RecruitPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">PROCESS</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">選考プロセス</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">選考プロセス</h2>
             <div className="section-divider mt-3 mb-10" />
           </FadeIn>
           <FadeIn>
@@ -254,7 +254,7 @@ export default function RecruitPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">APPLY</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">応募・お問い合わせ</h2>
+            <h2 className="h2-fluid font-bold text-white mb-2">応募・お問い合わせ</h2>
             <div className="section-divider mt-3 mb-8 mx-auto" />
             <p className="text-white/70 mb-8 max-w-xl mx-auto">
               ご興味をお持ちの方は、お気軽にお問い合わせください。カジュアル面談から始めることも可能です。

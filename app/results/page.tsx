@@ -12,7 +12,7 @@ export default function ResultsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">RESULTS</p>
-            <h1 className="text-4xl font-bold text-navy mb-2">実績</h1>
+            <h1 className="h1-fluid font-bold text-navy mb-2">実績</h1>
             <div className="section-divider mx-auto mt-3 mb-10" />
           </FadeIn>
         </div>
@@ -23,7 +23,7 @@ export default function ResultsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">FOUNDER TRACK RECORD</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">創業者 内海暢介 の実績</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">創業者 内海暢介 の実績</h2>
             <div className="section-divider mt-3 mb-10" />
           </FadeIn>
 
@@ -92,7 +92,7 @@ export default function ResultsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">CO-FOUNDER</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">共同創業者 吉田輝樹 の実績</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">共同創業者 吉田輝樹 の実績</h2>
             <div className="section-divider mt-3 mb-10" />
           </FadeIn>
 
@@ -148,7 +148,7 @@ export default function ResultsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">CASE STUDY</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">導入事例</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">導入事例</h2>
             <div className="section-divider mt-3 mb-10" />
           </FadeIn>
 
@@ -213,7 +213,7 @@ export default function ResultsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">COMPETITIVE ANALYSIS</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">競合比較</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">競合比較</h2>
             <div className="section-divider mt-3 mb-4" />
             <p className="text-gray-500 text-sm mb-10 text-center">日本のAI企業10社調査結果</p>
           </FadeIn>
@@ -298,7 +298,7 @@ export default function ResultsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">NEXT STEP</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="h2-fluid font-bold text-white mb-6">
               導入事例・詳細資料のご請求
             </h2>
             <p className="text-white/60 text-sm mb-10 max-w-xl mx-auto leading-relaxed">

@@ -10,7 +10,7 @@ export default function AboutPage() {
       <section className="bg-[#F8F9FA] pt-32 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">ABOUT US</p>
-          <h1 className="text-4xl font-bold text-navy mb-2">会社概要</h1>
+          <h1 className="h1-fluid font-bold text-navy mb-2">会社概要</h1>
           <div className="section-divider mt-3" />
         </div>
       </section>
@@ -20,7 +20,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">COMPANY INFO</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">基本情報</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">基本情報</h2>
             <div className="section-divider mt-3 mb-10" />
             <dl className="max-w-3xl divide-y divide-gray-100">
               {[
@@ -96,7 +96,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">創業ストーリー</p>
-            <h2 className="text-3xl font-bold text-navy mb-2">なぜ、地方企業のAIなのか</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">なぜ、地方企業のAIなのか</h2>
             <div className="section-divider mt-3 mb-12" />
             <div className="grid md:grid-cols-3 gap-6">
               {[
@@ -128,7 +128,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">沿革</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">会社沿革</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">会社沿革</h2>
             <div className="section-divider mt-3 mb-12" />
             <ol className="relative border-l-2 border-gold ml-4 space-y-10 max-w-2xl">
               {[
@@ -159,7 +159,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">ADVISORY</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">顧問一覧</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">顧問一覧</h2>
             <div className="section-divider mt-3 mb-10" />
             <div className="bg-white border border-gray-200 rounded-xl p-10 flex items-center justify-center">
               <span className="text-gray-400 text-lg">準備中</span>
@@ -173,7 +173,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">ACCESS</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">アクセス</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">アクセス</h2>
             <div className="section-divider mt-3 mb-10" />
             <div className="bg-white border border-gray-200 rounded-xl p-10 flex items-center justify-center">
               <span className="text-gray-400 text-lg">準備中</span>

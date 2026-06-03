@@ -9,7 +9,7 @@ export default function DisclaimerPage() {
       <section className="bg-[#F8F9FA] pt-32 pb-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">Legal</p>
-          <h1 className="text-3xl font-bold text-navy mb-2">
+          <h1 className="h2-fluid font-bold text-navy mb-2">
             免責事項
           </h1>
           <p className="text-gold text-sm">制定日：2026年5月1日</p>

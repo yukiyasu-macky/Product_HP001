@@ -10,7 +10,7 @@ export default function RoadmapPage() {
       <section className="bg-[#F8F9FA] pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">BUSINESS PLAN</p>
-          <h1 className="text-4xl md:text-5xl font-bold text-navy mb-4">事業計画</h1>
+          <h1 className="h1-fluid font-bold text-navy mb-4">事業計画</h1>
           <div className="section-divider mt-3" />
         </div>
       </section>
@@ -20,7 +20,7 @@ export default function RoadmapPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">STRATEGY</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">3年戦略</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">3年戦略</h2>
             <div className="section-divider mt-3 mb-10" />
           </FadeIn>
 
@@ -108,7 +108,7 @@ export default function RoadmapPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">REVENUE FORECAST</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">売上計画</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">売上計画</h2>
             <div className="section-divider mt-3 mb-10" />
           </FadeIn>
 
@@ -156,7 +156,7 @@ export default function RoadmapPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">FUNDING</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">資金調達計画</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">資金調達計画</h2>
             <div className="section-divider mt-3 mb-10" />
           </FadeIn>
 
@@ -214,7 +214,7 @@ export default function RoadmapPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">EXIT</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">Exit戦略</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">Exit戦略</h2>
             <div className="section-divider mt-3 mb-10" />
           </FadeIn>
 
@@ -242,7 +242,7 @@ export default function RoadmapPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-4">CONTACT</p>
-            <h2 className="text-3xl font-bold text-white mb-6">投資家の方へ</h2>
+            <h2 className="h2-fluid font-bold text-white mb-6">投資家の方へ</h2>
             <p className="text-white/70 mb-8">事業計画の詳細資料をご希望の方はお問い合わせください。</p>
             <Link
               href="/contact"

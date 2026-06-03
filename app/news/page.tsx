@@ -10,7 +10,7 @@ export default function NewsPage() {
       <section className="bg-[#F8F9FA] pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">NEWS</p>
-          <h1 className="text-4xl md:text-5xl font-bold text-navy mb-2">ニュース</h1>
+          <h1 className="h1-fluid font-bold text-navy mb-2">ニュース</h1>
           <div className="section-divider mt-3" />
         </div>
       </section>
@@ -19,7 +19,7 @@ export default function NewsPage() {
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">最新情報</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">最新情報</h2>
             <div className="section-divider mt-3 mb-10" />
           </FadeIn>
 
@@ -71,7 +71,7 @@ export default function NewsPage() {
       <section className="bg-[#F8F9FA] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">今後のニュース</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">今後のニュース</h2>
             <div className="section-divider mt-3 mb-10" />
           </FadeIn>
 
@@ -104,7 +104,7 @@ export default function NewsPage() {
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">最新情報をお届けします</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">最新情報をお届けします</h2>
             <div className="section-divider mt-3 mb-8 mx-auto" />
             <p className="text-gray-600 max-w-xl mx-auto mb-10 leading-relaxed">
               Arcrise Laboのニュースレターに登録して、最新情報をいち早く受け取りましょう。

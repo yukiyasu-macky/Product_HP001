@@ -14,7 +14,7 @@ export default function MissionPage() {
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">
               MISSION &amp; VISION
             </p>
-            <h1 className="text-4xl md:text-5xl font-bold text-navy mb-2 leading-tight">
+            <h1 className="h1-fluid font-bold text-navy mb-2 leading-tight">
               ミッション・ビジョン
             </h1>
             <div className="section-divider mt-3" />
@@ -44,10 +44,10 @@ export default function MissionPage() {
             </div>
 
             <h2 className="font-black leading-tight">
-              <span className="block text-white text-4xl md:text-6xl">
+              <span className="block text-white h2-hero">
                 地方中堅企業にAIを届け、
               </span>
-              <span className="block gradient-text-gold glow-gold text-4xl md:text-6xl mt-2">
+              <span className="block gradient-text-gold glow-gold h2-hero mt-2">
                 日本の産業を再生する
               </span>
             </h2>
@@ -71,7 +71,7 @@ export default function MissionPage() {
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">
               THE PROBLEM
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">
+            <h2 className="h2-fluid font-bold text-navy mb-2">
               なぜ今、地方企業のAIなのか
             </h2>
             <div className="section-divider mt-3 mb-10" />
@@ -136,7 +136,7 @@ export default function MissionPage() {
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">
               OUR VISION
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">
+            <h2 className="h2-fluid font-bold text-navy mb-2">
               2029年に向けたビジョン
             </h2>
             <div className="section-divider mt-3 mb-10" />
@@ -222,7 +222,7 @@ export default function MissionPage() {
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">
               VALUES
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">
+            <h2 className="h2-fluid font-bold text-navy mb-2">
               バリュー
             </h2>
             <div className="section-divider mt-3 mb-10" />
@@ -275,7 +275,7 @@ export default function MissionPage() {
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">
               SOCIAL IMPACT
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">
+            <h2 className="h2-fluid font-bold text-navy mb-2">
               社会的意義
             </h2>
             <div className="section-divider mt-3 mb-10" />
