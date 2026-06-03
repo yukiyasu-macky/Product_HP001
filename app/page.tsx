@@ -72,7 +72,7 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
           style={{ background: 'linear-gradient(to bottom, transparent, #0D1B2A)' }} />
 
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn delay={0}>
             <p className="text-gold tracking-[0.5em] text-xs font-medium uppercase mb-8 opacity-80">
               Arcrise Labo Inc.

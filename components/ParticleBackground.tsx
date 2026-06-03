@@ -38,16 +38,24 @@ export default function ParticleBackground() {
       const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
       renderer.setSize(W, H)
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-      el.appendChild(renderer.domElement)
+      // Fix: canvas must be absolute z-0 so text renders above it
+      const canvas = renderer.domElement
+      canvas.style.position = 'absolute'
+      canvas.style.top = '0'
+      canvas.style.left = '0'
+      canvas.style.width = '100%'
+      canvas.style.height = '100%'
+      canvas.style.zIndex = '0'
+      el.appendChild(canvas)
 
       // ── Particle data ───────────────────────────────────────────────────
-      const N = 240
+      const N = 80
       interface Pt { x: number; y: number; vx: number; vy: number }
       const pts: Pt[] = Array.from({ length: N }, () => ({
         x: (Math.random() - 0.5) * W,
         y: (Math.random() - 0.5) * H,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
+        vx: (Math.random() - 0.5) * 0.22,
+        vy: (Math.random() - 0.5) * 0.22,
       }))
 
       // Points geometry
@@ -57,15 +65,15 @@ export default function ParticleBackground() {
       pGeo.setAttribute('position', pAttr)
       const pMat = new THREE.PointsMaterial({
         color: 0xC9A96E,
-        size: 2.2,
+        size: 1.8,
         transparent: true,
-        opacity: 0.65,
+        opacity: 0.6,
         sizeAttenuation: false,
       })
       scene.add(new THREE.Points(pGeo, pMat))
 
       // Lines geometry
-      const MAX_SEG = 900
+      const MAX_SEG = 300
       const lineArr = new Float32Array(MAX_SEG * 6)
       const lGeo = new THREE.BufferGeometry()
       const lAttr = new THREE.BufferAttribute(lineArr, 3)
@@ -73,12 +81,12 @@ export default function ParticleBackground() {
       const lMat = new THREE.LineBasicMaterial({
         color: 0xC9A96E,
         transparent: true,
-        opacity: 0.13,
+        opacity: 0.18,
       })
       const linesMesh = new THREE.LineSegments(lGeo, lMat)
       scene.add(linesMesh)
 
-      const MAX_D = 130
+      const MAX_D = 120
 
       // ── Resize ──────────────────────────────────────────────────────────
       const onResize = () => {
@@ -106,20 +114,20 @@ export default function ParticleBackground() {
           // Mouse repulsion
           const dx = p.x - mx, dy = p.y - my
           const d2 = dx * dx + dy * dy
-          const MOUSE_R = 140
+          const MOUSE_R = 130
           if (d2 < MOUSE_R * MOUSE_R && d2 > 0) {
             const d = Math.sqrt(d2)
-            const f = ((MOUSE_R - d) / MOUSE_R) * 0.28
+            const f = ((MOUSE_R - d) / MOUSE_R) * 0.12
             p.vx += (dx / d) * f
             p.vy += (dy / d) * f
           }
 
           // Damping
-          p.vx *= 0.983; p.vy *= 0.983
+          p.vx *= 0.97; p.vy *= 0.97
 
           // Speed cap
           const spd = Math.sqrt(p.vx * p.vx + p.vy * p.vy)
-          if (spd > 1.3) { p.vx = (p.vx / spd) * 1.3; p.vy = (p.vy / spd) * 1.3 }
+          if (spd > 0.6) { p.vx = (p.vx / spd) * 0.6; p.vy = (p.vy / spd) * 0.6 }
 
           p.x += p.vx; p.y += p.vy
 
@@ -188,6 +196,7 @@ export default function ParticleBackground() {
     <div
       ref={mountRef}
       className="absolute inset-0 w-full h-full pointer-events-none"
+      style={{ zIndex: 0 }}
     />
   )
 }
