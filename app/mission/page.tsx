@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import FadeIn from '@/components/FadeIn'
 import CountUp from '@/components/CountUp'
 
@@ -23,44 +24,59 @@ export default function MissionPage() {
       </section>
 
       {/* 2. MISSION STATEMENT — keep DARK for impact */}
-      <section className="bg-navy py-32 diagonal-gold relative overflow-hidden">
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(201,169,110,0.06) 0%, transparent 70%)',
-          }}
-        />
+      <section className="relative py-32 text-center overflow-hidden">
+        {/* 背景画像 */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-bg.jpg"
+            alt=""
+            fill
+            className="object-cover"
+            unoptimized
+          />
+        </div>
+        {/* ネイビーオーバーレイ（元の雰囲気を保つ） */}
+        <div className="absolute inset-0 bg-navy/85" />
+        {/* コンテンツ（既存のまま・z-indexだけ追加） */}
+        <div className="relative" style={{ zIndex: 1 }}>
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(201,169,110,0.06) 0%, transparent 70%)',
+            }}
+          />
 
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
-          <FadeIn>
-            {/* Decorative quote mark */}
-            <div
-              className="font-black text-gold/[0.07] leading-none select-none mb-2"
-              style={{ fontSize: '8rem' }}
-              aria-hidden="true"
-            >
-              &ldquo;
-            </div>
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
+            <FadeIn>
+              {/* Decorative quote mark */}
+              <div
+                className="font-black text-gold/[0.07] leading-none select-none mb-2"
+                style={{ fontSize: '8rem' }}
+                aria-hidden="true"
+              >
+                &ldquo;
+              </div>
 
-            <h2 className="font-black leading-tight">
-              <span className="block text-white h2-hero">
-                地方中堅企業にAIを届け、
-              </span>
-              <span className="block gradient-text-gold glow-gold h2-hero mt-2">
-                日本の産業を再生する
-              </span>
-            </h2>
+              <h2 className="font-black leading-tight">
+                <span className="block text-white h2-hero">
+                  地方中堅企業にAIを届け、
+                </span>
+                <span className="block gradient-text-gold glow-gold h2-hero mt-2">
+                  日本の産業を再生する
+                </span>
+              </h2>
 
-            <p className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto mt-8">
-              私たちは、AIの力を地方中堅企業へ届けることで、<br className="hidden md:block" />
-              日本の基幹産業を再生します。建設、不動産、物流など<br className="hidden md:block" />
-              地域経済を支える企業の生産性向上を実現し、<br className="hidden md:block" />
-              人手不足や事業承継といった社会課題の解決に挑戦します。<br className="hidden md:block" />
-              テクノロジーを現場の力へ変え、<br className="hidden md:block" />
-              日本の未来を支える産業基盤を強くします。
-            </p>
-          </FadeIn>
+              <p className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto mt-8">
+                私たちは、AIの力を地方中堅企業へ届けることで、<br className="hidden md:block" />
+                日本の基幹産業を再生します。建設、不動産、物流など<br className="hidden md:block" />
+                地域経済を支える企業の生産性向上を実現し、<br className="hidden md:block" />
+                人手不足や事業承継といった社会課題の解決に挑戦します。<br className="hidden md:block" />
+                テクノロジーを現場の力へ変え、<br className="hidden md:block" />
+                日本の未来を支える産業基盤を強くします。
+              </p>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
