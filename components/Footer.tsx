@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const legalLinks = [
   { href: '/legal/privacy', label: 'プライバシーポリシー' },
@@ -10,9 +11,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="text-gold font-bold text-lg tracking-widest">ARCRISE</span>
-              <span className="text-white/50 text-sm tracking-wider">LABS</span>
+            <div className="mb-4">
+              <Image
+                src="/images/arcrise-labs-logo.png"
+                alt="Arcrise Labs"
+                width={160}
+                height={36}
+                className="h-8 w-auto object-contain brightness-0 invert"
+              />
             </div>
             <p className="text-white/50 text-sm leading-relaxed">
               地方中堅企業にAIを届け、<br />日本の産業を再生する。
