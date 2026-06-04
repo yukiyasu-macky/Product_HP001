@@ -133,16 +133,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Info */}
-      <section className="bg-white py-12 border-y border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
-          <div className="bg-[#F8F9FA] border border-gray-200 rounded-xl p-6 text-center w-full max-w-sm">
-            <p className="text-navy font-semibold text-sm mb-2">メール</p>
-            <p className="text-gray-600 text-sm">info@arcrise-labo.com</p>
-          </div>
-        </div>
-      </section>
-
       {/* Forms Section */}
       <section id="inquiry-form" className="bg-[#F8F9FA] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
