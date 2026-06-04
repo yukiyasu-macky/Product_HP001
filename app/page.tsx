@@ -1,8 +1,7 @@
 import Link from 'next/link'
-import Image from 'next/image'
-import ParticleBackground from '@/components/ParticleBackground'
 import CountUp from '@/components/CountUp'
 import FadeIn from '@/components/FadeIn'
+import HeroSlider from '@/components/HeroSlider'
 
 export const dynamic = 'force-static'
 
@@ -60,55 +59,7 @@ const ctaLinks = [
 export default function Home() {
   return (
     <>
-      {/* ── HERO ── */}
-      <section className="relative min-h-screen flex items-center justify-center bg-navy overflow-hidden pt-16">
-        {/* Layer 1: background image */}
-        <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 0 }}>
-          <Image src="/images/hero-bg.jpg" alt="" fill className="object-cover" priority />
-        </div>
-        {/* Layer 2: navy overlay */}
-        <div className="absolute inset-0 pointer-events-none"
-          style={{ zIndex: 1, background: 'rgba(13, 27, 42, 0.5)' }} />
-        {/* Layer 3: particles (z-index 2 set inside component) */}
-        <ParticleBackground />
-        <div className="absolute inset-0 pointer-events-none"
-          style={{ zIndex: 3, background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,169,110,0.06) 0%, transparent 70%)' }} />
-        <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
-          style={{ zIndex: 3, background: 'linear-gradient(to bottom, transparent, #0D1B2A)' }} />
-
-        <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="hero-appear text-gold tracking-[0.5em] text-xs font-medium uppercase mb-8"
-            style={{ animationDelay: '0ms', opacity: 0 }}>
-            Arcrise Labo Inc.
-          </p>
-          <h1 className="hero-appear font-black mb-6 select-none"
-            style={{ fontSize: 'clamp(1.75rem, 0.8rem + 4vw, 4.5rem)', lineHeight: 1.15, animationDelay: '150ms', opacity: 0 }}>
-            <span style={{ color: '#FFFFFF' }}>地方産業を </span>
-            <span style={{ color: '#C9A96E', textShadow: '0 0 15px rgba(201,169,110,0.45)' }}>AI</span>
-            <span style={{ color: '#FFFFFF' }}>で拓く。</span>
-          </h1>
-          <p className="hero-appear text-base sm:text-lg max-w-2xl mx-auto mb-12 leading-relaxed"
-            style={{ color: '#C9A96E', animationDelay: '300ms', opacity: 0 }}>
-            1/5価格で、経営成果まで伴走する。
-          </p>
-          <div className="hero-appear flex flex-col sm:flex-row gap-4 justify-center"
-            style={{ animationDelay: '450ms', opacity: 0 }}>
-            <Link href="/service"
-              className="inline-block bg-gold text-navy font-bold px-10 py-4 rounded text-sm tracking-widest hover:opacity-90 transition-all hover:shadow-[0_0_30px_rgba(201,169,110,0.4)]">
-              サービスを見る
-            </Link>
-            <Link href="/about"
-              className="inline-block border border-white/40 text-white font-bold px-10 py-4 rounded text-sm tracking-widest hover:bg-white hover:text-navy transition-all">
-              会社を知る
-            </Link>
-          </div>
-        </div>
-
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none">
-          <span className="text-white/25 text-[10px] tracking-[0.4em]">SCROLL</span>
-          <div className="w-px h-10" style={{ background: 'linear-gradient(to bottom, rgba(255,255,255,0.3), transparent)' }} />
-        </div>
-      </section>
+      <HeroSlider />
 
       {/* ── NUMBERS (white) ── */}
       <section className="bg-white py-24 border-b border-gray-100">

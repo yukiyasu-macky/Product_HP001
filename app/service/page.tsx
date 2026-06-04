@@ -80,7 +80,7 @@ export default function ServicePage() {
       </section>
 
       {/* ── SECTION A: 建設業 ── */}
-      <section className="bg-[#F8F9FA] py-20">
+      <section id="construction" className="bg-[#F8F9FA] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <span className="inline-block bg-navy/8 text-navy border border-navy/15 text-xs px-3 py-1 rounded mb-6 tracking-widest uppercase">
@@ -136,7 +136,7 @@ export default function ServicePage() {
       </section>
 
       {/* ── SECTION B: 不動産業 ── */}
-      <section className="bg-white py-20">
+      <section id="realestate" className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <span className="inline-block bg-navy/8 text-navy border border-navy/15 text-xs px-3 py-1 rounded mb-6 tracking-widest uppercase">
@@ -191,8 +191,8 @@ export default function ServicePage() {
         </div>
       </section>
 
-      {/* ── SECTION C: 運送・物流業 ── */}
-      <section className="bg-[#F8F9FA] py-20">
+      {/* ── SECTION C: 運送業 ── */}
+      <section id="logistics" className="bg-[#F8F9FA] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <span className="inline-block bg-navy/8 text-navy border border-navy/15 text-xs px-3 py-1 rounded mb-6 tracking-widest uppercase">
