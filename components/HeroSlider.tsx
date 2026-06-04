@@ -1,78 +1,32 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const slides = [
-  {
-    id: 'top',
-    image: '/images/hero-bg.jpg',
-    industryEn: 'ARCRISE LABS',
-    navLabel: 'TOP',
-    headline: '地方産業を\nAIで拓く。',
-    headlineGold: 'AI',
-    cta: { label: 'サービスを見る', href: '/service' },
-    ctaSub: { label: '会社を知る', href: '/about' },
-  },
-]
-
-const INTERVAL = 6000
+const slide = {
+  image: '/images/hero-bg.jpg',
+  industryEn: 'ARCRISE LABS',
+  headline: '地方産業を\nAIで拓く。',
+  headlineGold: 'AI',
+  cta: { label: 'サービスを見る', href: '/service' },
+  ctaSub: { label: '会社を知る', href: '/about' },
+}
 
 export default function HeroSlider() {
-  const [current, setCurrent] = useState(0)
-  const [isAnimating, setIsAnimating] = useState(false)
-  const [progress, setProgress] = useState(0)
-
-  const goTo = useCallback((index: number) => {
-    if (isAnimating) return
-    setIsAnimating(true)
-    setTimeout(() => {
-      setCurrent(index)
-      setIsAnimating(false)
-      setProgress(0)
-    }, 600)
-  }, [isAnimating])
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      goTo((current + 1) % slides.length)
-    }, INTERVAL)
-    return () => clearInterval(interval)
-  }, [current, goTo])
-
-  useEffect(() => {
-    setProgress(0)
-    const start = Date.now()
-    const timer = setInterval(() => {
-      const elapsed = Date.now() - start
-      setProgress(Math.min((elapsed / INTERVAL) * 100, 100))
-    }, 50)
-    return () => clearInterval(timer)
-  }, [current])
-
-  const slide = slides[current]
-
   return (
     <section className="relative min-h-screen flex items-end bg-navy overflow-hidden">
 
       {/* 背景画像 */}
-      {slides.map((s, i) => (
-        <div
-          key={s.id}
-          className="absolute inset-0 transition-opacity duration-700"
-          style={{ opacity: i === current && !isAnimating ? 1 : 0 }}
-        >
-          <Image
-            src={s.image}
-            alt={s.navLabel}
-            fill
-            className="object-cover"
-            priority={i === 0}
-            sizes="100vw"
-          />
-        </div>
-      ))}
+      <div className="absolute inset-0">
+        <Image
+          src={slide.image}
+          alt="ARCRISE LABS"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+      </div>
 
       {/* オーバーレイ */}
       <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-navy/20 pointer-events-none" style={{ zIndex: 1 }} />
@@ -81,21 +35,17 @@ export default function HeroSlider() {
       {/* コンテンツ */}
       <div className="relative w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pb-24 pt-32" style={{ zIndex: 2 }}>
 
-        {/* 業種ラベル */}
-        <div
-          key={`label-${current}`}
-          className="inline-flex items-center gap-3 mb-6 animate-fadeSlideUp"
-          style={{ animationDuration: '0.5s', animationFillMode: 'both' }}
-        >
+        {/* ラベル */}
+        <div className="inline-flex items-center gap-3 mb-6 animate-fadeSlideUp"
+          style={{ animationDuration: '0.5s', animationFillMode: 'both' }}>
           <span className="w-6 h-px bg-gold" />
           <span className="text-gold text-xs tracking-[0.4em] uppercase font-medium">
             {slide.industryEn}
           </span>
         </div>
 
-        {/* メインヘッドライン */}
+        {/* ヘッドライン */}
         <h1
-          key={`h1-${current}`}
           className="text-white font-black mb-6 animate-fadeSlideUp whitespace-pre-line"
           style={{
             fontSize: 'clamp(2.8rem, 7vw, 6.5rem)',
@@ -106,26 +56,21 @@ export default function HeroSlider() {
             animationFillMode: 'both',
           }}
         >
-          {'headlineGold' in slide && slide.headlineGold
-            ? slide.headline.split(slide.headlineGold).map((part, i, arr) => (
-                <span key={i}>
-                  {part}
-                  {i < arr.length - 1 && (
-                    <span style={{ color: '#C9A96E', textShadow: '0 0 15px rgba(201,169,110,0.45)' }}>
-                      {slide.headlineGold}
-                    </span>
-                  )}
+          {slide.headline.split(slide.headlineGold).map((part, i, arr) => (
+            <span key={i}>
+              {part}
+              {i < arr.length - 1 && (
+                <span style={{ color: '#C9A96E', textShadow: '0 0 15px rgba(201,169,110,0.45)' }}>
+                  {slide.headlineGold}
                 </span>
-              ))
-            : slide.headline}
+              )}
+            </span>
+          ))}
         </h1>
 
         {/* CTA */}
-        <div
-          key={`cta-${current}`}
-          className="flex items-center gap-6 animate-fadeSlideUp"
-          style={{ animationDuration: '0.5s', animationDelay: '0.16s', animationFillMode: 'both' }}
-        >
+        <div className="flex items-center gap-6 animate-fadeSlideUp"
+          style={{ animationDuration: '0.5s', animationDelay: '0.16s', animationFillMode: 'both' }}>
           <Link
             href={slide.cta.href}
             className="inline-flex items-center gap-2 bg-gold text-navy font-bold px-8 py-4 rounded text-sm tracking-wide hover:bg-gold/90 transition-colors"
