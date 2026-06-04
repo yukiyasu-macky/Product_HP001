@@ -24,19 +24,20 @@ export default function ServicePage() {
     { name: 'ルート最適化', desc: '燃料コストと時間を最小化' },
   ]
 
+  // ① desc フィールド追加
   const steps = [
-    { num: '01', label: 'ヒアリング', period: 'Week 1–2' },
-    { num: '02', label: '課題分析', period: 'Week 3–4' },
-    { num: '03', label: '設計', period: 'Month 2' },
-    { num: '04', label: '開発', period: 'Month 3–4' },
-    { num: '05', label: 'テスト', period: 'Month 5' },
-    { num: '06', label: '稼働', period: 'Month 6' },
+    { num: '01', label: 'ヒアリング', period: 'Week 1–2', desc: '現場課題・業務フローの詳細ヒアリング' },
+    { num: '02', label: '課題分析', period: 'Week 3–4', desc: 'データ分析とAI適用箇所の特定' },
+    { num: '03', label: '設計', period: 'Month 2', desc: 'システム設計とプロトタイプ作成' },
+    { num: '04', label: '開発', period: 'Month 3–4', desc: '業界特化AIモデルの構築・実装' },
+    { num: '05', label: 'テスト', period: 'Month 5', desc: '現場での実証テストと精度検証' },
+    { num: '06', label: '稼働', period: 'Month 6', desc: '本番稼働開始・効果測定・改善継続' },
   ]
 
   return (
     <>
       {/* ── HERO ── */}
-      <section className="bg-[#F8F9FA] pt-32 pb-20">
+      <section className="bg-[#F8F9FA] pt-32 pb-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">SERVICE</p>
@@ -47,8 +48,30 @@ export default function ServicePage() {
               サービス・事業内容
             </h1>
             <div className="section-divider mt-3 mb-6" />
-            <p className="text-gray-500 text-xl mt-4">業界特化型AIプラットフォーム</p>
+            <p className="text-gray-500 text-xl mt-4 pb-10">業界特化型AIプラットフォーム</p>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* ── HERO STATS BAR ── */}
+      <section className="bg-white border-b border-gray-100 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-gray-200">
+            {[
+              { value: '100+', label: '支援実績', sub: 'CEO実績件数' },
+              { value: '1/5', label: '価格', sub: '大手SIer比' },
+              { value: '1/3', label: '期間', sub: '大手SIer比' },
+              { value: '6ヶ月', label: '稼働まで', sub: '標準導入期間' },
+            ].map((item) => (
+              <div key={item.label} className="text-center md:px-8">
+                <div className="font-black text-navy" style={{ fontSize: 'clamp(1.8rem,3vw,2.5rem)', lineHeight: 1 }}>
+                  {item.value}
+                </div>
+                <div className="text-navy text-sm font-semibold mt-1">{item.label}</div>
+                <div className="text-gray-400 text-xs mt-0.5">{item.sub}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -151,63 +174,28 @@ export default function ServicePage() {
             <div className="section-divider mt-3 mb-10" />
           </FadeIn>
 
-          {/* Competitive advantage text */}
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-14">
-            <FadeIn>
-              <p className="text-gray-700 text-lg leading-relaxed">
-                Arcrise Laboは、AI技術だけでなく
-                <span className="text-navy font-semibold">「経営」と「現場」</span>の両方を理解しています。
-                100件以上の経営支援実績を持つCEOと、
-                大規模AI開発を統括してきたCTOが連携し、
-                業界特化型AIを短期間で実装します。
-              </p>
-              <p className="text-gray-700 text-lg leading-relaxed mt-6">
-                一般的なSI開発のような高額・長期プロジェクトではなく、
-                成果創出までを見据えた実践型導入を提供できることが
-                <span className="text-navy font-semibold">最大の強み</span>です。
-              </p>
-            </FadeIn>
-            <FadeIn>
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { label: '価格', value: '1/5', sub: '大手SIer比' },
-                  { label: '期間', value: '1/3', sub: '大手SIer比' },
-                  { label: '支援実績', value: '100+', sub: 'CEO実績件数' },
-                  { label: '稼働まで', value: '6ヶ月', sub: '標準導入期間' },
-                ].map((item) => (
-                  <div key={item.label}
-                    className="card-hover bg-white border border-gray-200 rounded-xl p-6 text-center">
-                    <div className="font-black text-navy text-2xl mb-1">{item.value}</div>
-                    <div className="text-navy text-sm font-semibold">{item.label}</div>
-                    <div className="text-gray-500 text-xs mt-0.5">{item.sub}</div>
-                  </div>
-                ))}
-              </div>
-            </FadeIn>
-          </div>
-
-          {/* Why Join cards */}
+          {/* ② 購入者向けカード内容に差し替え */}
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
                 num: '01',
-                title: '大きな裁量',
-                desc: '少人数チームで大きな意思決定に関われる。プロダクト・事業・組織を横断して動ける環境。',
+                title: '業界特化の深い知見',
+                desc: '建設・不動産・物流に特化したAIを提供。汎用ツールではなく、現場の業務プロセスに最適化されたソリューションです。',
               },
               {
                 num: '02',
-                title: '社会的インパクト',
-                desc: '地方企業の変革に直接貢献できる。AIによって日本のリアルな産業を変える最前線。',
+                title: '経営×現場を両方理解',
+                desc: '100件超の経営支援実績を持つCEOと大規模AI開発を統括したCTOが直接支援。コンサルではなく実装まで行います。',
               },
               {
                 num: '03',
-                title: '経済的リターン',
-                desc: '大手の+30-50%給与 + J-KISS SO。成果に応じたアップサイドが明確に設計されている。',
+                title: '大手SIerの1/5価格・1/3期間',
+                desc: '高額・長期のSI開発は不要。成果創出を見据えた実践型導入で、6ヶ月での稼働を標準としています。',
               },
               {
                 num: '04',
-                title: '成長環境',
-                desc: '経営×AI×営業の3領域を横断的に学べる。スタートアップ初期だからこそ得られる密度の高い経験。',
+                title: '地方中堅企業に特化',
+                desc: '大手SIerが参入しない22万社の市場に集中。地域に根ざした課題を深く理解したパートナーとして伴走します。',
               },
             ].map((item, i) => (
               <FadeIn key={item.num} delay={i * 100}>
@@ -234,13 +222,9 @@ export default function ServicePage() {
           </FadeIn>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* LEFT: Big Stat */}
             <FadeIn delay={100}>
               <div>
-                <div
-                  className="font-black text-navy"
-                  style={{ fontSize: 'clamp(6rem,12vw,8rem)', lineHeight: 0.9 }}
-                >
+                <div className="font-black text-navy" style={{ fontSize: 'clamp(6rem,12vw,8rem)', lineHeight: 0.9 }}>
                   <CountUp end={100} suffix="+" />
                 </div>
                 <p className="text-gray-600 text-xl mt-4">AI・DX導入支援件数</p>
@@ -252,7 +236,6 @@ export default function ServicePage() {
               </div>
             </FadeIn>
 
-            {/* RIGHT: Industry cards */}
             <FadeIn delay={200}>
               <div>
                 <div className="card-hover bg-white border border-gray-200 rounded-xl p-6 mb-4">
@@ -297,14 +280,14 @@ export default function ServicePage() {
             </span>
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mt-2">
-            {/* LEFT: stats */}
+            {/* LEFT: stats — ③ 数値フォント拡大・説明テキスト強化 */}
             <FadeIn delay={100}>
               <div className="card-hover bg-white border border-gray-200 rounded-xl p-8">
                 <p className="text-gray-500 text-xs tracking-widest uppercase mb-3">導入効果</p>
-                <div className="font-black text-navy" style={{ fontSize: 'clamp(3.5rem,7vw,5rem)', lineHeight: 1 }}>
+                <div className="font-black text-navy" style={{ fontSize: 'clamp(4.5rem,9vw,7rem)', lineHeight: 1 }}>
                   <CountUp end={30} suffix="%" />
                 </div>
-                <p className="text-gray-600 text-base mt-2">業務効率向上</p>
+                <p className="text-navy font-semibold text-lg mt-2">業務効率向上</p>
                 <div className="border-t border-gray-100 my-6" />
                 <ul className="space-y-4">
                   {constructionFeatures.map((f) => (
@@ -353,14 +336,14 @@ export default function ServicePage() {
             </span>
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mt-2">
-            {/* LEFT: stats */}
+            {/* LEFT: stats — ③ */}
             <FadeIn delay={100}>
               <div className="card-hover bg-white border border-gray-200 rounded-xl p-8">
                 <p className="text-gray-500 text-xs tracking-widest uppercase mb-3">導入効果</p>
-                <div className="font-black text-navy" style={{ fontSize: 'clamp(3.5rem,7vw,5rem)', lineHeight: 1 }}>
+                <div className="font-black text-navy" style={{ fontSize: 'clamp(4.5rem,9vw,7rem)', lineHeight: 1 }}>
                   ×5
                 </div>
-                <p className="text-gray-600 text-base mt-2">営業効率向上</p>
+                <p className="text-navy font-semibold text-lg mt-2">営業効率向上</p>
                 <div className="border-t border-gray-100 my-6" />
                 <ul className="space-y-4">
                   {realEstateFeatures.map((f) => (
@@ -409,14 +392,14 @@ export default function ServicePage() {
             </span>
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mt-2">
-            {/* LEFT: stats */}
+            {/* LEFT: stats — ③ */}
             <FadeIn delay={100}>
               <div className="card-hover bg-white border border-gray-200 rounded-xl p-8">
                 <p className="text-gray-500 text-xs tracking-widest uppercase mb-3">導入効果</p>
-                <div className="font-black text-navy" style={{ fontSize: 'clamp(3.5rem,7vw,5rem)', lineHeight: 1 }}>
+                <div className="font-black text-navy" style={{ fontSize: 'clamp(4.5rem,9vw,7rem)', lineHeight: 1 }}>
                   <CountUp end={20} prefix="−" suffix="%" />
                 </div>
-                <p className="text-gray-600 text-base mt-2">燃料コスト削減</p>
+                <p className="text-navy font-semibold text-lg mt-2">燃料コスト削減</p>
                 <div className="border-t border-gray-100 my-6" />
                 <ul className="space-y-4">
                   {logisticsFeatures.map((f) => (
@@ -473,36 +456,37 @@ export default function ServicePage() {
               </div>
               <div className="p-8 md:p-10">
                 <p className="text-gold font-semibold text-lg mb-6">問合せメール返信AI自動生成システム</p>
+                {/* ④ カードをネイビー背景に */}
                 <div className="grid md:grid-cols-3 gap-6">
-                  <div className="card-hover bg-white border border-gray-200 rounded-xl p-6">
-                    <div className="w-10 h-10 rounded-full border border-gray-200 bg-[#F8F9FA] flex items-center justify-center mb-4">
-                      <span className="text-navy/40 text-xs font-black">01</span>
+                  <div className="card-hover bg-navy rounded-xl p-6">
+                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mb-4">
+                      <span className="text-white/60 text-xs font-black">01</span>
                     </div>
                     <p className="text-xs font-bold text-gold uppercase tracking-wider mb-3">課題</p>
-                    <p className="text-gray-700 text-sm leading-relaxed">
+                    <p className="text-white/80 text-sm leading-relaxed">
                       大量の問合せメールへの対応に多くの人手が必要で、担当者の負担が増大していた。
                     </p>
                   </div>
-                  <div className="card-hover bg-white border border-gray-200 rounded-xl p-6">
-                    <div className="w-10 h-10 rounded-full border border-gray-200 bg-[#F8F9FA] flex items-center justify-center mb-4">
-                      <span className="text-navy/40 text-xs font-black">02</span>
+                  <div className="card-hover bg-navy rounded-xl p-6">
+                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mb-4">
+                      <span className="text-white/60 text-xs font-black">02</span>
                     </div>
                     <p className="text-xs font-bold text-gold uppercase tracking-wider mb-3">ソリューション</p>
-                    <p className="text-gray-700 text-sm leading-relaxed">
+                    <p className="text-white/80 text-sm leading-relaxed">
                       AIによる返信文の自動生成システムを構築。問合せ内容を解析し、適切な返信文を即時生成。
                     </p>
                   </div>
-                  <div className="card-hover bg-white border border-gray-200 rounded-xl p-6">
-                    <div className="w-10 h-10 rounded-full border border-gray-200 bg-[#F8F9FA] flex items-center justify-center mb-4">
-                      <span className="text-navy/40 text-xs font-black">03</span>
+                  <div className="card-hover bg-navy rounded-xl p-6">
+                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mb-4">
+                      <span className="text-white/60 text-xs font-black">03</span>
                     </div>
                     <p className="text-xs font-bold text-gold uppercase tracking-wider mb-3">効果</p>
-                    <p className="text-gray-700 text-sm leading-relaxed">
+                    <p className="text-white/80 text-sm leading-relaxed">
                       対応時間の大幅短縮を実現。担当者の負荷軽減により、コア業務への集中が可能に。
                     </p>
                   </div>
                 </div>
-                <p className="text-gray-500 text-sm mt-8 text-center">
+                <p className="text-gold font-semibold text-sm mt-8 text-center">
                   現在稼働実証中 — 成果は順次更新予定
                 </p>
               </div>
@@ -520,7 +504,7 @@ export default function ServicePage() {
             <div className="section-divider mt-3 mb-14" />
           </FadeIn>
 
-          {/* Horizontal steps (sm+) */}
+          {/* ⑤ desc 追加・横並びステップ */}
           <FadeIn delay={100}>
             <div className="hidden sm:flex items-start">
               {steps.map((s, i) => (
@@ -531,6 +515,7 @@ export default function ServicePage() {
                     </div>
                     <p className="text-navy text-xs font-semibold mt-3 text-center">{s.label}</p>
                     <p className="text-gray-400 text-xs mt-1 text-center">{s.period}</p>
+                    <p className="text-gray-500 text-xs mt-2 text-center leading-snug px-1">{s.desc}</p>
                   </div>
                   {i < steps.length - 1 && (
                     <div className="flex-1 h-px bg-gray-200 mt-5 min-w-0" />
@@ -539,7 +524,7 @@ export default function ServicePage() {
               ))}
             </div>
 
-            {/* Vertical steps (mobile) */}
+            {/* ⑤ desc 追加・縦並びステップ */}
             <div className="sm:hidden space-y-6">
               {steps.map((s, i) => (
                 <div key={s.num} className="flex items-start gap-4">
@@ -554,6 +539,7 @@ export default function ServicePage() {
                   <div className="pt-2">
                     <p className="text-navy font-semibold">{s.label}</p>
                     <p className="text-gray-400 text-xs mt-0.5">{s.period}</p>
+                    <p className="text-gray-500 text-xs mt-1 leading-snug">{s.desc}</p>
                   </div>
                 </div>
               ))}
