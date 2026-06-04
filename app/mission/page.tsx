@@ -49,15 +49,6 @@ export default function MissionPage() {
 
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
             <FadeIn>
-              {/* Decorative quote mark */}
-              <div
-                className="font-black text-gold/[0.07] leading-none select-none mb-2"
-                style={{ fontSize: '8rem' }}
-                aria-hidden="true"
-              >
-                &ldquo;
-              </div>
-
               <h2 className="font-black leading-tight">
                 <span className="block text-white h2-hero">
                   地方中堅企業にAIを届け、
