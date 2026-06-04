@@ -83,68 +83,6 @@ export default function ServicePage() {
         </div>
       </section>
 
-      {/* ── COMPARISON ── */}
-      <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">COMPARISON</p>
-            <h2 className="h2-fluid font-bold text-navy mb-2">他社比較</h2>
-            <div className="section-divider mt-3 mb-4" />
-            <p className="text-gray-500 text-sm mb-10 text-center">日本のAI企業10社調査結果</p>
-          </FadeIn>
-          <FadeIn delay={100}>
-            <div className="bg-white border border-gray-200 rounded-xl overflow-hidden">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="bg-[#F8F9FA] border-b border-gray-200">
-                    <th className="text-left text-navy font-semibold px-6 py-4">比較項目</th>
-                    <th className="text-center text-navy font-semibold px-4 py-4">業界特化</th>
-                    <th className="text-center text-navy font-semibold px-4 py-4">地方中堅対応</th>
-                    <th className="text-center text-navy font-semibold px-4 py-4">1/5価格</th>
-                    <th className="text-center text-navy font-semibold px-4 py-4">6ヶ月稼働</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-gray-100 bg-navy/5">
-                    <td className="px-6 py-4 font-bold text-navy">Arcrise Labo</td>
-                    {['✓', '✓', '✓', '✓'].map((v, i) => (
-                      <td key={i} className="text-center px-4 py-4">
-                        <span className="text-gold text-xl font-black">{v}</span>
-                      </td>
-                    ))}
-                  </tr>
-                  <tr className="border-b border-gray-100">
-                    <td className="px-6 py-4 font-semibold text-gray-600">大手SIer（平均）</td>
-                    {[true, false, false, false].map((ok, i) => (
-                      <td key={i} className="text-center px-4 py-4">
-                        {ok ? <span className="text-gold text-xl font-black">✓</span> : <span className="text-gray-300 text-xl font-black">✗</span>}
-                      </td>
-                    ))}
-                  </tr>
-                  <tr className="border-b border-gray-100">
-                    <td className="px-6 py-4 font-semibold text-gray-600">AIスタートアップ</td>
-                    {[false, false, true, false].map((ok, i) => (
-                      <td key={i} className="text-center px-4 py-4">
-                        {ok ? <span className="text-gold text-xl font-black">✓</span> : <span className="text-gray-300 text-xl font-black">✗</span>}
-                      </td>
-                    ))}
-                  </tr>
-                  <tr>
-                    <td className="px-6 py-4 font-semibold text-gray-600">コンサルファーム</td>
-                    {[false, false, false, false].map((ok, i) => (
-                      <td key={i} className="text-center px-4 py-4">
-                        {ok ? <span className="text-gold text-xl font-black">✓</span> : <span className="text-gray-300 text-xl font-black">✗</span>}
-                      </td>
-                    ))}
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p className="text-navy font-semibold text-center mt-6">4条件全て○はArcrise Laboのみ</p>
-          </FadeIn>
-        </div>
-      </section>
-
       {/* ── WHY CHOOSE US ── */}
       <section className="bg-[#F8F9FA] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -398,6 +336,68 @@ export default function ServicePage() {
                 <p className="text-gold font-semibold text-sm mt-8 text-center">現在稼働実証中 — 成果は順次更新予定</p>
               </div>
             </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ── COMPARISON ── */}
+      <section className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">COMPARISON</p>
+            <h2 className="h2-fluid font-bold text-navy mb-2">他社比較</h2>
+            <div className="section-divider mt-3 mb-4" />
+            <p className="text-gray-500 text-sm mb-10 text-center">日本のAI企業10社調査結果</p>
+          </FadeIn>
+          <FadeIn delay={100}>
+            <div className="bg-white border border-gray-200 rounded-xl overflow-hidden">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-[#F8F9FA] border-b border-gray-200">
+                    <th className="text-left text-navy font-semibold px-6 py-4">比較項目</th>
+                    <th className="text-center text-navy font-semibold px-4 py-4">業界特化</th>
+                    <th className="text-center text-navy font-semibold px-4 py-4">地方中堅対応</th>
+                    <th className="text-center text-navy font-semibold px-4 py-4">1/5価格</th>
+                    <th className="text-center text-navy font-semibold px-4 py-4">6ヶ月稼働</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-gray-100 bg-navy/5">
+                    <td className="px-6 py-4 font-bold text-navy">Arcrise Labo</td>
+                    {['✓', '✓', '✓', '✓'].map((v, i) => (
+                      <td key={i} className="text-center px-4 py-4">
+                        <span className="text-gold text-xl font-black">{v}</span>
+                      </td>
+                    ))}
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="px-6 py-4 font-semibold text-gray-600">大手SIer（平均）</td>
+                    {[true, false, false, false].map((ok, i) => (
+                      <td key={i} className="text-center px-4 py-4">
+                        {ok ? <span className="text-gold text-xl font-black">✓</span> : <span className="text-gray-300 text-xl font-black">✗</span>}
+                      </td>
+                    ))}
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="px-6 py-4 font-semibold text-gray-600">AIスタートアップ</td>
+                    {[false, false, true, false].map((ok, i) => (
+                      <td key={i} className="text-center px-4 py-4">
+                        {ok ? <span className="text-gold text-xl font-black">✓</span> : <span className="text-gray-300 text-xl font-black">✗</span>}
+                      </td>
+                    ))}
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 font-semibold text-gray-600">コンサルファーム</td>
+                    {[false, false, false, false].map((ok, i) => (
+                      <td key={i} className="text-center px-4 py-4">
+                        {ok ? <span className="text-gold text-xl font-black">✓</span> : <span className="text-gray-300 text-xl font-black">✗</span>}
+                      </td>
+                    ))}
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-navy font-semibold text-center mt-6">4条件全て○はArcrise Laboのみ</p>
           </FadeIn>
         </div>
       </section>
