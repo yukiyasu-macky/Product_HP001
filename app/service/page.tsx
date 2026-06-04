@@ -17,109 +17,67 @@ export default function ServicePage() {
 
   return (
     <>
-      {/* ── HERO ── */}
-      <section className="bg-[#F8F9FA] pt-32 pb-0">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ── HERO（統合） ── */}
+      <section className="relative overflow-hidden">
+        {/* 背景画像 */}
+        <div className="absolute inset-0">
+          <Image
+            src="/service-construction.jpg"
+            alt=""
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
+        <div className="absolute inset-0 bg-navy/88" />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse 70% 60% at 30% 50%, rgba(201,169,110,0.05) 0%, transparent 70%)',
+          }}
+        />
+
+        {/* コンテンツ */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-20">
           <FadeIn>
-            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">SERVICE</p>
+            {/* ラベル＋タイトル */}
+            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-4">SERVICE</p>
             <h1
-              className="font-black text-navy leading-none mb-2"
-              style={{ fontSize: 'clamp(2rem,4vw,3rem)' }}
+              className="text-white font-black leading-none mb-4"
+              style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}
             >
               サービス・事業内容
             </h1>
-            <div className="section-divider mt-3 mb-6" />
-            <p className="text-gray-500 text-xl mt-4 pb-10">業界特化型AIプラットフォーム</p>
-          </FadeIn>
-        </div>
-      </section>
+            <div className="section-divider mb-8" />
 
-      {/* ── HERO STATS BAR ── */}
-      <section className="bg-white border-b border-gray-100 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-gray-200">
-            {[
-              { value: '100+', label: '支援実績', sub: 'CEO実績件数' },
-              { value: '1/5', label: '価格', sub: '大手SIer比' },
-              { value: '1/3', label: '期間', sub: '大手SIer比' },
-              { value: '6ヶ月', label: '稼働まで', sub: '標準導入期間' },
-            ].map((item) => (
-              <div key={item.label} className="text-center md:px-8">
-                <div className="font-black text-navy" style={{ fontSize: 'clamp(1.8rem,3vw,2.5rem)', lineHeight: 1 }}>
-                  {item.value}
-                </div>
-                <div className="text-navy text-sm font-semibold mt-1">{item.label}</div>
-                <div className="text-gray-400 text-xs mt-0.5">{item.sub}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── PLATFORM OVERVIEW ── */}
-      <section className="bg-navy py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <FadeIn>
-            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">PLATFORM</p>
-            <h2 className="h2-fluid font-bold text-white mb-2">なぜ業界特化か</h2>
-            <div className="section-divider mx-auto mt-3 mb-10" />
-            <p className="text-white/70 text-lg max-w-2xl mx-auto mb-10">
-              Palantirの手法を参考にした、業界ごとにカスタマイズされたAIプラットフォーム。汎用AIではなく、各業界の業務プロセスに最適化されたソリューションを提供します。
+            {/* PLATFORMコピー */}
+            <h2
+              className="text-white font-black leading-tight mb-5"
+              style={{ fontSize: 'clamp(1.5rem, 3vw, 2.4rem)' }}
+            >
+              なぜ業界特化か
+            </h2>
+            <p className="text-white/60 text-base md:text-lg leading-relaxed max-w-2xl mb-10">
+              Palantirの手法を参考にした、業界ごとにカスタマイズされたAIプラットフォーム。
+              汎用AIではなく、各業界の業務プロセスに最適化されたソリューションを提供します。
             </p>
 
-            {/* ② アイコン3列 */}
-            <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mb-10">
+            {/* 数値4つ横並び */}
+            <div className="flex flex-wrap gap-x-10 gap-y-6">
               {[
-                {
-                  icon: (
-                    <svg viewBox="0 0 40 40" className="w-10 h-10 mx-auto mb-3" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="20" cy="20" r="18" />
-                      <path d="M12 20 L18 26 L28 14" />
-                    </svg>
-                  ),
-                  label: '業界特化',
-                  sub: '汎用AIではなく現場最適化',
-                },
-                {
-                  icon: (
-                    <svg viewBox="0 0 40 40" className="w-10 h-10 mx-auto mb-3" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M8 32 L8 16 L20 8 L32 16 L32 32 Z" />
-                      <path d="M15 32 L15 22 L25 22 L25 32" />
-                    </svg>
-                  ),
-                  label: '経営視点',
-                  sub: '100件超の実績をもつCEO直轄',
-                },
-                {
-                  icon: (
-                    <svg viewBox="0 0 40 40" className="w-10 h-10 mx-auto mb-3" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="20" cy="20" r="5" />
-                      <path d="M20 4 L20 10 M20 30 L20 36 M4 20 L10 20 M30 20 L36 20" />
-                      <path d="M8.6 8.6 L12.9 12.9 M27.1 27.1 L31.4 31.4 M8.6 31.4 L12.9 27.1 M27.1 12.9 L31.4 8.6" />
-                    </svg>
-                  ),
-                  label: '6ヶ月稼働',
-                  sub: '大手SIerの1/3期間で実装',
-                },
+                { value: '100+', label: '支援実績', sub: 'CEO実績件数' },
+                { value: '1/5',  label: '価格',    sub: '大手SIer比' },
+                { value: '1/3',  label: '期間',    sub: '大手SIer比' },
+                { value: '6ヶ月', label: '稼働まで', sub: '標準導入期間' },
               ].map((item) => (
-                <div key={item.label} className="text-center">
-                  {item.icon}
-                  <p className="text-white font-bold text-sm">{item.label}</p>
-                  <p className="text-white/50 text-xs mt-1">{item.sub}</p>
+                <div key={item.label} className="border-l-2 border-gold/40 pl-4">
+                  <div className="text-white font-black leading-none" style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)' }}>
+                    {item.value}
+                  </div>
+                  <div className="text-gold text-xs font-semibold mt-1">{item.label}</div>
+                  <div className="text-white/35 text-xs mt-0.5">{item.sub}</div>
                 </div>
               ))}
-            </div>
-
-            <div className="flex gap-4 flex-wrap justify-center">
-              <span className="border border-white/40 text-white px-6 py-2 rounded-full text-sm tracking-wide">
-                大手SIerの1/5価格
-              </span>
-              <span className="border border-white/40 text-white px-6 py-2 rounded-full text-sm tracking-wide">
-                大手SIerの1/3期間
-              </span>
-              <span className="bg-gold text-navy px-6 py-2 rounded-full text-sm font-semibold tracking-wide">
-                6ヶ月で稼働
-              </span>
             </div>
           </FadeIn>
         </div>
