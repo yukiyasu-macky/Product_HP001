@@ -170,13 +170,13 @@ export default function ServicePage() {
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
-                <div className="absolute bottom-0 left-0 p-6">
-                  <p className="text-white/70 text-xs tracking-widest uppercase mb-1">導入効果</p>
-                  <p className="text-white font-black" style={{ fontSize: 'clamp(2rem,5vw,3rem)', lineHeight: 1 }}>
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <p className="text-white/60 text-xs tracking-widest uppercase mb-2">導入効果</p>
+                  <p className="text-white font-black" style={{ fontSize: 'clamp(3rem,8vw,5rem)', lineHeight: 1 }}>
                     +30%
                   </p>
-                  <p className="text-white/80 text-sm mt-1">業務効率向上 / 対象 4万社</p>
+                  <p className="text-white/90 text-base font-medium mt-3">業務効率向上 / 対象 4万社</p>
                 </div>
               </div>
             </FadeIn>
@@ -218,13 +218,13 @@ export default function ServicePage() {
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
-                <div className="absolute bottom-0 left-0 p-6">
-                  <p className="text-white/70 text-xs tracking-widest uppercase mb-1">導入効果</p>
-                  <p className="text-white font-black" style={{ fontSize: 'clamp(2rem,5vw,3rem)', lineHeight: 1 }}>
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <p className="text-white/60 text-xs tracking-widest uppercase mb-2">導入効果</p>
+                  <p className="text-white font-black" style={{ fontSize: 'clamp(3rem,8vw,5rem)', lineHeight: 1 }}>
                     ×5
                   </p>
-                  <p className="text-white/80 text-sm mt-1">営業効率向上 / 対象 12万社</p>
+                  <p className="text-white/90 text-base font-medium mt-3">営業効率向上 / 対象 12万社</p>
                 </div>
               </div>
             </FadeIn>
@@ -276,13 +276,13 @@ export default function ServicePage() {
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
-                <div className="absolute bottom-0 left-0 p-6">
-                  <p className="text-white/70 text-xs tracking-widest uppercase mb-1">導入効果</p>
-                  <p className="text-white font-black" style={{ fontSize: 'clamp(2rem,5vw,3rem)', lineHeight: 1 }}>
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <p className="text-white/60 text-xs tracking-widest uppercase mb-2">導入効果</p>
+                  <p className="text-white font-black" style={{ fontSize: 'clamp(3rem,8vw,5rem)', lineHeight: 1 }}>
                     −20%
                   </p>
-                  <p className="text-white/80 text-sm mt-1">燃料コスト削減 / 対象 6万社</p>
+                  <p className="text-white/90 text-base font-medium mt-3">燃料コスト削減 / 対象 6万社</p>
                 </div>
               </div>
             </FadeIn>
