@@ -142,7 +142,7 @@ export default function ContactPage() {
                     <label className={labelClass}>お問い合わせ内容</label>
                     <textarea className={textareaClass} value={form0.message} onChange={(e) => setForm0({ ...form0, message: e.target.value })} required />
                   </div>
-                  <button type="submit" className="w-full bg-navy text-white font-semibold py-3.5 rounded text-sm hover:bg-[#142d4a] transition-colors">
+                  <button type="submit" className="w-full bg-navy text-white font-semibold py-3.5 rounded text-sm hover:bg-[#1a2f45] transition-colors">
                     送信する
                   </button>
                 </form>

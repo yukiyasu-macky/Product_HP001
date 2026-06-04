@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy: #1B3A5C;
+  --color-navy: #0D1B2A;
   --color-gold: #C9A96E;
   --color-light: #F8F9FA;
   --font-sans: 'Noto Sans JP', sans-serif;
@@ -24,7 +24,7 @@ body {
 .card-hover:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 28px rgba(13, 27, 42, 0.1);
-  border-color: #1B3A5C !important;
+  border-color: #0D1B2A !important;
 }
 
 /* ── Dark card hover (for navy sections) ── */

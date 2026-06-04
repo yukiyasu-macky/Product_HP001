@@ -34,7 +34,7 @@ export default function Header() {
             ))}
             <Link
               href="/contact"
-              className="ml-2 bg-navy text-white text-sm font-semibold px-5 py-2 rounded hover:bg-[#142d4a] transition-colors"
+              className="ml-2 bg-navy text-white text-sm font-semibold px-5 py-2 rounded hover:bg-[#1a2f45] transition-colors"
             >
               お問い合わせ
             </Link>
@@ -72,7 +72,7 @@ export default function Header() {
             <div className="px-6 py-4">
               <Link
                 href="/contact"
-                className="block bg-navy text-white text-sm text-center font-semibold py-3 rounded hover:bg-[#142d4a] transition-colors"
+                className="block bg-navy text-white text-sm text-center font-semibold py-3 rounded hover:bg-[#1a2f45] transition-colors"
                 onClick={() => setOpen(false)}
               >
                 お問い合わせ
