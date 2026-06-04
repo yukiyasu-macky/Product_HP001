@@ -71,7 +71,7 @@ export default function ServicePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">WHY CHOOSE US</p>
-            <h2 className="h2-fluid font-bold text-navy mb-2">なぜArcrise Laboを選ぶのか</h2>
+            <h2 className="h2-fluid font-bold text-navy mb-2">なぜArcrise Labsを選ぶのか</h2>
             <div className="section-divider mt-3 mb-10" />
           </FadeIn>
           {/* ③ アイコンバッジ＋ホバーアニメーション追加 */}

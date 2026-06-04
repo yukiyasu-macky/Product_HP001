@@ -34,10 +34,10 @@ export default function NewsPage() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-navy font-bold text-lg mb-2">
-                    Arcrise Labo Inc. 創業のお知らせ
+                    Arcrise Labs株式会社 創業のお知らせ
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    地方中堅企業向け業界特化型AIプラットフォームを提供するArcrise Labo Inc.が2026年5月に創業いたしました。
+                    地方中堅企業向け業界特化型AIプラットフォームを提供するArcrise Labs株式会社が2026年5月に創業いたしました。
                   </p>
                 </div>
               </div>

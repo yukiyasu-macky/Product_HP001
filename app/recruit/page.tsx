@@ -27,14 +27,14 @@ export default function RecruitPage() {
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">MESSAGE</p>
             <h2 className="h2-fluid font-bold text-navy mb-2">
-              Arcrise Laboが求めるもの
+              Arcrise Labsが求めるもの
             </h2>
             <div className="section-divider mt-3 mb-8" />
             <p className="text-gray-700 text-lg leading-relaxed max-w-3xl">
               AI技術は、それだけでは社会を変えられません。
               必要なのは、現場を理解し、経営課題を解決し、
               実際に成果へつなげる力です。<br /><br />
-              Arcrise Laboは、建設・不動産・物流といった
+              Arcrise Labsは、建設・不動産・物流といった
               日本を支える産業の変革に挑戦しています。
               私たちが目指すのは、現場にAIを根付かせ、
               地方から日本の産業を再生することです。<br /><br />

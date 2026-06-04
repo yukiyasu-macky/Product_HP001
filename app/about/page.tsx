@@ -101,7 +101,7 @@ export default function AboutPage() {
                 「本当に必要なのは、現場で使われる仕組みである」と確信してきました。
               </p>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Arcrise Laboは、最先端AIを地方中堅企業の実務へ落とし込み、
+                Arcrise Labsは、最先端AIを地方中堅企業の実務へ落とし込み、
                 経営成果へ直結させるために創業しました。
                 私たちは単なるシステム導入会社ではありません。
                 現場と経営を理解し、企業の未来を共に創るパートナーです。
