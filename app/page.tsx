@@ -61,6 +61,46 @@ export default function Home() {
     <>
       <HeroSlider />
 
+      {/* ── MISSION ── */}
+      <section className="relative py-32 text-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-bg.jpg"
+            alt=""
+            fill
+            className="object-cover"
+            unoptimized
+          />
+        </div>
+        <div className="absolute inset-0 bg-navy/80" />
+        <div className="relative z-10 max-w-4xl mx-auto px-6">
+          <FadeIn>
+            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-8">OUR MISSION</p>
+            <h2
+              className="text-white font-black mb-8 leading-tight"
+              style={{ fontSize: 'clamp(2rem, 5vw, 4rem)' }}
+            >
+              地方中堅企業にAIを届け、<br />
+              <span className="text-gold">日本の産業を再生する</span>
+            </h2>
+            <p className="text-white/70 text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
+              私たちは、AIの力を地方中堅企業へ届けることで、日本の基幹産業を再生します。
+              建設、不動産、物流など地域経済を支える企業の生産性向上を実現し、
+              人手不足や事業承継といった社会課題の解決に挑戦します。
+            </p>
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-2 border border-gold/60 text-gold font-semibold px-8 py-4 rounded text-sm tracking-wide hover:bg-gold hover:text-navy transition-all"
+            >
+              会社概要を見る
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </Link>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* ── NUMBERS (white) ── */}
       <section className="bg-white py-24 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -130,46 +170,6 @@ export default function Home() {
                 全サービスを見る →
               </Link>
             </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* ── MISSION ── */}
-      <section className="relative py-32 text-center overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/hero-bg.jpg"
-            alt=""
-            fill
-            className="object-cover"
-            unoptimized
-          />
-        </div>
-        <div className="absolute inset-0 bg-navy/80" />
-        <div className="relative z-10 max-w-4xl mx-auto px-6">
-          <FadeIn>
-            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-8">OUR MISSION</p>
-            <h2
-              className="text-white font-black mb-8 leading-tight"
-              style={{ fontSize: 'clamp(2rem, 5vw, 4rem)' }}
-            >
-              地方中堅企業にAIを届け、<br />
-              <span className="text-gold">日本の産業を再生する</span>
-            </h2>
-            <p className="text-white/70 text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
-              私たちは、AIの力を地方中堅企業へ届けることで、日本の基幹産業を再生します。
-              建設、不動産、物流など地域経済を支える企業の生産性向上を実現し、
-              人手不足や事業承継といった社会課題の解決に挑戦します。
-            </p>
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-2 border border-gold/60 text-gold font-semibold px-8 py-4 rounded text-sm tracking-wide hover:bg-gold hover:text-navy transition-all"
-            >
-              会社概要を見る
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </Link>
           </FadeIn>
         </div>
       </section>
