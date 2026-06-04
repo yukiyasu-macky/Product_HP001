@@ -54,7 +54,7 @@ const slides = [
   },
 ]
 
-const INTERVAL = 6000
+const INTERVAL = 3000
 
 export default function HeroSlider() {
   const [current, setCurrent] = useState(0)
@@ -214,23 +214,39 @@ export default function HeroSlider() {
           )}
         </div>
 
-        {/* スライドナビゲーション */}
-        <div className="flex items-center gap-8 mt-16">
+        {/* スライドナビゲーション — 帯型 */}
+        <div className="mt-16 flex rounded overflow-hidden border border-white/10"
+          style={{ background: 'rgba(13,27,42,0.55)' }}>
           {slides.map((s, i) => (
             <button
               key={s.id}
               onClick={() => goTo(i)}
-              className="flex flex-col items-start gap-2 group"
+              className={`
+                flex-1 flex flex-col items-start px-5 py-4 text-left
+                transition-colors duration-200 relative
+                ${i === current
+                  ? 'bg-[#0D1B2A]'
+                  : 'bg-transparent hover:bg-[#0D1B2A]/70'
+                }
+                ${i > 0 ? 'border-l border-white/10' : ''}
+              `}
             >
               {/* プログレスバー */}
-              <div className="w-16 h-px bg-white/20 relative overflow-hidden">
+              <div className="w-full h-0.5 mb-3 relative overflow-hidden rounded-full"
+                style={{ background: 'rgba(255,255,255,0.12)' }}>
                 <div
-                  className="absolute left-0 top-0 h-full bg-gold transition-none"
-                  style={{ width: i === current ? `${progress}%` : i < current ? '100%' : '0%' }}
+                  className="absolute left-0 top-0 h-full rounded-full transition-none"
+                  style={{
+                    background: i === current ? '#C9A96E' : 'rgba(255,255,255,0.25)',
+                    width: i === current ? `${progress}%` : i < current ? '100%' : '0%',
+                  }}
                 />
               </div>
               {/* 業種名 */}
-              <span className={`text-xs tracking-widest uppercase transition-colors ${i === current ? 'text-gold' : 'text-white/40 group-hover:text-white/70'}`}>
+              <span className={`
+                text-xs tracking-widest uppercase font-medium transition-colors duration-200
+                ${i === current ? 'text-gold' : 'text-white/35 hover:text-white/70'}
+              `}>
                 {s.navLabel}
               </span>
             </button>
