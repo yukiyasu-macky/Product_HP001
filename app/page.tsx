@@ -49,47 +49,12 @@ export default function Home() {
                 >
                   サービス
                 </h2>
-                <p className="text-white/50 group-hover:text-gray-500 text-sm leading-relaxed mb-5 transition-colors duration-300">
+                <p className="text-white/50 group-hover:text-gray-500 text-sm leading-relaxed transition-colors duration-300">
                   建設・不動産・物流業に特化したAIプラットフォーム。大手SIerの1/5価格、6ヶ月で稼働。
                 </p>
-                <div className="flex gap-6">
-                  {[
-                    { value: '+30%', label: '建設業効率向上' },
-                    { value: '×5',   label: '不動産営業効率' },
-                    { value: '−20%', label: '物流コスト削減' },
-                  ].map((s) => (
-                    <div key={s.label}>
-                      <div className="text-gold font-black text-base leading-none">{s.value}</div>
-                      <div className="text-white/30 group-hover:text-gray-400 text-xs mt-1 transition-colors duration-300">{s.label}</div>
-                    </div>
-                  ))}
-                </div>
               </div>
               <div className="flex items-center gap-2 text-gold text-sm font-semibold mt-8 group-hover:gap-4 transition-all duration-300">
                 <span>詳しく見る</span>
-                <span>→</span>
-              </div>
-            </Link>
-
-            {/* お問い合わせ — 下段全幅 */}
-            <Link
-              href="/contact"
-              className="group flex flex-col justify-between p-10 lg:p-14 sm:col-span-2 bg-[#0D1B2A] hover:bg-white transition-colors duration-300 min-h-[280px] lg:min-h-[320px]"
-            >
-              <div>
-                <p className="text-gold text-xs tracking-[0.4em] uppercase mb-5">CONTACT</p>
-                <h2
-                  className="text-white group-hover:text-navy font-black leading-tight mb-4 transition-colors duration-300"
-                  style={{ fontSize: 'clamp(1.6rem, 2.5vw, 2.2rem)' }}
-                >
-                  お問い合わせ
-                </h2>
-                <p className="text-white/50 group-hover:text-gray-500 text-sm leading-relaxed transition-colors duration-300">
-                  導入相談・資料請求・採用エントリーはこちら。まずはお気軽にご連絡ください。
-                </p>
-              </div>
-              <div className="flex items-center gap-2 text-gold text-sm font-semibold mt-8 group-hover:gap-4 transition-all duration-300">
-                <span>お問い合わせ</span>
                 <span>→</span>
               </div>
             </Link>
