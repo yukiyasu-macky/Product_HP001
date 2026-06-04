@@ -93,7 +93,6 @@ export default function AboutPage() {
             <div className="max-w-2xl">
               <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">代表者メッセージ</p>
               <h2 className="text-navy font-bold mb-1" style={{ fontSize: '1.5rem' }}>内海 暢介</h2>
-              <p className="text-gray-500">代表取締役CEO</p>
               <div className="section-divider mt-4 mb-6" />
               <p className="text-gray-700 leading-relaxed mb-6">
                 日本の地方には、優れた技術や豊富な経験を持ちながらも、
