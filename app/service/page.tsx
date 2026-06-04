@@ -5,53 +5,7 @@ import CountUp from '@/components/CountUp'
 
 export const dynamic = 'force-static'
 
-function ConstructionIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className={className}>
-      {/* Crane arm */}
-      <line x1="8" y1="40" x2="8" y2="8" />
-      <line x1="8" y1="10" x2="36" y2="10" />
-      <line x1="36" y1="10" x2="36" y2="20" />
-      <line x1="8" y1="10" x2="14" y2="4" />
-      {/* Hook */}
-      <line x1="28" y1="10" x2="28" y2="18" />
-      <path d="M25 18 Q24 22 27 22 Q30 22 30 19" />
-      {/* Building frame */}
-      <rect x="14" y="22" width="26" height="18" />
-      <line x1="14" y1="30" x2="40" y2="30" />
-      <line x1="22" y1="22" x2="22" y2="40" />
-      <line x1="32" y1="22" x2="32" y2="40" />
-      {/* Ground */}
-      <line x1="4" y1="40" x2="44" y2="40" />
-      {/* Workers */}
-      <circle cx="10" cy="36" r="1.5" fill="currentColor" stroke="none" />
-      <circle cx="43" cy="36" r="1.5" fill="currentColor" stroke="none" />
-    </svg>
-  )
-}
 
-
-function LogisticsIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className={className}>
-      {/* Truck body */}
-      <rect x="2" y="18" width="28" height="18" />
-      {/* Truck cab */}
-      <path d="M30 26 L30 36 L46 36 L46 28 L40 18 L30 18 L30 26 Z" />
-      {/* Cab window */}
-      <path d="M32 20 L40 20 L44 26 L32 26 Z" />
-      {/* Wheels */}
-      <circle cx="10" cy="38" r="4" />
-      <circle cx="22" cy="38" r="4" />
-      <circle cx="38" cy="38" r="4" />
-      {/* Route dots */}
-      <circle cx="6" cy="12" r="2" fill="currentColor" stroke="none" />
-      <circle cx="16" cy="8" r="2" fill="currentColor" stroke="none" />
-      <circle cx="26" cy="12" r="2" fill="currentColor" stroke="none" />
-      <path d="M6 12 Q11 6 16 8 Q21 10 26 12" strokeDasharray="2 2" />
-    </svg>
-  )
-}
 
 export default function ServicePage() {
   const constructionFeatures = [
@@ -134,31 +88,28 @@ export default function ServicePage() {
             </span>
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mt-2">
-            {/* LEFT: features */}
+            {/* LEFT: stats */}
             <FadeIn delay={100}>
-              <ConstructionIcon className="text-gold w-14 h-14 mb-6" />
-              <h2 className="h2-fluid font-bold text-navy mb-4">
-                建設業向けAIプラットフォーム
-              </h2>
-              <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                見積作成、工程管理、報告書作成、安全管理などの業務をAIで効率化。
-                現場監督や管理職の事務負担を削減し、
-                限られた人員でも高品質な施工管理を実現します。
-              </p>
-              <ul className="space-y-5">
-                {constructionFeatures.map((f) => (
-                  <li key={f.name} className="flex items-start gap-4">
-                    <span className="mt-1.5 shrink-0 w-2 h-2 rounded-full bg-gold" />
-                    <div>
-                      <p className="text-navy font-semibold">{f.name}</p>
-                      <p className="text-gray-500 text-sm mt-0.5">{f.desc}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-gray-400 text-xs tracking-wider mt-8 uppercase">
-                米国実例: Palantir × Jacobs Engineering
-              </p>
+              <div className="card-hover bg-white border border-gray-200 rounded-xl p-8">
+                <p className="text-gray-500 text-xs tracking-widest uppercase mb-3">導入効果</p>
+                <div className="font-black text-navy" style={{ fontSize: 'clamp(3.5rem,7vw,5rem)', lineHeight: 1 }}>
+                  <CountUp end={30} suffix="%" />
+                </div>
+                <p className="text-gray-600 text-base mt-2">業務効率向上</p>
+                <div className="border-t border-gray-100 my-6" />
+                <ul className="space-y-4">
+                  {constructionFeatures.map((f) => (
+                    <li key={f.name} className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0" />
+                      <div>
+                        <p className="text-navy font-semibold text-sm">{f.name}</p>
+                        <p className="text-gray-500 text-xs mt-0.5">{f.desc}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-gray-400 text-xs tracking-wider mt-6 uppercase">対象企業数: 4万社</p>
+              </div>
             </FadeIn>
             {/* RIGHT: image */}
             <FadeIn delay={200}>
@@ -195,17 +146,25 @@ export default function ServicePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mt-2">
             {/* LEFT: stats */}
             <FadeIn delay={100}>
-              <div className="card-hover bg-white border border-gray-200 rounded-xl p-10">
+              <div className="card-hover bg-white border border-gray-200 rounded-xl p-8">
                 <p className="text-gray-500 text-xs tracking-widest uppercase mb-3">導入効果</p>
-                <div
-                  className="font-black text-navy"
-                  style={{ fontSize: 'clamp(3.5rem,7vw,5rem)', lineHeight: 1 }}
-                >
+                <div className="font-black text-navy" style={{ fontSize: 'clamp(3.5rem,7vw,5rem)', lineHeight: 1 }}>
                   ×5
                 </div>
                 <p className="text-gray-600 text-base mt-2">営業効率向上</p>
                 <div className="border-t border-gray-100 my-6" />
-                <p className="text-gray-500 text-sm">対象企業数: 12万社</p>
+                <ul className="space-y-4">
+                  {realEstateFeatures.map((f) => (
+                    <li key={f.name} className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0" />
+                      <div>
+                        <p className="text-navy font-semibold text-sm">{f.name}</p>
+                        <p className="text-gray-500 text-xs mt-0.5">{f.desc}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-gray-400 text-xs tracking-wider mt-6 uppercase">対象企業数: 12万社</p>
               </div>
             </FadeIn>
             {/* RIGHT: image */}
@@ -241,30 +200,28 @@ export default function ServicePage() {
             </span>
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mt-2">
-            {/* LEFT: features */}
+            {/* LEFT: stats */}
             <FadeIn delay={100}>
-              <LogisticsIcon className="text-gold w-14 h-14 mb-6" />
-              <h2 className="h2-fluid font-bold text-navy mb-4">
-                運送・物流業向けAIプラットフォーム
-              </h2>
-              <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                配車計画、運行管理、問い合わせ対応、日報処理などをAIで最適化。
-                ドライバー不足への対応と運行効率向上を同時に実現します。
-              </p>
-              <ul className="space-y-5">
-                {logisticsFeatures.map((f) => (
-                  <li key={f.name} className="flex items-start gap-4">
-                    <span className="mt-1.5 shrink-0 w-2 h-2 rounded-full bg-gold" />
-                    <div>
-                      <p className="text-navy font-semibold">{f.name}</p>
-                      <p className="text-gray-500 text-sm mt-0.5">{f.desc}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-gray-400 text-xs tracking-wider mt-8 uppercase">
-                米国実例: Palantir × Uber Freight
-              </p>
+              <div className="card-hover bg-white border border-gray-200 rounded-xl p-8">
+                <p className="text-gray-500 text-xs tracking-widest uppercase mb-3">導入効果</p>
+                <div className="font-black text-navy" style={{ fontSize: 'clamp(3.5rem,7vw,5rem)', lineHeight: 1 }}>
+                  <CountUp end={20} prefix="−" suffix="%" />
+                </div>
+                <p className="text-gray-600 text-base mt-2">燃料コスト削減</p>
+                <div className="border-t border-gray-100 my-6" />
+                <ul className="space-y-4">
+                  {logisticsFeatures.map((f) => (
+                    <li key={f.name} className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0" />
+                      <div>
+                        <p className="text-navy font-semibold text-sm">{f.name}</p>
+                        <p className="text-gray-500 text-xs mt-0.5">{f.desc}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-gray-400 text-xs tracking-wider mt-6 uppercase">対象企業数: 6万社</p>
+              </div>
             </FadeIn>
             {/* RIGHT: image */}
             <FadeIn delay={200}>
