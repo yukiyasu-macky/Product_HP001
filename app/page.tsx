@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import CountUp from '@/components/CountUp'
 import FadeIn from '@/components/FadeIn'
 import HeroSlider from '@/components/HeroSlider'
@@ -50,9 +51,8 @@ const services = [
 ]
 
 const ctaLinks = [
-  { href: '/results', label: '実績', desc: '100+件の導入支援実績' },
-  { href: '/team', label: 'チーム', desc: '経営×AI×営業の3ピース' },
-  { href: '/recruit', label: '採用情報', desc: '大手+30-50%給与 + SO' },
+  { href: '/about', label: '会社概要', desc: '会社情報・ミッション・ビジョン' },
+  { href: '/service', label: 'サービス', desc: '業界特化型AIプラットフォーム' },
   { href: '/contact', label: 'お問い合わせ', desc: '無料相談・資料請求' },
 ]
 
@@ -134,28 +134,41 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── MISSION (dark navy — contrast section) ── */}
-      <section className="relative bg-navy py-32 overflow-hidden diagonal-gold">
-        <div className="absolute inset-0 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse 60% 70% at 50% 50%, rgba(201,169,110,0.04) 0%, transparent 70%)' }} />
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* ── MISSION ── */}
+      <section className="relative py-32 text-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-bg.jpg"
+            alt=""
+            fill
+            className="object-cover"
+            unoptimized
+          />
+        </div>
+        <div className="absolute inset-0 bg-navy/80" />
+        <div className="relative z-10 max-w-4xl mx-auto px-6">
           <FadeIn>
-            <p className="text-gold text-xs tracking-[0.5em] uppercase mb-8">Our Mission</p>
-            <div className="text-[6rem] font-black leading-none text-gold/[0.07] select-none -mb-4">&ldquo;</div>
-            <h2 className="h2-hero font-black text-white leading-tight mb-6">
+            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-8">OUR MISSION</p>
+            <h2
+              className="text-white font-black mb-8 leading-tight"
+              style={{ fontSize: 'clamp(2rem, 5vw, 4rem)' }}
+            >
               地方中堅企業にAIを届け、<br />
-              <span className="glow-gold gradient-text-gold">日本の産業を再生する</span>
+              <span className="text-gold">日本の産業を再生する</span>
             </h2>
-          </FadeIn>
-          <FadeIn delay={150}>
-            <p className="text-white/60 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-10">
+            <p className="text-white/70 text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
               私たちは、AIの力を地方中堅企業へ届けることで、日本の基幹産業を再生します。
               建設、不動産、物流など地域経済を支える企業の生産性向上を実現し、
               人手不足や事業承継といった社会課題の解決に挑戦します。
             </p>
-            <Link href="/mission"
-              className="inline-block border border-gold/60 text-gold font-semibold px-10 py-3.5 rounded text-sm tracking-wider hover:bg-gold hover:text-navy transition-all">
-              ミッションを読む →
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-2 border border-gold/60 text-gold font-semibold px-8 py-4 rounded text-sm tracking-wide hover:bg-gold hover:text-navy transition-all"
+            >
+              会社概要を見る
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </Link>
           </FadeIn>
         </div>
