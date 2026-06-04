@@ -22,7 +22,7 @@ export default function AboutPage() {
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">COMPANY INFO</p>
             <h2 className="h2-fluid font-bold text-navy mb-2">基本情報</h2>
             <div className="section-divider mt-3 mb-10" />
-            <dl className="max-w-3xl divide-y divide-gray-100">
+            <dl className="max-w-3xl">
               {[
                 { dt: '商号', dd: 'Arcrise Labo Inc.（アークライズラボ株式会社）' },
                 { dt: '設立', dd: '2026年5月' },
@@ -39,7 +39,7 @@ export default function AboutPage() {
               ].map(({ dt, dd }, i) => (
                 <div
                   key={dt}
-                  className={`flex flex-col md:flex-row py-4 gap-0.5 md:gap-2 ${i % 2 === 0 ? 'bg-gray-50 px-3 rounded' : ''}`}
+                  className={`flex flex-col md:flex-row py-4 px-3 gap-1 md:gap-2 rounded ${i % 2 === 0 ? 'bg-gray-50' : ''}`}
                 >
                   <dt className="text-navy text-xs font-semibold tracking-wide md:text-sm md:w-40 md:shrink-0 md:pt-0.5">{dt}</dt>
                   <dd className="text-gray-700 text-sm md:text-base">{dd}</dd>
