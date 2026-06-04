@@ -212,8 +212,33 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 7. CEO Message */}
+      {/* 7. Culture */}
       <section className="bg-[#F8F9FA] py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">CULTURE</p>
+            <h2 className="h2-fluid font-bold text-navy mb-2">カルチャー</h2>
+            <div className="section-divider mt-3 mb-10" />
+          </FadeIn>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { value: '現場主義', desc: '会議室より現場。コンサルではなくFDE。クライアントの現場に入り込み、共に変革を起こす。' },
+              { value: '成果責任', desc: '技術よりビジネス成果を優先する。美しいコードより、動く事業を。' },
+              { value: '高速実行', desc: '6ヶ月で稼働。スピードが競争優位。考え抜いた後は迷わず動く。' },
+            ].map((item, i) => (
+              <FadeIn key={item.value} delay={i * 100}>
+                <div className="border-l-4 border-gold pl-6 py-2">
+                  <p className="text-navy font-black text-2xl mb-2">{item.value}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 8. CEO Message */}
+      <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="max-w-2xl">
@@ -244,32 +269,51 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 8. Culture */}
-      <section className="bg-white py-20">
+      {/* 9. Company Info */}
+      <section className="bg-[#F8F9FA] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">CULTURE</p>
-            <h2 className="h2-fluid font-bold text-navy mb-2">カルチャー</h2>
+            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">COMPANY INFO</p>
+            <h2 className="h2-fluid font-bold text-navy mb-2">基本情報</h2>
             <div className="section-divider mt-3 mb-10" />
+            <div className="grid md:grid-cols-2 gap-12 items-start">
+              {/* LEFT: Building image */}
+              <div className="relative min-h-[400px] rounded-xl overflow-hidden sticky top-8">
+                <Image
+                  src="/about-building.jpg"
+                  alt="ビジネス街のビル群"
+                  fill
+                  className="object-cover"
+                  unoptimized
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/30 to-transparent" />
+              </div>
+              {/* RIGHT: Table */}
+              <dl>
+                {[
+                  { dt: '商号', dd: 'Arcrise Labo Inc.（アークライズラボ株式会社）' },
+                  { dt: '設立', dd: '2026年6月' },
+                  { dt: '資本金', dd: '準備中' },
+                  { dt: '法人番号', dd: '準備中' },
+                  { dt: '所在地', dd: '準備中' },
+                  { dt: '代表者', dd: '代表取締役CEO 内海暢介' },
+                  { dt: '事業内容', dd: '業界特化型AIプラットフォームの開発・提供、AI導入コンサルティング' },
+                ].map(({ dt, dd }, i) => (
+                  <div
+                    key={dt}
+                    className={`flex flex-col md:flex-row py-4 px-3 gap-1 md:gap-2 rounded ${i % 2 === 0 ? 'bg-gray-50' : ''}`}
+                  >
+                    <dt className="text-navy text-xs font-semibold tracking-wide md:text-sm md:w-40 md:shrink-0 md:pt-0.5">{dt}</dt>
+                    <dd className="text-gray-700 text-sm md:text-base">{dd}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
           </FadeIn>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { value: '現場主義', desc: '会議室より現場。コンサルではなくFDE。クライアントの現場に入り込み、共に変革を起こす。' },
-              { value: '成果責任', desc: '技術よりビジネス成果を優先する。美しいコードより、動く事業を。' },
-              { value: '高速実行', desc: '6ヶ月で稼働。スピードが競争優位。考え抜いた後は迷わず動く。' },
-            ].map((item, i) => (
-              <FadeIn key={item.value} delay={i * 100}>
-                <div className="border-l-4 border-gold pl-6 py-2">
-                  <p className="text-navy font-black text-2xl mb-2">{item.value}</p>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* 9. Join Us CTA */}
+      {/* 10. Join Us CTA */}
       <section className="bg-navy py-20 text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
@@ -284,46 +328,6 @@ export default function AboutPage() {
             >
               採用情報を見る
             </Link>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* 10. Company Info */}
-      <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden mb-16">
-              <Image
-                src="/about-building.jpg"
-                alt="ビジネス街のビル群"
-                fill
-                className="object-cover"
-                unoptimized
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/30 to-transparent" />
-            </div>
-            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">COMPANY INFO</p>
-            <h2 className="h2-fluid font-bold text-navy mb-2">基本情報</h2>
-            <div className="section-divider mt-3 mb-10" />
-            <dl className="max-w-3xl">
-              {[
-                { dt: '商号', dd: 'Arcrise Labo Inc.（アークライズラボ株式会社）' },
-                { dt: '設立', dd: '2026年6月' },
-                { dt: '資本金', dd: '準備中' },
-                { dt: '法人番号', dd: '準備中' },
-                { dt: '所在地', dd: '準備中' },
-                { dt: '代表者', dd: '代表取締役CEO 内海暢介' },
-                { dt: '事業内容', dd: '業界特化型AIプラットフォームの開発・提供、AI導入コンサルティング' },
-              ].map(({ dt, dd }, i) => (
-                <div
-                  key={dt}
-                  className={`flex flex-col md:flex-row py-4 px-3 gap-1 md:gap-2 rounded ${i % 2 === 0 ? 'bg-gray-50' : ''}`}
-                >
-                  <dt className="text-navy text-xs font-semibold tracking-wide md:text-sm md:w-40 md:shrink-0 md:pt-0.5">{dt}</dt>
-                  <dd className="text-gray-700 text-sm md:text-base">{dd}</dd>
-                </div>
-              ))}
-            </dl>
           </FadeIn>
         </div>
       </section>
