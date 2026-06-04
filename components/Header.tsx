@@ -4,7 +4,6 @@ import Link from 'next/link'
 
 const navItems = [
   { href: '/about', label: '会社概要' },
-  { href: '/mission', label: 'ミッション' },
   { href: '/service', label: 'サービス' },
   { href: '/news', label: 'ニュース' },
   { href: '/recruit', label: '採用' },

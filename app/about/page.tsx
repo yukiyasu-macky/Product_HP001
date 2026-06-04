@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import FadeIn from '@/components/FadeIn'
+import CountUp from '@/components/CountUp'
 
 export const dynamic = 'force-static'
 
@@ -16,52 +17,202 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 2. Company Info */}
-      <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            {/* Building image */}
-            <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden mb-16">
-              <Image
-                src="/about-building.jpg"
-                alt="ビジネス街のビル群"
-                fill
-                className="object-cover"
-                unoptimized
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/30 to-transparent" />
-            </div>
-
-            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">COMPANY INFO</p>
-            <h2 className="h2-fluid font-bold text-navy mb-2">基本情報</h2>
-            <div className="section-divider mt-3 mb-10" />
-            <dl className="max-w-3xl">
-              {[
-                { dt: '商号', dd: 'Arcrise Labo Inc.（アークライズラボ株式会社）' },
-                { dt: '設立', dd: '2026年6月' },
-                { dt: '資本金', dd: '準備中' },
-                { dt: '法人番号', dd: '準備中' },
-                { dt: '所在地', dd: '準備中' },
-                { dt: '代表者', dd: '代表取締役CEO 内海暢介' },
-                {
-                  dt: '事業内容',
-                  dd: '業界特化型AIプラットフォームの開発・提供、AI導入コンサルティング',
-                },
-              ].map(({ dt, dd }, i) => (
-                <div
-                  key={dt}
-                  className={`flex flex-col md:flex-row py-4 px-3 gap-1 md:gap-2 rounded ${i % 2 === 0 ? 'bg-gray-50' : ''}`}
-                >
-                  <dt className="text-navy text-xs font-semibold tracking-wide md:text-sm md:w-40 md:shrink-0 md:pt-0.5">{dt}</dt>
-                  <dd className="text-gray-700 text-sm md:text-base">{dd}</dd>
-                </div>
-              ))}
-            </dl>
-          </FadeIn>
+      {/* 2. Mission Statement */}
+      <section className="relative py-32 text-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-bg.jpg"
+            alt=""
+            fill
+            className="object-cover"
+            unoptimized
+          />
+        </div>
+        <div className="absolute inset-0 bg-navy/85" />
+        <div className="relative" style={{ zIndex: 1 }}>
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: 'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(201,169,110,0.06) 0%, transparent 70%)',
+            }}
+          />
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
+            <FadeIn>
+              <h2 className="font-black leading-tight">
+                <span className="block text-white h2-hero">
+                  地方中堅企業にAIを届け、
+                </span>
+                <span className="block gradient-text-gold glow-gold h2-hero mt-2">
+                  日本の産業を再生する
+                </span>
+              </h2>
+              <p className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto mt-8">
+                私たちは、AIの力を地方中堅企業へ届けることで、<br className="hidden md:block" />
+                日本の基幹産業を再生します。建設、不動産、物流など<br className="hidden md:block" />
+                地域経済を支える企業の生産性向上を実現し、<br className="hidden md:block" />
+                人手不足や事業承継といった社会課題の解決に挑戦します。<br className="hidden md:block" />
+                テクノロジーを現場の力へ変え、<br className="hidden md:block" />
+                日本の未来を支える産業基盤を強くします。
+              </p>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
-      {/* 3. CEO Message */}
+      {/* 3. Vision */}
+      <section className="bg-[#F8F9FA] py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">OUR VISION</p>
+            <h2 className="h2-fluid font-bold text-navy mb-2">2029年に向けたビジョン</h2>
+            <div className="section-divider mt-3 mb-10" />
+          </FadeIn>
+          <div className="grid md:grid-cols-3 gap-6">
+            <FadeIn delay={0}>
+              <div className="card-hover bg-white border border-gray-200 rounded-xl p-8 h-full flex flex-col relative overflow-hidden">
+                <div className="absolute -right-4 -top-4 font-black text-navy/[0.04] select-none pointer-events-none leading-none" style={{ fontSize: '8rem' }} aria-hidden="true">1</div>
+                <span className="inline-block bg-navy/8 text-navy border border-navy/15 text-xs px-3 py-1 rounded mb-5 self-start tracking-wider">Phase 1｜2026-2027</span>
+                <h3 className="text-navy font-bold text-xl mb-4 leading-snug">建設・不動産・運送業での<br />AI導入実証</h3>
+                <p className="text-gray-600 text-sm leading-relaxed mt-auto">業界特化のAIソリューションを開発し、地方中堅企業への導入実績を積み上げ、ROIを明確に示すプレイブックを確立します。</p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={100}>
+              <div className="card-hover bg-white border border-gray-200 rounded-xl p-8 h-full flex flex-col relative overflow-hidden">
+                <div className="absolute -right-4 -top-4 font-black text-navy/[0.04] select-none pointer-events-none leading-none" style={{ fontSize: '8rem' }} aria-hidden="true">2</div>
+                <span className="inline-block bg-navy/8 text-navy border border-navy/15 text-xs px-3 py-1 rounded mb-5 self-start tracking-wider">Phase 2｜2027-2028</span>
+                <h3 className="text-navy font-bold text-xl mb-4 leading-snug">業界拡大と<br />M&amp;Aによる規模拡大</h3>
+                <p className="text-gray-600 text-sm leading-relaxed mt-auto">実証済みのモデルを他業界へ横展開しながら、M&amp;Aを活用して専門知識を持つ企業を取り込み、急速なスケールを実現します。</p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={200}>
+              <div className="card-hover bg-white border border-gray-200 rounded-xl p-8 h-full flex flex-col relative overflow-hidden">
+                <div className="absolute -right-4 -top-4 font-black text-navy/[0.04] select-none pointer-events-none leading-none" style={{ fontSize: '8rem' }} aria-hidden="true">3</div>
+                <span className="inline-block bg-navy/8 text-navy border border-navy/15 text-xs px-3 py-1 rounded mb-5 self-start tracking-wider">Phase 3｜2028-2029</span>
+                <h3 className="text-navy font-bold text-xl mb-4 leading-snug">廉価版ASP展開で<br />中小企業市場へ</h3>
+                <p className="text-gray-600 text-sm leading-relaxed mt-auto">蓄積した知見をASPプロダクトとして提供し、より小規模な企業にもAIの恩恵を届けることで、産業全体のDXを加速させます。</p>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Values */}
+      <section className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">VALUES</p>
+            <h2 className="h2-fluid font-bold text-navy mb-2">バリュー</h2>
+            <div className="section-divider mt-3 mb-10" />
+          </FadeIn>
+          <div className="grid md:grid-cols-3 gap-6">
+            <FadeIn delay={0}>
+              <div className="card-hover bg-white border border-gray-200 rounded-xl p-8 h-full flex flex-col border-l-4 border-l-gold pl-6">
+                <div className="font-black text-navy text-4xl mb-4 leading-none">「経営」</div>
+                <p className="text-gray-600 text-sm leading-relaxed mt-auto">事業成果を最優先にしたAI導入。技術のための技術ではなく、利益を生むAI。</p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={100}>
+              <div className="card-hover bg-white border border-gray-200 rounded-xl p-8 h-full flex flex-col border-l-4 border-l-gold pl-6">
+                <div className="font-black text-navy text-4xl mb-4 leading-none">「AI」</div>
+                <p className="text-gray-600 text-sm leading-relaxed mt-auto">業界特化の深い専門知識とAI技術の融合。汎用ではなく、専門特化。</p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={200}>
+              <div className="card-hover bg-white border border-gray-200 rounded-xl p-8 h-full flex flex-col border-l-4 border-l-gold pl-6">
+                <div className="font-black text-navy text-4xl mb-4 leading-none">「営業」</div>
+                <p className="text-gray-600 text-sm leading-relaxed mt-auto">現場に入り込むForward Deployed Engineer。コンサルではなく、実装者。</p>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. The Problem */}
+      <section className="bg-[#F8F9FA] py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">THE PROBLEM</p>
+            <h2 className="h2-fluid font-bold text-navy mb-2">なぜ今、地方企業のAIなのか</h2>
+            <div className="section-divider mt-3 mb-10" />
+          </FadeIn>
+          <div className="grid md:grid-cols-3 gap-6">
+            <FadeIn delay={0}>
+              <div className="card-hover bg-white border border-gray-200 rounded-xl p-8 h-full flex flex-col">
+                <div className="font-black text-navy mb-4 leading-none" style={{ fontSize: 'clamp(3rem,7vw,5rem)' }}>
+                  <CountUp end={849} suffix="件" />
+                </div>
+                <p className="text-navy font-bold text-lg mb-2">2025年地方企業倒産件数</p>
+                <p className="text-gray-500 text-sm mt-auto">人手不足と非効率業務が主因</p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={100}>
+              <div className="card-hover bg-white border border-gray-200 rounded-xl p-8 h-full flex flex-col">
+                <div className="font-black text-navy mb-4 leading-none" style={{ fontSize: 'clamp(3rem,7vw,5rem)' }}>
+                  9-14×
+                </div>
+                <p className="text-navy font-bold text-lg mb-2">AI市場の成長予測</p>
+                <p className="text-gray-500 text-sm mt-auto">今後5年間のAI市場規模拡大</p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={200}>
+              <div className="card-hover bg-white border border-gray-200 rounded-xl p-8 h-full flex flex-col">
+                <div className="font-black text-navy mb-4 leading-none" style={{ fontSize: 'clamp(3rem,7vw,5rem)' }}>
+                  68pt
+                </div>
+                <p className="text-navy font-bold text-lg mb-2">空白市場スコア</p>
+                <p className="text-gray-500 text-sm mt-auto">大手SIerが参入しない中堅企業市場</p>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Social Impact */}
+      <section className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">SOCIAL IMPACT</p>
+            <h2 className="h2-fluid font-bold text-navy mb-2">社会的意義</h2>
+            <div className="section-divider mt-3 mb-10" />
+          </FadeIn>
+          <div className="grid md:grid-cols-2 gap-8">
+            <FadeIn delay={0}>
+              <div className="card-hover bg-white border border-gray-200 rounded-xl p-10 h-full flex flex-col">
+                <div className="mb-6">
+                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="24" cy="24" r="23" stroke="#C9A96E" strokeWidth="1.5" strokeOpacity="0.6" />
+                    <path d="M14 32 L24 16 L34 32" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" strokeOpacity="0.9" />
+                    <path d="M18 26 L30 26" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeOpacity="0.7" />
+                    <circle cx="24" cy="36" r="2" fill="#C9A96E" fillOpacity="0.7" />
+                  </svg>
+                </div>
+                <h3 className="text-navy font-bold text-2xl mb-4">地方創生</h3>
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  地方企業の生産性向上が地域経済を支える。AIによる業務効率化は、地方に残る産業の競争力を回復させ、雇用と経済の好循環を生み出します。
+                </p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={150}>
+              <div className="card-hover bg-white border border-gray-200 rounded-xl p-10 h-full flex flex-col">
+                <div className="mb-6">
+                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="24" cy="24" r="23" stroke="#C9A96E" strokeWidth="1.5" strokeOpacity="0.6" />
+                    <circle cx="24" cy="18" r="5" stroke="#C9A96E" strokeWidth="1.5" strokeOpacity="0.9" />
+                    <path d="M13 36 C13 30 18 26 24 26 C30 26 35 30 35 36" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeOpacity="0.7" />
+                    <path d="M30 20 L38 20 M34 16 L38 20 L34 24" stroke="#C9A96E" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" strokeOpacity="0.6" />
+                  </svg>
+                </div>
+                <h3 className="text-navy font-bold text-2xl mb-4">人手不足解消</h3>
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  AIによる業務効率化で少子高齢化に対応。人口減少が進む日本において、AIは「もう一人の従業員」として、現場の生産性を劇的に底上げします。
+                </p>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. CEO Message */}
       <section className="bg-[#F8F9FA] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
@@ -74,8 +225,7 @@ export default function AboutPage() {
                 日本の地方には、優れた技術や豊富な経験を持ちながらも、
                 人材不足や業務負荷の増加に苦しむ企業が数多く存在します。
                 私はこれまで100件を超える経営・事業支援の現場に携わり、
-                「本当に必要なのは、現場で使われる仕組みである」と
-                確信してきました。
+                「本当に必要なのは、現場で使われる仕組みである」と確信してきました。
               </p>
               <p className="text-gray-700 leading-relaxed mb-6">
                 Arcrise Laboは、最先端AIを地方中堅企業の実務へ落とし込み、
@@ -84,8 +234,7 @@ export default function AboutPage() {
                 現場と経営を理解し、企業の未来を共に創るパートナーです。
               </p>
               <p className="text-gray-700 leading-relaxed mb-6">
-                地方から日本を変える。その挑戦を、
-                私たちは本気で実現していきます。
+                地方から日本を変える。その挑戦を、私たちは本気で実現していきます。
               </p>
               <p className="text-navy font-semibold text-sm tracking-wider mt-6">
                 代表取締役 CEO　内海 暢介
@@ -95,68 +244,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 4. Founding Story */}
+      {/* 8. Culture */}
       <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">創業ストーリー</p>
-            <h2 className="h2-fluid font-bold text-navy mb-2">なぜ、地方企業のAIなのか</h2>
-            <div className="section-divider mt-3 mb-12" />
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                {
-                  title: '課題の発見',
-                  body: '製造・流通・食品での100+件の支援で見えた地方企業の実態',
-                },
-                {
-                  title: '市場の空白',
-                  body: '大手SIerが手を出せない22万社の中堅企業市場',
-                },
-                {
-                  title: '技術の民主化',
-                  body: 'Palantirモデルをベースにした業界特化型プラットフォーム',
-                },
-              ].map(({ title, body }) => (
-                <div key={title} className="card-hover bg-white border border-gray-200 rounded-xl p-8">
-                  <h3 className="text-navy font-bold text-lg mb-3">{title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{body}</p>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* 5. Advisory */}
-      <section className="bg-[#F8F9FA] py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">ADVISORY</p>
-            <h2 className="h2-fluid font-bold text-navy mb-2">顧問一覧</h2>
-            <div className="section-divider mt-3 mb-10" />
-            <div className="bg-white border border-gray-200 rounded-xl p-10 flex items-center justify-center">
-              <span className="text-gray-400 text-lg">準備中</span>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* 6. Access */}
-      <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">ACCESS</p>
-            <h2 className="h2-fluid font-bold text-navy mb-2">アクセス</h2>
-            <div className="section-divider mt-3 mb-10" />
-            <div className="bg-white border border-gray-200 rounded-xl p-10 flex items-center justify-center">
-              <span className="text-gray-400 text-lg">準備中</span>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* 7. Culture */}
-      <section className="bg-[#F8F9FA] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">CULTURE</p>
@@ -165,18 +254,9 @@ export default function AboutPage() {
           </FadeIn>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              {
-                value: '現場主義',
-                desc: '会議室より現場。コンサルではなくFDE。クライアントの現場に入り込み、共に変革を起こす。',
-              },
-              {
-                value: '成果責任',
-                desc: '技術よりビジネス成果を優先する。美しいコードより、動く事業を。',
-              },
-              {
-                value: '高速実行',
-                desc: '6ヶ月で稼働。スピードが競争優位。考え抜いた後は迷わず動く。',
-              },
+              { value: '現場主義', desc: '会議室より現場。コンサルではなくFDE。クライアントの現場に入り込み、共に変革を起こす。' },
+              { value: '成果責任', desc: '技術よりビジネス成果を優先する。美しいコードより、動く事業を。' },
+              { value: '高速実行', desc: '6ヶ月で稼働。スピードが競争優位。考え抜いた後は迷わず動く。' },
             ].map((item, i) => (
               <FadeIn key={item.value} delay={i * 100}>
                 <div className="border-l-4 border-gold pl-6 py-2">
@@ -189,14 +269,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 8. Join Us CTA */}
+      {/* 9. Join Us CTA */}
       <section className="bg-navy py-20 text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">JOIN US</p>
-            <h2 className="h2-fluid font-bold text-white mb-4">
-              チームに加わりませんか？
-            </h2>
+            <h2 className="h2-fluid font-bold text-white mb-4">チームに加わりませんか？</h2>
             <p className="text-white/50 text-sm mb-10 max-w-xl mx-auto">
               日本のリアルな産業をAIで変革するミッションに共感するプロフェッショナルを探しています。
             </p>
@@ -206,6 +284,46 @@ export default function AboutPage() {
             >
               採用情報を見る
             </Link>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* 10. Company Info */}
+      <section className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden mb-16">
+              <Image
+                src="/about-building.jpg"
+                alt="ビジネス街のビル群"
+                fill
+                className="object-cover"
+                unoptimized
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/30 to-transparent" />
+            </div>
+            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">COMPANY INFO</p>
+            <h2 className="h2-fluid font-bold text-navy mb-2">基本情報</h2>
+            <div className="section-divider mt-3 mb-10" />
+            <dl className="max-w-3xl">
+              {[
+                { dt: '商号', dd: 'Arcrise Labo Inc.（アークライズラボ株式会社）' },
+                { dt: '設立', dd: '2026年6月' },
+                { dt: '資本金', dd: '準備中' },
+                { dt: '法人番号', dd: '準備中' },
+                { dt: '所在地', dd: '準備中' },
+                { dt: '代表者', dd: '代表取締役CEO 内海暢介' },
+                { dt: '事業内容', dd: '業界特化型AIプラットフォームの開発・提供、AI導入コンサルティング' },
+              ].map(({ dt, dd }, i) => (
+                <div
+                  key={dt}
+                  className={`flex flex-col md:flex-row py-4 px-3 gap-1 md:gap-2 rounded ${i % 2 === 0 ? 'bg-gray-50' : ''}`}
+                >
+                  <dt className="text-navy text-xs font-semibold tracking-wide md:text-sm md:w-40 md:shrink-0 md:pt-0.5">{dt}</dt>
+                  <dd className="text-gray-700 text-sm md:text-base">{dd}</dd>
+                </div>
+              ))}
+            </dl>
           </FadeIn>
         </div>
       </section>

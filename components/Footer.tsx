@@ -28,7 +28,7 @@ export default function Footer() {
             <h4 className="text-gold text-sm font-semibold tracking-wider mb-4">PAGES</h4>
             <div className="grid grid-cols-2 gap-2">
               {[
-                ['/about', '会社概要'], ['/mission', 'ミッション'],
+                ['/about', '会社概要'],
                 ['/service', 'サービス'], ['/news', 'ニュース'],
                 ['/recruit', '採用'],
                 ['/contact', 'お問い合わせ'],
