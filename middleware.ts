@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 const VALID_USER = 'arcrise'
 const VALID_PASS = 'labo2026'
 
-export function proxy(request: NextRequest) {
+export function middleware(request: NextRequest) {
   const auth = request.headers.get('authorization')
 
   if (auth?.startsWith('Basic ')) {
@@ -25,5 +25,7 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|favicon\\.ico|.*\\.(?:jpg|jpeg|png|gif|svg|webp|avif|ico|woff2?|ttf|otf)).*)'],
+  matcher: [
+    '/((?!_next/static|_next/image|favicon\\.ico|.*\\.(?:jpg|jpeg|png|gif|svg|webp|avif|ico|woff2?|ttf|otf)).*)',
+  ],
 }
