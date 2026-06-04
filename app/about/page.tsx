@@ -8,17 +8,9 @@ export const dynamic = 'force-static'
 export default function AboutPage() {
   return (
     <>
-      {/* 1. Hero */}
-      <section className="bg-[#F8F9FA] pt-32 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">ABOUT US</p>
-          <h1 className="h1-fluid font-bold text-navy mb-2">会社概要</h1>
-          <div className="section-divider mt-3" />
-        </div>
-      </section>
-
-      {/* 2. Mission Statement */}
-      <section className="relative py-32 text-center overflow-hidden">
+      {/* 1. Hero + Mission（統合） */}
+      <section className="relative overflow-hidden" style={{ paddingTop: '5rem', paddingBottom: '0' }}>
+        {/* 背景画像 */}
         <div className="absolute inset-0">
           <Image
             src="/images/hero-bg.jpg"
@@ -29,33 +21,38 @@ export default function AboutPage() {
           />
         </div>
         <div className="absolute inset-0 bg-navy/85" />
-        <div className="relative" style={{ zIndex: 1 }}>
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background: 'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(201,169,110,0.06) 0%, transparent 70%)',
-            }}
-          />
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
-            <FadeIn>
-              <h2 className="font-black leading-tight">
-                <span className="block text-white h2-hero">
-                  地方中堅企業にAIを届け、
-                </span>
-                <span className="block gradient-text-gold glow-gold h2-hero mt-2">
-                  日本の産業を再生する
-                </span>
-              </h2>
-              <p className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto mt-8">
-                私たちは、AIの力を地方中堅企業へ届けることで、<br className="hidden md:block" />
-                日本の基幹産業を再生します。建設、不動産、物流など<br className="hidden md:block" />
-                地域経済を支える企業の生産性向上を実現し、<br className="hidden md:block" />
-                人手不足や事業承継といった社会課題の解決に挑戦します。<br className="hidden md:block" />
-                テクノロジーを現場の力へ変え、<br className="hidden md:block" />
-                日本の未来を支える産業基盤を強くします。
-              </p>
-            </FadeIn>
-          </div>
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(201,169,110,0.06) 0%, transparent 70%)',
+          }}
+        />
+
+        {/* コンテンツ */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24">
+          <FadeIn>
+            {/* ページラベル＋タイトル（左寄せ） */}
+            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-4">ABOUT US</p>
+            <h1 className="text-white font-black mb-6" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.1 }}>
+              会社概要
+            </h1>
+            <div className="section-divider mb-10" />
+
+            {/* ミッション（左寄せ） */}
+            <h2 className="font-black leading-tight mb-8" style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.8rem)', lineHeight: 1.15 }}>
+              <span className="block text-white">
+                地方中堅企業にAIを届け、
+              </span>
+              <span className="block gradient-text-gold glow-gold mt-1">
+                日本の産業を再生する
+              </span>
+            </h2>
+            <p className="text-white/60 text-base md:text-lg leading-relaxed max-w-2xl">
+              私たちは、AIの力を地方中堅企業へ届けることで、日本の基幹産業を再生します。
+              建設、不動産、物流など地域経済を支える企業の生産性向上を実現し、
+              人手不足や事業承継といった社会課題の解決に挑戦します。
+            </p>
+          </FadeIn>
         </div>
       </section>
 
