@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 const VALID_USER = 'arcrise'
 const VALID_PASS = 'labo2026'
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const auth = request.headers.get('authorization')
 
   if (auth?.startsWith('Basic ')) {

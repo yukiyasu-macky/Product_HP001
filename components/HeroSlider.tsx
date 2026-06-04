@@ -104,7 +104,7 @@ export default function HeroSlider() {
         >
           <Image
             src={s.image}
-            alt={'industry' in s ? s.industry : s.navLabel}
+            alt={s.navLabel}
             fill
             className="object-cover"
             priority={i === 0}
@@ -178,19 +178,19 @@ export default function HeroSlider() {
           {'cta' in slide ? (
             <>
               <Link
-                href={slide.cta.href}
+                href={slide.cta!.href}
                 className="inline-flex items-center gap-2 bg-gold text-navy font-bold px-8 py-4 rounded text-sm tracking-wide hover:bg-gold/90 transition-colors"
               >
-                {slide.cta.label}
+                {slide.cta!.label}
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </Link>
               <Link
-                href={slide.ctaSub.href}
+                href={slide.ctaSub!.href}
                 className="text-white/70 text-sm hover:text-white transition-colors underline underline-offset-4"
               >
-                {slide.ctaSub.label}
+                {slide.ctaSub!.label}
               </Link>
             </>
           ) : (
