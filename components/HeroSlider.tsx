@@ -1,38 +1,54 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const slide = {
-  image: '/images/hero-bg.jpg',
-  industryEn: 'ARCRISE LABS',
-  headline: '地方産業を\nAIで拓く。',
-  headlineGold: 'AI',
-  cta: { label: 'サービスを見る', href: '/service' },
-  ctaSub: { label: '会社を知る', href: '/about' },
-}
+const bgImages = [
+  '/images/hero-bg.jpg',
+  '/service-construction.jpg',
+  '/service-realestate.jpg',
+  '/service-logistics.jpg',
+]
+
+const INTERVAL = 5000
 
 export default function HeroSlider() {
+  const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % bgImages.length)
+    }, INTERVAL)
+    return () => clearInterval(timer)
+  }, [])
+
   return (
     <section className="relative min-h-screen flex items-end bg-navy overflow-hidden">
 
-      {/* 背景画像 */}
-      <div className="absolute inset-0">
-        <Image
-          src={slide.image}
-          alt="ARCRISE LABS"
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
-      </div>
+      {/* 背景画像（フェードループ） */}
+      {bgImages.map((src, i) => (
+        <div
+          key={src}
+          className="absolute inset-0 transition-opacity duration-1000"
+          style={{ opacity: i === current ? 1 : 0 }}
+        >
+          <Image
+            src={src}
+            alt=""
+            fill
+            className="object-cover"
+            priority={i === 0}
+            sizes="100vw"
+          />
+        </div>
+      ))}
 
       {/* オーバーレイ */}
       <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-navy/20 pointer-events-none" style={{ zIndex: 1 }} />
       <div className="absolute inset-0 bg-gradient-to-r from-navy/70 via-navy/30 to-transparent pointer-events-none" style={{ zIndex: 1 }} />
 
-      {/* コンテンツ */}
+      {/* コンテンツ（固定） */}
       <div className="relative w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pb-24 pt-32" style={{ zIndex: 2 }}>
 
         {/* ラベル */}
@@ -40,7 +56,7 @@ export default function HeroSlider() {
           style={{ animationDuration: '0.5s', animationFillMode: 'both' }}>
           <span className="w-6 h-px bg-gold" />
           <span className="text-gold text-xs tracking-[0.4em] uppercase font-medium">
-            {slide.industryEn}
+            ARCRISE LABS
           </span>
         </div>
 
@@ -56,12 +72,12 @@ export default function HeroSlider() {
             animationFillMode: 'both',
           }}
         >
-          {slide.headline.split(slide.headlineGold).map((part, i, arr) => (
+          {'地方産業を\nAIで拓く。'.split('AI').map((part, i, arr) => (
             <span key={i}>
               {part}
               {i < arr.length - 1 && (
                 <span style={{ color: '#C9A96E', textShadow: '0 0 15px rgba(201,169,110,0.45)' }}>
-                  {slide.headlineGold}
+                  AI
                 </span>
               )}
             </span>
@@ -72,19 +88,19 @@ export default function HeroSlider() {
         <div className="flex items-center gap-6 animate-fadeSlideUp"
           style={{ animationDuration: '0.5s', animationDelay: '0.16s', animationFillMode: 'both' }}>
           <Link
-            href={slide.cta.href}
+            href="/service"
             className="inline-flex items-center gap-2 bg-gold text-navy font-bold px-8 py-4 rounded text-sm tracking-wide hover:bg-gold/90 transition-colors"
           >
-            {slide.cta.label}
+            サービスを見る
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </Link>
           <Link
-            href={slide.ctaSub.href}
+            href="/about"
             className="text-white/70 text-sm hover:text-white transition-colors underline underline-offset-4"
           >
-            {slide.ctaSub.label}
+            会社を知る
           </Link>
         </div>
 
