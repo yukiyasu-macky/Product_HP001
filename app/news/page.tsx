@@ -23,11 +23,6 @@ export default function NewsPage() {
       {/* News list */}
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <h2 className="h2-fluid font-bold text-navy mb-2">最新情報</h2>
-            <div className="section-divider mt-3 mb-10" />
-          </FadeIn>
-
           <div>
             <FadeIn>
               <div className="flex items-start gap-6 border-b border-gray-100 py-8">

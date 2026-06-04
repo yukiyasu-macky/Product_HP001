@@ -341,7 +341,7 @@ export default function ServicePage() {
       </section>
 
       {/* ── COMPARISON ── */}
-      <section className="bg-white py-20">
+      <section className="bg-[#F8F9FA] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">COMPARISON</p>

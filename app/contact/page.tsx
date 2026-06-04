@@ -8,32 +8,33 @@ export const dynamic = 'force-static'
 export default function ContactPage() {
   const [activeTab, setActiveTab] = useState(0)
 
-  const [form1, setForm1] = useState({ company: '', name: '', email: '', phone: '', message: '' })
+  // Tab 0: サービス相談
+  const [form0, setForm0] = useState({ company: '', name: '', email: '', industry: '', employeeSize: '', message: '' })
+  const [form0Sent, setForm0Sent] = useState(false)
+
+  // Tab 1: 資料請求
+  const [form1, setForm1] = useState({ company: '', name: '', email: '', message: '' })
   const [form1Sent, setForm1Sent] = useState(false)
 
-  const [form2, setForm2] = useState({ nameOrCompany: '', email: '', investmentScale: '', message: '' })
+  // Tab 2: 採用エントリー
+  const [form2, setForm2] = useState({ name: '', email: '', type: '', message: '' })
   const [form2Sent, setForm2Sent] = useState(false)
 
-  const [form3, setForm3] = useState({ company: '', name: '', email: '', industry: '', employeeSize: '', message: '' })
-  const [form3Sent, setForm3Sent] = useState(false)
-
-  const [form4, setForm4] = useState({ name: '', email: '', type: '', message: '' })
-  const [form4Sent, setForm4Sent] = useState(false)
-
+  const handleSubmit0 = (e: React.FormEvent) => { e.preventDefault(); setForm0Sent(true) }
   const handleSubmit1 = (e: React.FormEvent) => { e.preventDefault(); setForm1Sent(true) }
   const handleSubmit2 = (e: React.FormEvent) => { e.preventDefault(); setForm2Sent(true) }
-  const handleSubmit3 = (e: React.FormEvent) => { e.preventDefault(); setForm3Sent(true) }
-  const handleSubmit4 = (e: React.FormEvent) => { e.preventDefault(); setForm4Sent(true) }
 
   const scrollToForm = (type?: string) => {
+    if (type === 'service') setActiveTab(0)
+    else if (type === 'document') setActiveTab(1)
+    else if (type === 'recruit') setActiveTab(2)
     const el = document.getElementById('inquiry-form')
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
+    if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 50)
   }
 
   const tabs = [
-    '銀行・金融機関の方',
-    '投資家・パートナーの方',
-    'サービスに関するお問い合わせ',
+    'サービス・導入のご相談',
+    '資料請求',
     '採用エントリー',
   ]
 
@@ -117,8 +118,61 @@ export default function ContactPage() {
             ))}
           </div>
 
-          {/* Form 1: 銀行・金融機関 */}
+          {/* Form 0: サービス・導入のご相談 */}
           {activeTab === 0 && (
+            <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm max-w-2xl">
+              {form0Sent ? (
+                <div className="text-navy bg-green-50 border border-green-200 p-4 rounded">
+                  送信しました。ありがとうございます。
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit0} className="space-y-6">
+                  <div>
+                    <label className={labelClass}>会社名</label>
+                    <input type="text" className={inputClass} value={form0.company} onChange={(e) => setForm0({ ...form0, company: e.target.value })} required />
+                  </div>
+                  <div>
+                    <label className={labelClass}>担当者名</label>
+                    <input type="text" className={inputClass} value={form0.name} onChange={(e) => setForm0({ ...form0, name: e.target.value })} required />
+                  </div>
+                  <div>
+                    <label className={labelClass}>メール</label>
+                    <input type="email" className={inputClass} value={form0.email} onChange={(e) => setForm0({ ...form0, email: e.target.value })} required />
+                  </div>
+                  <div>
+                    <label className={labelClass}>業界</label>
+                    <select className={selectClass} value={form0.industry} onChange={(e) => setForm0({ ...form0, industry: e.target.value })} required>
+                      <option value="">選択してください</option>
+                      <option value="construction">建設業</option>
+                      <option value="realestate">不動産業</option>
+                      <option value="logistics">運送・物流業</option>
+                      <option value="other">その他</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className={labelClass}>従業員規模</label>
+                    <select className={selectClass} value={form0.employeeSize} onChange={(e) => setForm0({ ...form0, employeeSize: e.target.value })} required>
+                      <option value="">選択してください</option>
+                      <option value="under50">50名以下</option>
+                      <option value="50-200">50-200名</option>
+                      <option value="200-500">200-500名</option>
+                      <option value="over500">500名以上</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className={labelClass}>お問い合わせ内容</label>
+                    <textarea className={textareaClass} value={form0.message} onChange={(e) => setForm0({ ...form0, message: e.target.value })} required />
+                  </div>
+                  <button type="submit" className="w-full bg-navy text-white font-semibold py-3.5 rounded text-sm hover:bg-[#1a2f45] transition-colors">
+                    送信する
+                  </button>
+                </form>
+              )}
+            </div>
+          )}
+
+          {/* Form 1: 資料請求 */}
+          {activeTab === 1 && (
             <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm max-w-2xl">
               {form1Sent ? (
                 <div className="text-navy bg-green-50 border border-green-200 p-4 rounded">
@@ -139,11 +193,7 @@ export default function ContactPage() {
                     <input type="email" className={inputClass} value={form1.email} onChange={(e) => setForm1({ ...form1, email: e.target.value })} required />
                   </div>
                   <div>
-                    <label className={labelClass}>電話</label>
-                    <input type="tel" className={inputClass} value={form1.phone} onChange={(e) => setForm1({ ...form1, phone: e.target.value })} />
-                  </div>
-                  <div>
-                    <label className={labelClass}>お問い合わせ内容</label>
+                    <label className={labelClass}>ご要望・ご質問</label>
                     <textarea className={textareaClass} value={form1.message} onChange={(e) => setForm1({ ...form1, message: e.target.value })} required />
                   </div>
                   <button type="submit" className="w-full bg-navy text-white font-semibold py-3.5 rounded text-sm hover:bg-[#1a2f45] transition-colors">
@@ -154,8 +204,8 @@ export default function ContactPage() {
             </div>
           )}
 
-          {/* Form 2: 投資家・パートナー */}
-          {activeTab === 1 && (
+          {/* Form 2: 採用エントリー */}
+          {activeTab === 2 && (
             <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm max-w-2xl">
               {form2Sent ? (
                 <div className="text-navy bg-green-50 border border-green-200 p-4 rounded">
@@ -164,108 +214,16 @@ export default function ContactPage() {
               ) : (
                 <form onSubmit={handleSubmit2} className="space-y-6">
                   <div>
-                    <label className={labelClass}>会社名・お名前</label>
-                    <input type="text" className={inputClass} value={form2.nameOrCompany} onChange={(e) => setForm2({ ...form2, nameOrCompany: e.target.value })} required />
+                    <label className={labelClass}>お名前</label>
+                    <input type="text" className={inputClass} value={form2.name} onChange={(e) => setForm2({ ...form2, name: e.target.value })} required />
                   </div>
                   <div>
                     <label className={labelClass}>メール</label>
                     <input type="email" className={inputClass} value={form2.email} onChange={(e) => setForm2({ ...form2, email: e.target.value })} required />
                   </div>
                   <div>
-                    <label className={labelClass}>投資規模</label>
-                    <select className={selectClass} value={form2.investmentScale} onChange={(e) => setForm2({ ...form2, investmentScale: e.target.value })} required>
-                      <option value="">選択してください</option>
-                      <option value="pre-seed">Pre-Seed</option>
-                      <option value="seed">Seed以降</option>
-                      <option value="partnership">パートナーシップ</option>
-                      <option value="other">その他</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className={labelClass}>メッセージ</label>
-                    <textarea className={textareaClass} value={form2.message} onChange={(e) => setForm2({ ...form2, message: e.target.value })} required />
-                  </div>
-                  <button type="submit" className="w-full bg-navy text-white font-semibold py-3.5 rounded text-sm hover:bg-[#1a2f45] transition-colors">
-                    送信する
-                  </button>
-                </form>
-              )}
-            </div>
-          )}
-
-          {/* Form 3: サービスに関するお問い合わせ */}
-          {activeTab === 2 && (
-            <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm max-w-2xl">
-              {form3Sent ? (
-                <div className="text-navy bg-green-50 border border-green-200 p-4 rounded">
-                  送信しました。ありがとうございます。
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit3} className="space-y-6">
-                  <div>
-                    <label className={labelClass}>会社名</label>
-                    <input type="text" className={inputClass} value={form3.company} onChange={(e) => setForm3({ ...form3, company: e.target.value })} required />
-                  </div>
-                  <div>
-                    <label className={labelClass}>担当者名</label>
-                    <input type="text" className={inputClass} value={form3.name} onChange={(e) => setForm3({ ...form3, name: e.target.value })} required />
-                  </div>
-                  <div>
-                    <label className={labelClass}>メール</label>
-                    <input type="email" className={inputClass} value={form3.email} onChange={(e) => setForm3({ ...form3, email: e.target.value })} required />
-                  </div>
-                  <div>
-                    <label className={labelClass}>業界</label>
-                    <select className={selectClass} value={form3.industry} onChange={(e) => setForm3({ ...form3, industry: e.target.value })} required>
-                      <option value="">選択してください</option>
-                      <option value="construction">建設業</option>
-                      <option value="realestate">不動産業</option>
-                      <option value="logistics">運送・物流業</option>
-                      <option value="other">その他</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className={labelClass}>従業員規模</label>
-                    <select className={selectClass} value={form3.employeeSize} onChange={(e) => setForm3({ ...form3, employeeSize: e.target.value })} required>
-                      <option value="">選択してください</option>
-                      <option value="under50">50名以下</option>
-                      <option value="50-200">50-200名</option>
-                      <option value="200-500">200-500名</option>
-                      <option value="over500">500名以上</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className={labelClass}>お問い合わせ内容</label>
-                    <textarea className={textareaClass} value={form3.message} onChange={(e) => setForm3({ ...form3, message: e.target.value })} required />
-                  </div>
-                  <button type="submit" className="w-full bg-navy text-white font-semibold py-3.5 rounded text-sm hover:bg-[#1a2f45] transition-colors">
-                    送信する
-                  </button>
-                </form>
-              )}
-            </div>
-          )}
-
-          {/* Form 4: 採用エントリー */}
-          {activeTab === 3 && (
-            <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm max-w-2xl">
-              {form4Sent ? (
-                <div className="text-navy bg-green-50 border border-green-200 p-4 rounded">
-                  送信しました。ありがとうございます。
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit4} className="space-y-6">
-                  <div>
-                    <label className={labelClass}>お名前</label>
-                    <input type="text" className={inputClass} value={form4.name} onChange={(e) => setForm4({ ...form4, name: e.target.value })} required />
-                  </div>
-                  <div>
-                    <label className={labelClass}>メール</label>
-                    <input type="email" className={inputClass} value={form4.email} onChange={(e) => setForm4({ ...form4, email: e.target.value })} required />
-                  </div>
-                  <div>
                     <label className={labelClass}>ご希望の種別</label>
-                    <select className={selectClass} value={form4.type} onChange={(e) => setForm4({ ...form4, type: e.target.value })} required>
+                    <select className={selectClass} value={form2.type} onChange={(e) => setForm2({ ...form2, type: e.target.value })} required>
                       <option value="">選択してください</option>
                       <option value="apply">求人への応募</option>
                       <option value="casual">カジュアル面談</option>
@@ -274,7 +232,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label className={labelClass}>メッセージ・自己紹介</label>
-                    <textarea className={textareaClass} value={form4.message} onChange={(e) => setForm4({ ...form4, message: e.target.value })} required />
+                    <textarea className={textareaClass} value={form2.message} onChange={(e) => setForm2({ ...form2, message: e.target.value })} required />
                   </div>
                   <button type="submit" className="w-full bg-navy text-white font-semibold py-3.5 rounded text-sm hover:bg-[#1a2f45] transition-colors">
                     送信する

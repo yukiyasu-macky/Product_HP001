@@ -56,7 +56,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 3. Vision */}
+      {/* 2. Vision */}
       <section className="bg-[#F8F9FA] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
@@ -93,7 +93,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 4. Values */}
+      {/* 3. Values */}
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
@@ -124,7 +124,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 5. The Problem */}
+      {/* 4. The Problem */}
       <section className="bg-[#F8F9FA] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
@@ -158,13 +158,14 @@ export default function AboutPage() {
                 </div>
                 <p className="text-navy font-bold text-lg mb-2">空白市場スコア</p>
                 <p className="text-gray-500 text-sm mt-auto">大手SIerが参入しない中堅企業市場</p>
+                <p className="text-gray-400 text-xs mt-2">※独自算出（業界参入障壁・市場集中度・価格帯分析による）</p>
               </div>
             </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* 6. Social Impact */}
+      {/* 5. Social Impact */}
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
@@ -209,7 +210,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 7. Culture */}
+      {/* 6. Culture */}
       <section className="bg-[#F8F9FA] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
@@ -234,13 +235,13 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 8. CEO Message */}
+      {/* 7. CEO Message */}
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="max-w-2xl">
               <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">代表者メッセージ</p>
-              <h2 className="text-navy text-2xl font-bold mb-1">内海 暢介</h2>
+              <h2 className="text-navy font-bold mb-1" style={{ fontSize: '1.5rem' }}>内海 暢介</h2>
               <p className="text-gray-500">代表取締役CEO</p>
               <div className="section-divider mt-4 mb-6" />
               <p className="text-gray-700 leading-relaxed mb-6">
@@ -266,7 +267,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 9. Company Info */}
+      {/* 8. Company Info */}
       <section className="bg-[#F8F9FA] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
@@ -310,7 +311,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 10. Join Us CTA */}
+      {/* 9. Join Us CTA */}
       <section className="bg-navy py-20 text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
