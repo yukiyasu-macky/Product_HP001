@@ -8,49 +8,12 @@ const slides = [
   {
     id: 'top',
     image: '/images/hero-bg.jpg',
-    industryEn: 'ARCRISE LABO INC.',
+    industryEn: 'ARCRISE LABS',
     navLabel: 'TOP',
     headline: '地方産業を\nAIで拓く。',
     headlineGold: 'AI',
-    subline: '1/5価格で、経営成果まで伴走する。',
     cta: { label: 'サービスを見る', href: '/service' },
     ctaSub: { label: '会社を知る', href: '/about' },
-  },
-  {
-    id: 'construction',
-    image: '/service-construction.jpg',
-    industry: '建設業',
-    industryEn: 'CONSTRUCTION',
-    navLabel: 'CONSTRUCTION',
-    headline: '建設現場を、\nAIで変える。',
-    subline: '見積・工程・書類をAIが自動化。現場監督の事務負担を削減し、限られた人員でも高品質な施工管理を実現します。',
-    stat: '+30%',
-    statLabel: '業務効率向上',
-    href: '/service#construction',
-  },
-  {
-    id: 'realestate',
-    image: '/service-realestate.jpg',
-    industry: '不動産業',
-    industryEn: 'REAL ESTATE',
-    navLabel: 'REAL ESTATE',
-    headline: '不動産営業を、\nAIで変える。',
-    subline: '物件マッチング・顧客LTV最適化・市場分析をAIが担う。営業担当者が成約活動に集中できる環境を構築します。',
-    stat: '×5',
-    statLabel: '営業効率向上',
-    href: '/service#realestate',
-  },
-  {
-    id: 'logistics',
-    image: '/service-logistics.jpg',
-    industry: '運送業',
-    industryEn: 'LOGISTICS',
-    navLabel: 'LOGISTICS',
-    headline: '物流・配送を、\nAIで変える。',
-    subline: '配車・ルート・需要予測をリアルタイムで最適化。燃料コストと残業時間を大幅に削減します。',
-    stat: '−20%',
-    statLabel: '燃料コスト削減',
-    href: '/service#logistics',
   },
 ]
 
@@ -71,7 +34,6 @@ export default function HeroSlider() {
     }, 600)
   }, [isAnimating])
 
-  // 自動スライド
   useEffect(() => {
     const interval = setInterval(() => {
       goTo((current + 1) % slides.length)
@@ -79,7 +41,6 @@ export default function HeroSlider() {
     return () => clearInterval(interval)
   }, [current, goTo])
 
-  // プログレスバー
   useEffect(() => {
     setProgress(0)
     const start = Date.now()
@@ -95,7 +56,7 @@ export default function HeroSlider() {
   return (
     <section className="relative min-h-screen flex items-end bg-navy overflow-hidden">
 
-      {/* 背景画像（フェードトランジション） */}
+      {/* 背景画像 */}
       {slides.map((s, i) => (
         <div
           key={s.id}
@@ -113,9 +74,8 @@ export default function HeroSlider() {
         </div>
       ))}
 
-      {/* オーバーレイ：下から濃いグラデーション */}
+      {/* オーバーレイ */}
       <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-navy/20 pointer-events-none" style={{ zIndex: 1 }} />
-      {/* オーバーレイ：左から薄いグラデーション（テキスト側を暗く） */}
       <div className="absolute inset-0 bg-gradient-to-r from-navy/70 via-navy/30 to-transparent pointer-events-none" style={{ zIndex: 1 }} />
 
       {/* コンテンツ */}
@@ -160,82 +120,29 @@ export default function HeroSlider() {
             : slide.headline}
         </h1>
 
-        {/* サブテキスト */}
-        <p
-          key={`sub-${current}`}
-          className="text-white/70 text-base md:text-lg max-w-xl mb-10 leading-relaxed animate-fadeSlideUp"
-          style={{ animationDuration: '0.5s', animationDelay: '0.16s', animationFillMode: 'both' }}
-        >
-          {slide.subline}
-        </p>
-
         {/* CTA */}
         <div
           key={`cta-${current}`}
           className="flex items-center gap-6 animate-fadeSlideUp"
-          style={{ animationDuration: '0.5s', animationDelay: '0.24s', animationFillMode: 'both' }}
+          style={{ animationDuration: '0.5s', animationDelay: '0.16s', animationFillMode: 'both' }}
         >
-          {'cta' in slide ? (
-            <>
-              <Link
-                href={slide.cta!.href}
-                className="inline-flex items-center gap-2 bg-gold text-navy font-bold px-8 py-4 rounded text-sm tracking-wide hover:bg-gold/90 transition-colors"
-              >
-                {slide.cta!.label}
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </Link>
-              <Link
-                href={slide.ctaSub!.href}
-                className="text-white/70 text-sm hover:text-white transition-colors underline underline-offset-4"
-              >
-                {slide.ctaSub!.label}
-              </Link>
-            </>
-          ) : (
-            <>
-              <Link
-                href={slide.href}
-                className="inline-flex items-center gap-2 bg-gold text-navy font-bold px-8 py-4 rounded text-sm tracking-wide hover:bg-gold/90 transition-colors"
-              >
-                {slide.industry}の詳細を見る
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </Link>
-              <Link
-                href="/contact"
-                className="text-white/70 text-sm hover:text-white transition-colors underline underline-offset-4"
-              >
-                お問い合わせ
-              </Link>
-            </>
-          )}
+          <Link
+            href={slide.cta.href}
+            className="inline-flex items-center gap-2 bg-gold text-navy font-bold px-8 py-4 rounded text-sm tracking-wide hover:bg-gold/90 transition-colors"
+          >
+            {slide.cta.label}
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </Link>
+          <Link
+            href={slide.ctaSub.href}
+            className="text-white/70 text-sm hover:text-white transition-colors underline underline-offset-4"
+          >
+            {slide.ctaSub.label}
+          </Link>
         </div>
 
-        {/* スライドナビゲーション */}
-        <div className="flex items-center gap-8 mt-16">
-          {slides.map((s, i) => (
-            <button
-              key={s.id}
-              onClick={() => goTo(i)}
-              className="flex flex-col items-start gap-2 group"
-            >
-              {/* プログレスバー */}
-              <div className="w-16 h-px bg-white/20 relative overflow-hidden">
-                <div
-                  className="absolute left-0 top-0 h-full bg-gold transition-none"
-                  style={{ width: i === current ? `${progress}%` : i < current ? '100%' : '0%' }}
-                />
-              </div>
-              {/* 業種名 */}
-              <span className={`text-xs tracking-widest uppercase transition-colors ${i === current ? 'text-gold' : 'text-white/40 group-hover:text-white/70'}`}>
-                {s.navLabel}
-              </span>
-            </button>
-          ))}
-        </div>
       </div>
 
       {/* 下スクロール誘導 */}

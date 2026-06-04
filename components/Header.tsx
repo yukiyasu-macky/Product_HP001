@@ -5,8 +5,6 @@ import Link from 'next/link'
 const navItems = [
   { href: '/about', label: '会社概要' },
   { href: '/service', label: 'サービス' },
-  { href: '/news', label: 'ニュース' },
-  { href: '/recruit', label: '採用' },
 ]
 
 export default function Header() {
@@ -20,7 +18,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-1.5 shrink-0">
             <span className="text-navy font-black text-lg tracking-[0.2em]">ARCRISE</span>
-            <span className="text-gray-400 font-light text-sm tracking-wider">LABO</span>
+            <span className="text-gray-400 font-light text-sm tracking-wider">LABS</span>
           </Link>
 
           {/* Desktop nav */}

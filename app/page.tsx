@@ -71,33 +71,10 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* 採用 */}
-            <Link
-              href="/recruit"
-              className="group flex flex-col justify-between p-10 lg:p-14 border-r border-white/10 bg-[#0D1B2A] hover:bg-white transition-colors duration-300 min-h-[280px] lg:min-h-[320px]"
-            >
-              <div>
-                <p className="text-gold text-xs tracking-[0.4em] uppercase mb-5">RECRUIT</p>
-                <h2
-                  className="text-white group-hover:text-navy font-black leading-tight mb-4 transition-colors duration-300"
-                  style={{ fontSize: 'clamp(1.6rem, 2.5vw, 2.2rem)' }}
-                >
-                  採用情報
-                </h2>
-                <p className="text-white/50 group-hover:text-gray-500 text-sm leading-relaxed transition-colors duration-300">
-                  日本のリアルな産業をAIで変革するミッションに共感するプロフェッショナルを募集しています。
-                </p>
-              </div>
-              <div className="flex items-center gap-2 text-gold text-sm font-semibold mt-8 group-hover:gap-4 transition-all duration-300">
-                <span>詳しく見る</span>
-                <span>→</span>
-              </div>
-            </Link>
-
-            {/* お問い合わせ */}
+            {/* お問い合わせ — 下段全幅 */}
             <Link
               href="/contact"
-              className="group flex flex-col justify-between p-10 lg:p-14 bg-[#0D1B2A] hover:bg-white transition-colors duration-300 min-h-[280px] lg:min-h-[320px]"
+              className="group flex flex-col justify-between p-10 lg:p-14 sm:col-span-2 bg-[#0D1B2A] hover:bg-white transition-colors duration-300 min-h-[280px] lg:min-h-[320px]"
             >
               <div>
                 <p className="text-gold text-xs tracking-[0.4em] uppercase mb-5">CONTACT</p>
