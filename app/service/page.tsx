@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import FadeIn from '@/components/FadeIn'
 import CountUp from '@/components/CountUp'
 
@@ -29,29 +30,6 @@ function ConstructionIcon({ className }: { className?: string }) {
   )
 }
 
-function RealEstateIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className={className}>
-      {/* Main building */}
-      <rect x="10" y="14" width="28" height="26" />
-      {/* Roof line */}
-      <polyline points="6,14 24,4 42,14" />
-      {/* Floors */}
-      <line x1="10" y1="22" x2="38" y2="22" />
-      <line x1="10" y1="30" x2="38" y2="30" />
-      {/* Windows floor 1 */}
-      <rect x="14" y="16" width="5" height="4" />
-      <rect x="29" y="16" width="5" height="4" />
-      {/* Windows floor 2 */}
-      <rect x="14" y="24" width="5" height="4" />
-      <rect x="29" y="24" width="5" height="4" />
-      {/* Door */}
-      <rect x="20" y="32" width="8" height="8" />
-      {/* Ground */}
-      <line x1="4" y1="40" x2="44" y2="40" />
-    </svg>
-  )
-}
 
 function LogisticsIcon({ className }: { className?: string }) {
   return (
@@ -182,19 +160,24 @@ export default function ServicePage() {
                 米国実例: Palantir × Jacobs Engineering
               </p>
             </FadeIn>
-            {/* RIGHT: stats */}
+            {/* RIGHT: image */}
             <FadeIn delay={200}>
-              <div className="card-hover bg-white border border-gray-200 rounded-xl p-10">
-                <p className="text-gray-500 text-xs tracking-widest uppercase mb-3">導入効果</p>
-                <div
-                  className="font-black text-navy"
-                  style={{ fontSize: 'clamp(3.5rem,7vw,5rem)', lineHeight: 1 }}
-                >
-                  <CountUp end={30} suffix="%" />
+              <div className="relative rounded-xl overflow-hidden aspect-[4/3] shadow-lg">
+                <Image
+                  src="/service-construction.jpg"
+                  alt="建設業の現場 – 工場・クレーン群の空撮"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 p-6">
+                  <p className="text-white/70 text-xs tracking-widest uppercase mb-1">導入効果</p>
+                  <p className="text-white font-black" style={{ fontSize: 'clamp(2rem,5vw,3rem)', lineHeight: 1 }}>
+                    +30%
+                  </p>
+                  <p className="text-white/80 text-sm mt-1">業務効率向上 / 対象 4万社</p>
                 </div>
-                <p className="text-gray-600 text-base mt-2">業務効率向上</p>
-                <div className="border-t border-gray-100 my-6" />
-                <p className="text-gray-500 text-sm">対象企業数: 4万社</p>
               </div>
             </FadeIn>
           </div>
@@ -225,27 +208,25 @@ export default function ServicePage() {
                 <p className="text-gray-500 text-sm">対象企業数: 12万社</p>
               </div>
             </FadeIn>
-            {/* RIGHT: features */}
+            {/* RIGHT: image */}
             <FadeIn delay={200}>
-              <RealEstateIcon className="text-gold w-14 h-14 mb-6" />
-              <h2 className="h2-fluid font-bold text-navy mb-4">
-                不動産業向けAIプラットフォーム
-              </h2>
-              <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                物件情報整理、顧客対応、契約関連業務、営業資料作成をAIで自動化。
-                営業担当者が顧客提案や成約活動に集中できる環境を構築します。
-              </p>
-              <ul className="space-y-5">
-                {realEstateFeatures.map((f) => (
-                  <li key={f.name} className="flex items-start gap-4">
-                    <span className="mt-1.5 shrink-0 w-2 h-2 rounded-full bg-gold" />
-                    <div>
-                      <p className="text-navy font-semibold">{f.name}</p>
-                      <p className="text-gray-500 text-sm mt-0.5">{f.desc}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
+              <div className="relative rounded-xl overflow-hidden aspect-[4/3] shadow-lg">
+                <Image
+                  src="/service-realestate.jpg"
+                  alt="地方都市の住宅街・マンション群の空撮"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 p-6">
+                  <p className="text-white/70 text-xs tracking-widest uppercase mb-1">導入効果</p>
+                  <p className="text-white font-black" style={{ fontSize: 'clamp(2rem,5vw,3rem)', lineHeight: 1 }}>
+                    ×5
+                  </p>
+                  <p className="text-white/80 text-sm mt-1">営業効率向上 / 対象 12万社</p>
+                </div>
+              </div>
             </FadeIn>
           </div>
         </div>
@@ -285,19 +266,24 @@ export default function ServicePage() {
                 米国実例: Palantir × Uber Freight
               </p>
             </FadeIn>
-            {/* RIGHT: stats */}
+            {/* RIGHT: image */}
             <FadeIn delay={200}>
-              <div className="card-hover bg-white border border-gray-200 rounded-xl p-10">
-                <p className="text-gray-500 text-xs tracking-widest uppercase mb-3">コスト削減効果</p>
-                <div
-                  className="font-black text-navy"
-                  style={{ fontSize: 'clamp(3.5rem,7vw,5rem)', lineHeight: 1 }}
-                >
-                  <CountUp end={25} suffix="%" />
+              <div className="relative rounded-xl overflow-hidden aspect-[4/3] shadow-lg">
+                <Image
+                  src="/service-logistics.jpg"
+                  alt="物流センターと高速道路の空撮"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 p-6">
+                  <p className="text-white/70 text-xs tracking-widest uppercase mb-1">導入効果</p>
+                  <p className="text-white font-black" style={{ fontSize: 'clamp(2rem,5vw,3rem)', lineHeight: 1 }}>
+                    −20%
+                  </p>
+                  <p className="text-white/80 text-sm mt-1">燃料コスト削減 / 対象 6万社</p>
                 </div>
-                <p className="text-gray-600 text-base mt-2">コスト削減（+15–25%）</p>
-                <div className="border-t border-gray-100 my-6" />
-                <p className="text-gray-500 text-sm">対象企業数: 6万社</p>
               </div>
             </FadeIn>
           </div>
