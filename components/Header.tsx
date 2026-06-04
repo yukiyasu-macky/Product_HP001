@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const navItems = [
   { href: '/about', label: '会社概要' },
@@ -16,9 +17,14 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-1.5 shrink-0">
-            <span className="text-navy font-black text-lg tracking-[0.2em]">ARCRISE</span>
-            <span className="text-gray-400 font-light text-sm tracking-wider">LABS</span>
+          <Link href="/" className="flex items-center shrink-0">
+            <Image
+              src="/images/arcrise-labs-logo.png"
+              alt="Arcrise Labs"
+              width={160}
+              height={36}
+              className="h-8 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop nav */}
