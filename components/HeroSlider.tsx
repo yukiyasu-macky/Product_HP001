@@ -6,10 +6,22 @@ import Link from 'next/link'
 
 const slides = [
   {
+    id: 'top',
+    image: '/images/hero-bg.jpg',
+    industryEn: 'ARCRISE LABO INC.',
+    navLabel: 'TOP',
+    headline: '地方産業を\nAIで拓く。',
+    headlineGold: 'AI',
+    subline: '1/5価格で、経営成果まで伴走する。',
+    cta: { label: 'サービスを見る', href: '/service' },
+    ctaSub: { label: '会社を知る', href: '/about' },
+  },
+  {
     id: 'construction',
     image: '/service-construction.jpg',
     industry: '建設業',
     industryEn: 'CONSTRUCTION',
+    navLabel: 'CONSTRUCTION',
     headline: '建設現場を、\nAIで変える。',
     subline: '見積・工程・書類をAIが自動化。現場監督の事務負担を削減し、限られた人員でも高品質な施工管理を実現します。',
     stat: '+30%',
@@ -21,6 +33,7 @@ const slides = [
     image: '/service-realestate.jpg',
     industry: '不動産業',
     industryEn: 'REAL ESTATE',
+    navLabel: 'REAL ESTATE',
     headline: '不動産営業を、\nAIで変える。',
     subline: '物件マッチング・顧客LTV最適化・市場分析をAIが担う。営業担当者が成約活動に集中できる環境を構築します。',
     stat: '×5',
@@ -32,6 +45,7 @@ const slides = [
     image: '/service-logistics.jpg',
     industry: '運送業',
     industryEn: 'LOGISTICS',
+    navLabel: 'LOGISTICS',
     headline: '物流・配送を、\nAIで変える。',
     subline: '配車・ルート・需要予測をリアルタイムで最適化。燃料コストと残業時間を大幅に削減します。',
     stat: '−20%',
@@ -90,7 +104,7 @@ export default function HeroSlider() {
         >
           <Image
             src={s.image}
-            alt={s.industry}
+            alt={'industry' in s ? s.industry : s.navLabel}
             fill
             className="object-cover"
             priority={i === 0}
@@ -132,7 +146,18 @@ export default function HeroSlider() {
             animationFillMode: 'both',
           }}
         >
-          {slide.headline}
+          {'headlineGold' in slide && slide.headlineGold
+            ? slide.headline.split(slide.headlineGold).map((part, i, arr) => (
+                <span key={i}>
+                  {part}
+                  {i < arr.length - 1 && (
+                    <span style={{ color: '#C9A96E', textShadow: '0 0 15px rgba(201,169,110,0.45)' }}>
+                      {slide.headlineGold}
+                    </span>
+                  )}
+                </span>
+              ))
+            : slide.headline}
         </h1>
 
         {/* サブテキスト */}
@@ -150,21 +175,43 @@ export default function HeroSlider() {
           className="flex items-center gap-6 animate-fadeSlideUp"
           style={{ animationDuration: '0.5s', animationDelay: '0.24s', animationFillMode: 'both' }}
         >
-          <Link
-            href={slide.href}
-            className="inline-flex items-center gap-2 bg-gold text-navy font-bold px-8 py-4 rounded text-sm tracking-wide hover:bg-gold/90 transition-colors"
-          >
-            {slide.industry}の詳細を見る
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </Link>
-          <Link
-            href="/contact"
-            className="text-white/70 text-sm hover:text-white transition-colors underline underline-offset-4"
-          >
-            お問い合わせ
-          </Link>
+          {'cta' in slide ? (
+            <>
+              <Link
+                href={slide.cta.href}
+                className="inline-flex items-center gap-2 bg-gold text-navy font-bold px-8 py-4 rounded text-sm tracking-wide hover:bg-gold/90 transition-colors"
+              >
+                {slide.cta.label}
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </Link>
+              <Link
+                href={slide.ctaSub.href}
+                className="text-white/70 text-sm hover:text-white transition-colors underline underline-offset-4"
+              >
+                {slide.ctaSub.label}
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link
+                href={slide.href}
+                className="inline-flex items-center gap-2 bg-gold text-navy font-bold px-8 py-4 rounded text-sm tracking-wide hover:bg-gold/90 transition-colors"
+              >
+                {slide.industry}の詳細を見る
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </Link>
+              <Link
+                href="/contact"
+                className="text-white/70 text-sm hover:text-white transition-colors underline underline-offset-4"
+              >
+                お問い合わせ
+              </Link>
+            </>
+          )}
         </div>
 
         {/* スライドナビゲーション */}
@@ -184,7 +231,7 @@ export default function HeroSlider() {
               </div>
               {/* 業種名 */}
               <span className={`text-xs tracking-widest uppercase transition-colors ${i === current ? 'text-gold' : 'text-white/40 group-hover:text-white/70'}`}>
-                {s.industryEn}
+                {s.navLabel}
               </span>
             </button>
           ))}
