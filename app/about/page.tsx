@@ -158,25 +158,6 @@ export default function AboutPage() {
           </FadeIn>
         </div>
       </section>
-
-      {/* 9. Join Us CTA */}
-      <section className="bg-navy py-20 text-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">JOIN US</p>
-            <h2 className="h2-fluid font-bold text-white mb-4">チームに加わりませんか？</h2>
-            <p className="text-white/50 text-sm mb-10 max-w-xl mx-auto">
-              日本のリアルな産業をAIで変革するミッションに共感するプロフェッショナルを探しています。
-            </p>
-            <Link
-              href="/recruit"
-              className="inline-block border border-gold/60 text-gold font-semibold px-8 py-3.5 rounded text-sm tracking-wide hover:bg-gold hover:text-navy transition-all"
-            >
-              採用情報を見る
-            </Link>
-          </FadeIn>
-        </div>
-      </section>
     </>
   )
 }
