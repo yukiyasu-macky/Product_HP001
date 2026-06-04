@@ -7,7 +7,6 @@ const navItems = [
   { href: '/mission', label: 'ミッション' },
   { href: '/service', label: 'サービス' },
   { href: '/results', label: '実績' },
-  { href: '/team', label: 'チーム' },
   { href: '/news', label: 'ニュース' },
   { href: '/recruit', label: '採用' },
 ]

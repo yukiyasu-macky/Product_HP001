@@ -303,6 +303,51 @@ export default function ServicePage() {
         </div>
       </section>
 
+      {/* ── WHY JOIN ── */}
+      <section className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">WHY JOIN</p>
+            <h2 className="h2-fluid font-bold text-navy mb-2">なぜArcrise Laboを選ぶのか</h2>
+            <div className="section-divider mt-3 mb-10" />
+          </FadeIn>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              {
+                num: '01',
+                title: '大きな裁量',
+                desc: '少人数チームで大きな意思決定に関われる。プロダクト・事業・組織を横断して動ける環境。',
+              },
+              {
+                num: '02',
+                title: '社会的インパクト',
+                desc: '地方企業の変革に直接貢献できる。AIによって日本のリアルな産業を変える最前線。',
+              },
+              {
+                num: '03',
+                title: '経済的リターン',
+                desc: '大手の+30-50%給与 + J-KISS SO。成果に応じたアップサイドが明確に設計されている。',
+              },
+              {
+                num: '04',
+                title: '成長環境',
+                desc: '経営×AI×営業の3領域を横断的に学べる。スタートアップ初期だからこそ得られる密度の高い経験。',
+              },
+            ].map((item, i) => (
+              <FadeIn key={item.num} delay={i * 100}>
+                <div className="card-hover bg-white border border-gray-200 rounded-xl p-8 relative overflow-hidden">
+                  <span className="absolute top-4 right-6 text-4xl font-black text-gray-100 select-none leading-none">
+                    {item.num}
+                  </span>
+                  <h3 className="text-navy font-bold text-lg mb-3 relative z-10">{item.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed relative z-10">{item.desc}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── IMPLEMENTATION PROCESS ── */}
       <section className="bg-[#F8F9FA] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

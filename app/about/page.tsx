@@ -154,6 +154,61 @@ export default function AboutPage() {
           </FadeIn>
         </div>
       </section>
+
+      {/* 7. Culture */}
+      <section className="bg-[#F8F9FA] py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">CULTURE</p>
+            <h2 className="h2-fluid font-bold text-navy mb-2">カルチャー</h2>
+            <div className="section-divider mt-3 mb-10" />
+          </FadeIn>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                value: '現場主義',
+                desc: '会議室より現場。コンサルではなくFDE。クライアントの現場に入り込み、共に変革を起こす。',
+              },
+              {
+                value: '成果責任',
+                desc: '技術よりビジネス成果を優先する。美しいコードより、動く事業を。',
+              },
+              {
+                value: '高速実行',
+                desc: '6ヶ月で稼働。スピードが競争優位。考え抜いた後は迷わず動く。',
+              },
+            ].map((item, i) => (
+              <FadeIn key={item.value} delay={i * 100}>
+                <div className="border-l-4 border-gold pl-6 py-2">
+                  <p className="text-navy font-black text-2xl mb-2">{item.value}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 8. Join Us CTA */}
+      <section className="bg-navy py-20 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">JOIN US</p>
+            <h2 className="h2-fluid font-bold text-white mb-4">
+              チームに加わりませんか？
+            </h2>
+            <p className="text-white/50 text-sm mb-10 max-w-xl mx-auto">
+              日本のリアルな産業をAIで変革するミッションに共感するプロフェッショナルを探しています。
+            </p>
+            <Link
+              href="/recruit"
+              className="inline-block border border-gold/60 text-gold font-semibold px-8 py-3.5 rounded text-sm tracking-wide hover:bg-gold hover:text-navy transition-all"
+            >
+              採用情報を見る
+            </Link>
+          </FadeIn>
+        </div>
+      </section>
     </>
   )
 }
