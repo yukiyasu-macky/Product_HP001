@@ -21,8 +21,8 @@ export default function Header() {
             <Image
               src="/images/arcrise-labs-logo.png"
               alt="Arcrise Labs"
-              width={160}
-              height={36}
+              width={140}
+              height={32}
               className="h-8 w-auto object-contain"
             />
           </Link>
