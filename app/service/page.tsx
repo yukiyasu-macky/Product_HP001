@@ -6,25 +6,6 @@ import CountUp from '@/components/CountUp'
 export const dynamic = 'force-static'
 
 export default function ServicePage() {
-  const constructionFeatures = [
-    { name: '見積AI', desc: '過去案件データから精度の高い見積を自動生成' },
-    { name: '工程管理AI', desc: '最適な工程スケジュールを自動計画' },
-    { name: '書類自動化', desc: '申請書類・報告書の自動生成' },
-  ]
-
-  const realEstateFeatures = [
-    { name: '物件マッチングAI', desc: '顧客ニーズと物件の高精度マッチング' },
-    { name: '営業LTV最適化', desc: '顧客生涯価値を最大化する営業戦略' },
-    { name: '市場分析AI', desc: 'リアルタイム市場動向分析' },
-  ]
-
-  const logisticsFeatures = [
-    { name: '配車最適化AI', desc: 'リアルタイムで最適な配車計画を生成' },
-    { name: '需要予測AI', desc: '配送需要を予測し在庫・人員を最適化' },
-    { name: 'ルート最適化', desc: '燃料コストと時間を最小化' },
-  ]
-
-  // ① desc フィールド追加
   const steps = [
     { num: '01', label: 'ヒアリング', period: 'Week 1–2', desc: '現場課題・業務フローの詳細ヒアリング' },
     { num: '02', label: '課題分析', period: 'Week 3–4', desc: 'データ分析とAI適用箇所の特定' },
@@ -85,7 +66,51 @@ export default function ServicePage() {
             <p className="text-white/70 text-lg max-w-2xl mx-auto mb-10">
               Palantirの手法を参考にした、業界ごとにカスタマイズされたAIプラットフォーム。汎用AIではなく、各業界の業務プロセスに最適化されたソリューションを提供します。
             </p>
-            <div className="flex gap-4 flex-wrap justify-center mt-8">
+
+            {/* ② アイコン3列 */}
+            <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mb-10">
+              {[
+                {
+                  icon: (
+                    <svg viewBox="0 0 40 40" className="w-10 h-10 mx-auto mb-3" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="20" cy="20" r="18" />
+                      <path d="M12 20 L18 26 L28 14" />
+                    </svg>
+                  ),
+                  label: '業界特化',
+                  sub: '汎用AIではなく現場最適化',
+                },
+                {
+                  icon: (
+                    <svg viewBox="0 0 40 40" className="w-10 h-10 mx-auto mb-3" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M8 32 L8 16 L20 8 L32 16 L32 32 Z" />
+                      <path d="M15 32 L15 22 L25 22 L25 32" />
+                    </svg>
+                  ),
+                  label: '経営視点',
+                  sub: '100件超の実績をもつCEO直轄',
+                },
+                {
+                  icon: (
+                    <svg viewBox="0 0 40 40" className="w-10 h-10 mx-auto mb-3" fill="none" stroke="#C9A96E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="20" cy="20" r="5" />
+                      <path d="M20 4 L20 10 M20 30 L20 36 M4 20 L10 20 M30 20 L36 20" />
+                      <path d="M8.6 8.6 L12.9 12.9 M27.1 27.1 L31.4 31.4 M8.6 31.4 L12.9 27.1 M27.1 12.9 L31.4 8.6" />
+                    </svg>
+                  ),
+                  label: '6ヶ月稼働',
+                  sub: '大手SIerの1/3期間で実装',
+                },
+              ].map((item) => (
+                <div key={item.label} className="text-center">
+                  {item.icon}
+                  <p className="text-white font-bold text-sm">{item.label}</p>
+                  <p className="text-white/50 text-xs mt-1">{item.sub}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex gap-4 flex-wrap justify-center">
               <span className="border border-white/40 text-white px-6 py-2 rounded-full text-sm tracking-wide">
                 大手SIerの1/5価格
               </span>
@@ -109,7 +134,6 @@ export default function ServicePage() {
             <div className="section-divider mt-3 mb-4" />
             <p className="text-gray-500 text-sm mb-10 text-center">日本のAI企業10社調査結果</p>
           </FadeIn>
-
           <FadeIn delay={100}>
             <div className="bg-white border border-gray-200 rounded-xl overflow-hidden">
               <table className="w-full text-sm">
@@ -158,9 +182,7 @@ export default function ServicePage() {
                 </tbody>
               </table>
             </div>
-            <p className="text-navy font-semibold text-center mt-6">
-              4条件全て○はArcrise Laboのみ
-            </p>
+            <p className="text-navy font-semibold text-center mt-6">4条件全て○はArcrise Laboのみ</p>
           </FadeIn>
         </div>
       </section>
@@ -173,8 +195,7 @@ export default function ServicePage() {
             <h2 className="h2-fluid font-bold text-navy mb-2">なぜArcrise Laboを選ぶのか</h2>
             <div className="section-divider mt-3 mb-10" />
           </FadeIn>
-
-          {/* ② 購入者向けカード内容に差し替え */}
+          {/* ③ アイコンバッジ＋ホバーアニメーション追加 */}
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
@@ -199,10 +220,14 @@ export default function ServicePage() {
               },
             ].map((item, i) => (
               <FadeIn key={item.num} delay={i * 100}>
-                <div className="card-hover bg-white border border-gray-200 rounded-xl p-8 relative overflow-hidden">
+                <div className="bg-white border border-gray-200 hover:border-gold/40 rounded-xl p-8 relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                   <span className="absolute top-4 right-6 text-4xl font-black text-gray-100 select-none leading-none">
                     {item.num}
                   </span>
+                  {/* ③ アイコンバッジ */}
+                  <div className="w-10 h-10 rounded-lg bg-navy/5 flex items-center justify-center mb-4">
+                    <span className="text-gold font-black text-lg">{item.num}</span>
+                  </div>
                   <h3 className="text-navy font-bold text-lg mb-3 relative z-10">{item.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed relative z-10">{item.desc}</p>
                 </div>
@@ -220,7 +245,6 @@ export default function ServicePage() {
             <h2 className="h2-fluid font-bold text-navy mb-2">創業者の実績</h2>
             <div className="section-divider mt-3 mb-10" />
           </FadeIn>
-
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <FadeIn delay={100}>
               <div>
@@ -233,9 +257,14 @@ export default function ServicePage() {
                     業務効率+20-30%を実証済
                   </span>
                 </div>
+                {/* ④ 業種バッジ追加 */}
+                <div className="flex gap-3 mt-4 flex-wrap">
+                  <span className="text-xs border border-gray-200 text-gray-500 px-3 py-1 rounded-full">製造業 +25%</span>
+                  <span className="text-xs border border-gray-200 text-gray-500 px-3 py-1 rounded-full">流通業 −30%</span>
+                  <span className="text-xs border border-gray-200 text-gray-500 px-3 py-1 rounded-full">食品業 −40%</span>
+                </div>
               </div>
             </FadeIn>
-
             <FadeIn delay={200}>
               <div>
                 <div className="card-hover bg-white border border-gray-200 rounded-xl p-6 mb-4">
@@ -243,27 +272,21 @@ export default function ServicePage() {
                     <h3 className="text-navy font-bold text-lg">製造業</h3>
                     <span className="font-black text-navy text-2xl">+25%</span>
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    生産管理AIを導入し、業務効率を改善。現場の課題に即した設計で定着率も高評価。
-                  </p>
+                  <p className="text-gray-600 text-sm leading-relaxed">生産管理AIを導入し、業務効率を改善。現場の課題に即した設計で定着率も高評価。</p>
                 </div>
                 <div className="card-hover bg-white border border-gray-200 rounded-xl p-6 mb-4">
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="text-navy font-bold text-lg">流通業</h3>
                     <span className="font-black text-navy text-2xl">-30%</span>
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    在庫最適化AIにより廃棄ロスを削減。需要予測の精度向上でキャッシュフローも改善。
-                  </p>
+                  <p className="text-gray-600 text-sm leading-relaxed">在庫最適化AIにより廃棄ロスを削減。需要予測の精度向上でキャッシュフローも改善。</p>
                 </div>
                 <div className="card-hover bg-white border border-gray-200 rounded-xl p-6">
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="text-navy font-bold text-lg">食品業</h3>
                     <span className="font-black text-navy text-2xl">-40%</span>
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    品質管理AIを導入し、不良品率を低減。検査工程の自動化で品質の均一化を実現。
-                  </p>
+                  <p className="text-gray-600 text-sm leading-relaxed">品質管理AIを導入し、不良品率を低減。検査工程の自動化で品質の均一化を実現。</p>
                 </div>
               </div>
             </FadeIn>
@@ -271,171 +294,107 @@ export default function ServicePage() {
         </div>
       </section>
 
-      {/* ── SECTION A: 建設業 ── */}
-      <section id="construction" className="bg-[#F8F9FA] py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <span className="inline-block bg-navy/8 text-navy border border-navy/15 text-xs px-3 py-1 rounded mb-6 tracking-widest uppercase">
-              建設業 / CONSTRUCTION
-            </span>
-          </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mt-2">
-            {/* LEFT: stats — ③ 数値フォント拡大・説明テキスト強化 */}
-            <FadeIn delay={100}>
-              <div className="card-hover bg-white border border-gray-200 rounded-xl p-8">
-                <p className="text-gray-500 text-xs tracking-widest uppercase mb-3">導入効果</p>
-                <div className="font-black text-navy" style={{ fontSize: 'clamp(4.5rem,9vw,7rem)', lineHeight: 1 }}>
-                  <CountUp end={30} suffix="%" />
-                </div>
-                <p className="text-navy font-semibold text-lg mt-2">業務効率向上</p>
-                <div className="border-t border-gray-100 my-6" />
-                <ul className="space-y-4">
-                  {constructionFeatures.map((f) => (
-                    <li key={f.name} className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0" />
-                      <div>
-                        <p className="text-navy font-semibold text-sm">{f.name}</p>
-                        <p className="text-gray-500 text-xs mt-0.5">{f.desc}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-gray-400 text-xs tracking-wider mt-6 uppercase">対象企業数: 4万社</p>
-              </div>
-            </FadeIn>
-            {/* RIGHT: image */}
-            <FadeIn delay={200}>
-              <div className="relative rounded-xl overflow-hidden aspect-[4/3] shadow-lg">
-                <Image
-                  src="/service-construction.jpg"
-                  alt="建設業の現場 – 工場・クレーン群の空撮"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <p className="text-white/60 text-xs tracking-widest uppercase mb-2">導入効果</p>
-                  <p className="text-white font-black" style={{ fontSize: 'clamp(3rem,8vw,5rem)', lineHeight: 1 }}>
-                    +30%
-                  </p>
-                  <p className="text-white/90 text-base font-medium mt-3">業務効率向上 / 対象 4万社</p>
-                </div>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
+      {/* ── 3業種パネル（フル画像横並び）── */}
+      <section className="bg-navy">
+        <div className="grid grid-cols-1 md:grid-cols-3 min-h-[600px]">
+          {[
+            {
+              id: 'construction',
+              en: 'CONSTRUCTION',
+              ja: '建設業',
+              image: '/service-construction.jpg',
+              alt: '建設業の現場 – 工場・クレーン群の空撮',
+              stat: '+30%',
+              statLabel: '業務効率向上',
+              target: '対象 4万社',
+              features: ['見積AI', '工程管理AI', '書類自動化'],
+              desc: '見積作成から工程管理・報告書類まで、現場業務をまるごとAI化。管理職の事務負担を劇的に削減します。',
+            },
+            {
+              id: 'realestate',
+              en: 'REAL ESTATE',
+              ja: '不動産業',
+              image: '/service-realestate.jpg',
+              alt: '地方都市の住宅街・マンション群の空撮',
+              stat: '×5',
+              statLabel: '営業効率向上',
+              target: '対象 12万社',
+              features: ['物件マッチングAI', '営業LTV最適化', '市場分析AI'],
+              desc: '物件マッチングから顧客対応・営業資料作成まで自動化。担当者が成約活動だけに集中できる環境を構築。',
+            },
+            {
+              id: 'logistics',
+              en: 'LOGISTICS',
+              ja: '運送・物流業',
+              image: '/service-logistics.jpg',
+              alt: '物流センターと高速道路の空撮',
+              stat: '−20%',
+              statLabel: '燃料コスト削減',
+              target: '対象 6万社',
+              features: ['配車最適化AI', '需要予測AI', 'ルート最適化'],
+              desc: '配車計画・運行管理・日報処理をAIで最適化。ドライバー不足への対応と運行効率向上を同時に実現。',
+            },
+          ].map((s, i) => (
+            <div
+              key={s.id}
+              id={s.id}
+              className="group relative overflow-hidden cursor-pointer"
+              style={{ minHeight: '600px' }}
+            >
+              {/* 背景画像 */}
+              <Image
+                src={s.image}
+                alt={s.alt}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+              {/* 常時オーバーレイ */}
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/95 via-navy/50 to-navy/10 transition-opacity duration-500" />
+              {/* ホバー時追加オーバーレイ */}
+              <div className="absolute inset-0 bg-navy/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-      {/* ── SECTION B: 不動産業 ── */}
-      <section id="realestate" className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <span className="inline-block bg-navy/8 text-navy border border-navy/15 text-xs px-3 py-1 rounded mb-6 tracking-widest uppercase">
-              不動産業 / REAL ESTATE
-            </span>
-          </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mt-2">
-            {/* LEFT: stats — ③ */}
-            <FadeIn delay={100}>
-              <div className="card-hover bg-white border border-gray-200 rounded-xl p-8">
-                <p className="text-gray-500 text-xs tracking-widest uppercase mb-3">導入効果</p>
-                <div className="font-black text-navy" style={{ fontSize: 'clamp(4.5rem,9vw,7rem)', lineHeight: 1 }}>
-                  ×5
+              {/* コンテンツ */}
+              <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10">
+                {/* 業種ラベル */}
+                <div className="mb-4">
+                  <p className="text-gold text-xs tracking-[0.4em] uppercase mb-2">{s.en}</p>
+                  <h3 className="text-white font-black leading-none" style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)' }}>
+                    {s.ja}
+                  </h3>
                 </div>
-                <p className="text-navy font-semibold text-lg mt-2">営業効率向上</p>
-                <div className="border-t border-gray-100 my-6" />
-                <ul className="space-y-4">
-                  {realEstateFeatures.map((f) => (
-                    <li key={f.name} className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0" />
-                      <div>
-                        <p className="text-navy font-semibold text-sm">{f.name}</p>
-                        <p className="text-gray-500 text-xs mt-0.5">{f.desc}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-gray-400 text-xs tracking-wider mt-6 uppercase">対象企業数: 12万社</p>
-              </div>
-            </FadeIn>
-            {/* RIGHT: image */}
-            <FadeIn delay={200}>
-              <div className="relative rounded-xl overflow-hidden aspect-[4/3] shadow-lg">
-                <Image
-                  src="/service-realestate.jpg"
-                  alt="地方都市の住宅街・マンション群の空撮"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <p className="text-white/60 text-xs tracking-widest uppercase mb-2">導入効果</p>
-                  <p className="text-white font-black" style={{ fontSize: 'clamp(3rem,8vw,5rem)', lineHeight: 1 }}>
-                    ×5
-                  </p>
-                  <p className="text-white/90 text-base font-medium mt-3">営業効率向上 / 対象 12万社</p>
+                {/* 数値 */}
+                <div className="mb-6">
+                  <div className="text-gold font-black leading-none" style={{ fontSize: 'clamp(3rem, 6vw, 5rem)' }}>
+                    {s.stat}
+                  </div>
+                  <p className="text-white/70 text-sm mt-1">{s.statLabel} / {s.target}</p>
                 </div>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* ── SECTION C: 運送業 ── */}
-      <section id="logistics" className="bg-[#F8F9FA] py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <span className="inline-block bg-navy/8 text-navy border border-navy/15 text-xs px-3 py-1 rounded mb-6 tracking-widest uppercase">
-              運送・物流業 / LOGISTICS
-            </span>
-          </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mt-2">
-            {/* LEFT: stats — ③ */}
-            <FadeIn delay={100}>
-              <div className="card-hover bg-white border border-gray-200 rounded-xl p-8">
-                <p className="text-gray-500 text-xs tracking-widest uppercase mb-3">導入効果</p>
-                <div className="font-black text-navy" style={{ fontSize: 'clamp(4.5rem,9vw,7rem)', lineHeight: 1 }}>
-                  <CountUp end={20} prefix="−" suffix="%" />
+                {/* 詳細（ホバー時スライドイン） */}
+                <div className="overflow-hidden max-h-0 group-hover:max-h-96 transition-all duration-500 ease-out">
+                  <p className="text-white/80 text-sm leading-relaxed mb-5">{s.desc}</p>
+                  <ul className="space-y-2 mb-6">
+                    {s.features.map((f) => (
+                      <li key={f} className="flex items-center gap-2 text-white/90 text-sm">
+                        <span className="w-1 h-1 rounded-full bg-gold shrink-0" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 border border-gold/60 text-gold text-sm font-semibold px-5 py-2.5 rounded hover:bg-gold hover:text-navy transition-all duration-300"
+                  >
+                    この業種の相談をする →
+                  </Link>
                 </div>
-                <p className="text-navy font-semibold text-lg mt-2">燃料コスト削減</p>
-                <div className="border-t border-gray-100 my-6" />
-                <ul className="space-y-4">
-                  {logisticsFeatures.map((f) => (
-                    <li key={f.name} className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0" />
-                      <div>
-                        <p className="text-navy font-semibold text-sm">{f.name}</p>
-                        <p className="text-gray-500 text-xs mt-0.5">{f.desc}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-gray-400 text-xs tracking-wider mt-6 uppercase">対象企業数: 6万社</p>
+                {/* 縦区切り線 */}
+                {i < 2 && (
+                  <div className="hidden md:block absolute top-10 right-0 bottom-10 w-px bg-white/10" />
+                )}
               </div>
-            </FadeIn>
-            {/* RIGHT: image */}
-            <FadeIn delay={200}>
-              <div className="relative rounded-xl overflow-hidden aspect-[4/3] shadow-lg">
-                <Image
-                  src="/service-logistics.jpg"
-                  alt="物流センターと高速道路の空撮"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <p className="text-white/60 text-xs tracking-widest uppercase mb-2">導入効果</p>
-                  <p className="text-white font-black" style={{ fontSize: 'clamp(3rem,8vw,5rem)', lineHeight: 1 }}>
-                    −20%
-                  </p>
-                  <p className="text-white/90 text-base font-medium mt-3">燃料コスト削減 / 対象 6万社</p>
-                </div>
-              </div>
-            </FadeIn>
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -447,7 +406,6 @@ export default function ServicePage() {
             <h2 className="h2-fluid font-bold text-navy mb-2">導入事例</h2>
             <div className="section-divider mt-3 mb-10" />
           </FadeIn>
-
           <FadeIn delay={100}>
             <div className="border border-gray-200 rounded-xl overflow-hidden card-hover">
               <div className="bg-white border-b border-gray-200 px-8 py-4 flex items-center justify-between">
@@ -456,39 +414,30 @@ export default function ServicePage() {
               </div>
               <div className="p-8 md:p-10">
                 <p className="text-gold font-semibold text-lg mb-6">問合せメール返信AI自動生成システム</p>
-                {/* ④ カードをネイビー背景に */}
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="card-hover bg-navy rounded-xl p-6">
                     <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mb-4">
                       <span className="text-white/60 text-xs font-black">01</span>
                     </div>
                     <p className="text-xs font-bold text-gold uppercase tracking-wider mb-3">課題</p>
-                    <p className="text-white/80 text-sm leading-relaxed">
-                      大量の問合せメールへの対応に多くの人手が必要で、担当者の負担が増大していた。
-                    </p>
+                    <p className="text-white/80 text-sm leading-relaxed">大量の問合せメールへの対応に多くの人手が必要で、担当者の負担が増大していた。</p>
                   </div>
                   <div className="card-hover bg-navy rounded-xl p-6">
                     <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mb-4">
                       <span className="text-white/60 text-xs font-black">02</span>
                     </div>
                     <p className="text-xs font-bold text-gold uppercase tracking-wider mb-3">ソリューション</p>
-                    <p className="text-white/80 text-sm leading-relaxed">
-                      AIによる返信文の自動生成システムを構築。問合せ内容を解析し、適切な返信文を即時生成。
-                    </p>
+                    <p className="text-white/80 text-sm leading-relaxed">AIによる返信文の自動生成システムを構築。問合せ内容を解析し、適切な返信文を即時生成。</p>
                   </div>
                   <div className="card-hover bg-navy rounded-xl p-6">
                     <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mb-4">
                       <span className="text-white/60 text-xs font-black">03</span>
                     </div>
                     <p className="text-xs font-bold text-gold uppercase tracking-wider mb-3">効果</p>
-                    <p className="text-white/80 text-sm leading-relaxed">
-                      対応時間の大幅短縮を実現。担当者の負荷軽減により、コア業務への集中が可能に。
-                    </p>
+                    <p className="text-white/80 text-sm leading-relaxed">対応時間の大幅短縮を実現。担当者の負荷軽減により、コア業務への集中が可能に。</p>
                   </div>
                 </div>
-                <p className="text-gold font-semibold text-sm mt-8 text-center">
-                  現在稼働実証中 — 成果は順次更新予定
-                </p>
+                <p className="text-gold font-semibold text-sm mt-8 text-center">現在稼働実証中 — 成果は順次更新予定</p>
               </div>
             </div>
           </FadeIn>
@@ -503,8 +452,6 @@ export default function ServicePage() {
             <h2 className="h2-fluid font-bold text-navy mb-2">導入プロセス</h2>
             <div className="section-divider mt-3 mb-14" />
           </FadeIn>
-
-          {/* ⑤ desc 追加・横並びステップ */}
           <FadeIn delay={100}>
             <div className="hidden sm:flex items-start">
               {steps.map((s, i) => (
@@ -523,8 +470,6 @@ export default function ServicePage() {
                 </div>
               ))}
             </div>
-
-            {/* ⑤ desc 追加・縦並びステップ */}
             <div className="sm:hidden space-y-6">
               {steps.map((s, i) => (
                 <div key={s.num} className="flex items-start gap-4">
@@ -532,9 +477,7 @@ export default function ServicePage() {
                     <div className="w-10 h-10 rounded-full border-2 border-navy flex items-center justify-center text-navy font-bold text-sm shrink-0">
                       {s.num}
                     </div>
-                    {i < steps.length - 1 && (
-                      <div className="w-px flex-1 bg-gray-200 mt-2 h-6" />
-                    )}
+                    {i < steps.length - 1 && <div className="w-px flex-1 bg-gray-200 mt-2 h-6" />}
                   </div>
                   <div className="pt-2">
                     <p className="text-navy font-semibold">{s.label}</p>
@@ -544,13 +487,9 @@ export default function ServicePage() {
                 </div>
               ))}
             </div>
-
             <div className="mt-12 border border-gray-200 bg-white rounded-xl p-6 text-center">
               <p className="text-gray-700 text-base">
-                大手SIerの
-                <span className="text-navy font-bold"> 1/3の期間</span>、
-                <span className="text-navy font-bold"> 1/5の価格</span>
-                で実現
+                大手SIerの<span className="text-navy font-bold"> 1/3の期間</span>、<span className="text-navy font-bold"> 1/5の価格</span>で実現
               </p>
             </div>
           </FadeIn>
@@ -562,19 +501,26 @@ export default function ServicePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">CONTACT</p>
-            <h2 className="h2-fluid font-bold text-white mb-4">
-              導入を検討されている企業様へ
-            </h2>
+            <h2 className="h2-fluid font-bold text-white mb-4">導入を検討されている企業様へ</h2>
             <div className="section-divider mx-auto mt-3 mb-6" />
             <p className="text-white/60 text-base mb-10 max-w-xl mx-auto">
               業界特化型AIプラットフォームについて、まずはお気軽にご相談ください。専門チームが貴社の課題をヒアリングし、最適なプランをご提案します。
             </p>
-            <Link
-              href="/contact"
-              className="inline-block border border-gold/60 text-gold font-semibold px-8 py-3.5 rounded text-sm tracking-wide hover:bg-gold hover:text-navy transition-all"
-            >
-              無料相談はこちら
-            </Link>
+            {/* ⑤ 2ボタン構成 */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact"
+                className="inline-block bg-gold text-navy font-bold px-10 py-4 rounded text-sm tracking-wide hover:bg-gold/90 transition-all"
+              >
+                無料相談はこちら →
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-block border border-gold/60 text-gold font-semibold px-10 py-4 rounded text-sm tracking-wide hover:bg-gold/10 transition-all"
+              >
+                資料請求・お問い合わせ
+              </Link>
+            </div>
           </FadeIn>
         </div>
       </section>
