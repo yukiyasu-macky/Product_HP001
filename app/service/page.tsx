@@ -452,6 +452,219 @@ export default function ServicePage() {
         </div>
       </section>
 
+      {/* ── TRACK RECORD ── */}
+      <section className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">TRACK RECORD</p>
+            <h2 className="h2-fluid font-bold text-navy mb-2">創業者の実績</h2>
+            <div className="section-divider mt-3 mb-10" />
+          </FadeIn>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* LEFT: Big Stat */}
+            <FadeIn delay={100}>
+              <div>
+                <div
+                  className="font-black text-navy"
+                  style={{ fontSize: 'clamp(6rem,12vw,8rem)', lineHeight: 0.9 }}
+                >
+                  <CountUp end={100} suffix="+" />
+                </div>
+                <p className="text-gray-600 text-xl mt-4">AI・DX導入支援件数</p>
+                <div className="mt-6">
+                  <span className="inline-block bg-navy text-white text-sm px-4 py-2 rounded font-semibold">
+                    業務効率+20-30%を実証済
+                  </span>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* RIGHT: Industry cards */}
+            <FadeIn delay={200}>
+              <div>
+                <div className="card-hover bg-white border border-gray-200 rounded-xl p-6 mb-4">
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-navy font-bold text-lg">製造業</h3>
+                    <span className="font-black text-navy text-2xl">+25%</span>
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    生産管理AIを導入し、業務効率を改善。現場の課題に即した設計で定着率も高評価。
+                  </p>
+                </div>
+                <div className="card-hover bg-white border border-gray-200 rounded-xl p-6 mb-4">
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-navy font-bold text-lg">流通業</h3>
+                    <span className="font-black text-navy text-2xl">-30%</span>
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    在庫最適化AIにより廃棄ロスを削減。需要予測の精度向上でキャッシュフローも改善。
+                  </p>
+                </div>
+                <div className="card-hover bg-white border border-gray-200 rounded-xl p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-navy font-bold text-lg">食品業</h3>
+                    <span className="font-black text-navy text-2xl">-40%</span>
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    品質管理AIを導入し、不良品率を低減。検査工程の自動化で品質の均一化を実現。
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CASE STUDY ── */}
+      <section className="bg-[#F8F9FA] py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">CASE STUDY</p>
+            <h2 className="h2-fluid font-bold text-navy mb-2">導入事例</h2>
+            <div className="section-divider mt-3 mb-10" />
+          </FadeIn>
+
+          <FadeIn delay={100}>
+            <div className="border border-gray-200 rounded-xl overflow-hidden card-hover">
+              <div className="bg-white border-b border-gray-200 px-8 py-4 flex items-center justify-between">
+                <span className="text-navy font-bold text-xl">流通企業 M社</span>
+                <span className="bg-navy text-white text-xs font-bold px-3 py-1 rounded-full">稼働実証中</span>
+              </div>
+              <div className="p-8 md:p-10">
+                <p className="text-gold font-semibold text-lg mb-6">問合せメール返信AI自動生成システム</p>
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="card-hover bg-white border border-gray-200 rounded-xl p-6">
+                    <div className="w-10 h-10 rounded-full border border-gray-200 bg-[#F8F9FA] flex items-center justify-center mb-4">
+                      <span className="text-navy/40 text-xs font-black">01</span>
+                    </div>
+                    <p className="text-xs font-bold text-gold uppercase tracking-wider mb-3">課題</p>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      大量の問合せメールへの対応に多くの人手が必要で、担当者の負担が増大していた。
+                    </p>
+                  </div>
+                  <div className="card-hover bg-white border border-gray-200 rounded-xl p-6">
+                    <div className="w-10 h-10 rounded-full border border-gray-200 bg-[#F8F9FA] flex items-center justify-center mb-4">
+                      <span className="text-navy/40 text-xs font-black">02</span>
+                    </div>
+                    <p className="text-xs font-bold text-gold uppercase tracking-wider mb-3">ソリューション</p>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      AIによる返信文の自動生成システムを構築。問合せ内容を解析し、適切な返信文を即時生成。
+                    </p>
+                  </div>
+                  <div className="card-hover bg-white border border-gray-200 rounded-xl p-6">
+                    <div className="w-10 h-10 rounded-full border border-gray-200 bg-[#F8F9FA] flex items-center justify-center mb-4">
+                      <span className="text-navy/40 text-xs font-black">03</span>
+                    </div>
+                    <p className="text-xs font-bold text-gold uppercase tracking-wider mb-3">効果</p>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      対応時間の大幅短縮を実現。担当者の負荷軽減により、コア業務への集中が可能に。
+                    </p>
+                  </div>
+                </div>
+                <p className="text-gray-500 text-sm mt-8 text-center">
+                  現在稼働実証中 — 成果は順次更新予定
+                </p>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ── COMPARISON ── */}
+      <section className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">COMPARISON</p>
+            <h2 className="h2-fluid font-bold text-navy mb-2">他社比較</h2>
+            <div className="section-divider mt-3 mb-4" />
+            <p className="text-gray-500 text-sm mb-10 text-center">日本のAI企業10社調査結果</p>
+          </FadeIn>
+
+          <FadeIn delay={100}>
+            <div className="bg-white border border-gray-200 rounded-xl overflow-hidden">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-[#F8F9FA] border-b border-gray-200">
+                    <th className="text-left text-navy font-semibold px-6 py-4">比較項目</th>
+                    <th className="text-center text-navy font-semibold px-4 py-4">業界特化</th>
+                    <th className="text-center text-navy font-semibold px-4 py-4">地方中堅対応</th>
+                    <th className="text-center text-navy font-semibold px-4 py-4">1/5価格</th>
+                    <th className="text-center text-navy font-semibold px-4 py-4">6ヶ月稼働</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-gray-100 bg-navy/5">
+                    <td className="px-6 py-4 font-bold text-navy">Arcrise Labo</td>
+                    {['✓', '✓', '✓', '✓'].map((v, i) => (
+                      <td key={i} className="text-center px-4 py-4">
+                        <span className="text-gold text-xl font-black">{v}</span>
+                      </td>
+                    ))}
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="px-6 py-4 font-semibold text-gray-600">大手SIer（平均）</td>
+                    {[true, false, false, false].map((ok, i) => (
+                      <td key={i} className="text-center px-4 py-4">
+                        {ok ? <span className="text-gold text-xl font-black">✓</span> : <span className="text-gray-300 text-xl font-black">✗</span>}
+                      </td>
+                    ))}
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="px-6 py-4 font-semibold text-gray-600">AIスタートアップ</td>
+                    {[false, false, true, false].map((ok, i) => (
+                      <td key={i} className="text-center px-4 py-4">
+                        {ok ? <span className="text-gold text-xl font-black">✓</span> : <span className="text-gray-300 text-xl font-black">✗</span>}
+                      </td>
+                    ))}
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 font-semibold text-gray-600">コンサルファーム</td>
+                    {[false, false, false, false].map((ok, i) => (
+                      <td key={i} className="text-center px-4 py-4">
+                        {ok ? <span className="text-gold text-xl font-black">✓</span> : <span className="text-gray-300 text-xl font-black">✗</span>}
+                      </td>
+                    ))}
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-navy font-semibold text-center mt-6">
+              4条件全て○はArcrise Laboのみ
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ── NEXT STEP ── */}
+      <section className="bg-navy py-20 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">NEXT STEP</p>
+            <h2 className="h2-fluid font-bold text-white mb-6">
+              導入事例・詳細資料のご請求
+            </h2>
+            <p className="text-white/60 text-sm mb-10 max-w-xl mx-auto leading-relaxed">
+              実績の詳細や導入事例の資料をご希望の方は、お気軽にお問い合わせください。
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact"
+                className="inline-block border border-gold/60 text-gold font-semibold px-8 py-3.5 rounded text-sm tracking-wide hover:bg-gold hover:text-navy transition-all"
+              >
+                お問い合わせ・資料請求
+              </Link>
+              <Link
+                href="/service"
+                className="inline-block border border-white/30 text-white/80 font-semibold px-8 py-3.5 rounded text-sm tracking-wide hover:border-white hover:text-white transition-all"
+              >
+                サービス詳細を見る
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* ── CTA ── */}
       <section className="bg-navy py-20 text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

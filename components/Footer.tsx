@@ -29,8 +29,8 @@ export default function Footer() {
             <div className="grid grid-cols-2 gap-2">
               {[
                 ['/about', '会社概要'], ['/mission', 'ミッション'],
-                ['/service', 'サービス'], ['/results', '実績'],
-                ['/news', 'ニュース'], ['/recruit', '採用'],
+                ['/service', 'サービス'], ['/news', 'ニュース'],
+                ['/recruit', '採用'],
                 ['/contact', 'お問い合わせ'],
               ].map(([href, label]) => (
                 <Link key={href} href={href} className="text-white/50 hover:text-gold text-sm transition">

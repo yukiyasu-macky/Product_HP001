@@ -6,7 +6,6 @@ const navItems = [
   { href: '/about', label: '会社概要' },
   { href: '/mission', label: 'ミッション' },
   { href: '/service', label: 'サービス' },
-  { href: '/results', label: '実績' },
   { href: '/news', label: 'ニュース' },
   { href: '/recruit', label: '採用' },
 ]
