@@ -7,11 +7,16 @@ export default function RecruitPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy pt-32 pb-24">
+      <section className="bg-[#0D1B2A] pt-36 pb-16 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">RECRUIT</p>
-          <h1 className="h1-fluid font-black text-white mb-4">採用情報</h1>
-          <p className="text-white/80 text-2xl mt-4">経営×AI×現場を変えたい人へ</p>
+          <p className="text-gold text-xs tracking-[0.4em] uppercase mb-4">RECRUIT</p>
+          <h1
+            className="text-white font-black mb-4"
+            style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.1 }}
+          >
+            採用情報
+          </h1>
+          <p className="text-white/70 text-xl mt-2">経営×AI×現場を変えたい人へ</p>
           <div className="section-divider mt-6" />
         </div>
       </section>
@@ -73,9 +78,7 @@ export default function RecruitPage() {
                     <li>建設・不動産・物流業界の知見</li>
                   </ul>
                 </div>
-                <div className="border-t border-gray-100 pt-4">
-                  <p className="text-gold font-semibold text-sm">報酬: 大手SIの+30-50%給与 + J-KISS SO</p>
-                </div>
+                <div className="border-t border-gray-100 pt-4" />
               </div>
             </FadeIn>
 
@@ -101,9 +104,7 @@ export default function RecruitPage() {
                     <li>IT・SaaS営業経験</li>
                   </ul>
                 </div>
-                <div className="border-t border-gray-100 pt-4">
-                  <p className="text-gold font-semibold text-sm">報酬: 大手SIの+30-50%給与 + J-KISS SO</p>
-                </div>
+                <div className="border-t border-gray-100 pt-4" />
               </div>
             </FadeIn>
 
@@ -123,71 +124,7 @@ export default function RecruitPage() {
                     <li>生成AI活用の実績</li>
                   </ul>
                 </div>
-                <div className="border-t border-gray-100 pt-4">
-                  <p className="text-gold font-semibold text-sm">報酬: 大手SIの+30-50%給与 + J-KISS SO</p>
-                </div>
-              </div>
-            </FadeIn>
-
-          </div>
-        </div>
-      </section>
-
-      {/* Compensation */}
-      <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">BENEFITS</p>
-            <h2 className="h2-fluid font-bold text-navy mb-2">待遇・福利厚生</h2>
-            <div className="section-divider mt-3 mb-10" />
-          </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-            <FadeIn>
-              <div className="card-hover bg-white border border-gray-200 rounded-xl p-8">
-                <div className="w-10 h-10 bg-[#F8F9FA] rounded-lg flex items-center justify-center text-gold mb-4">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <p className="text-navy font-bold mb-2">給与</p>
-                <p className="text-gray-600 text-sm leading-relaxed">大手SIer比+30-50%（経験・スキルによる）</p>
-              </div>
-            </FadeIn>
-
-            <FadeIn>
-              <div className="card-hover bg-white border border-gray-200 rounded-xl p-8">
-                <div className="w-10 h-10 bg-[#F8F9FA] rounded-lg flex items-center justify-center text-gold mb-4">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
-                </div>
-                <p className="text-navy font-bold mb-2">ストックオプション</p>
-                <p className="text-gray-600 text-sm leading-relaxed">J-KISS形式のSO付与</p>
-              </div>
-            </FadeIn>
-
-            <FadeIn>
-              <div className="card-hover bg-white border border-gray-200 rounded-xl p-8">
-                <div className="w-10 h-10 bg-[#F8F9FA] rounded-lg flex items-center justify-center text-gold mb-4">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <p className="text-navy font-bold mb-2">裁量</p>
-                <p className="text-gray-600 text-sm leading-relaxed">少人数チームで大きな意思決定に参加</p>
-              </div>
-            </FadeIn>
-
-            <FadeIn>
-              <div className="card-hover bg-white border border-gray-200 rounded-xl p-8">
-                <div className="w-10 h-10 bg-[#F8F9FA] rounded-lg flex items-center justify-center text-gold mb-4">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                  </svg>
-                </div>
-                <p className="text-navy font-bold mb-2">成長</p>
-                <p className="text-gray-600 text-sm leading-relaxed">経営×AI×営業の3領域を横断的に経験</p>
+                <div className="border-t border-gray-100 pt-4" />
               </div>
             </FadeIn>
 
