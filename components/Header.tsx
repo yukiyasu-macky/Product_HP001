@@ -8,8 +8,6 @@ const navItems = [
   { href: '/service', label: 'サービス' },
   { href: '/results', label: '実績' },
   { href: '/team', label: 'チーム' },
-  { href: '/roadmap', label: '事業計画' },
-  { href: '/ir', label: 'IR' },
   { href: '/news', label: 'ニュース' },
   { href: '/recruit', label: '採用' },
 ]

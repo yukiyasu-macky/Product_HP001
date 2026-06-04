@@ -54,8 +54,6 @@ const ctaLinks = [
   { href: '/results', label: '実績', desc: '100+件の導入支援実績' },
   { href: '/team', label: 'チーム', desc: '経営×AI×営業の3ピース' },
   { href: '/recruit', label: '採用情報', desc: '大手+30-50%給与 + SO' },
-  { href: '/roadmap', label: '事業計画', desc: '3年でExit ¥100-150億' },
-  { href: '/ir', label: 'IR', desc: 'Pre-Seed J-KISS ¥2億' },
   { href: '/contact', label: 'お問い合わせ', desc: '無料相談・資料請求' },
 ]
 
