@@ -227,12 +227,6 @@ export default function ServicePage() {
               >
                 無料相談はこちら →
               </Link>
-              <Link
-                href="/contact"
-                className="inline-block border border-gold/60 text-gold font-semibold px-10 py-4 rounded text-sm tracking-wide hover:bg-gold/10 transition-all"
-              >
-                資料請求・お問い合わせ
-              </Link>
             </div>
           </FadeIn>
         </div>
