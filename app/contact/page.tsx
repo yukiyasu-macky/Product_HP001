@@ -25,8 +25,7 @@ export default function ContactPage() {
   const handleSubmit3 = (e: React.FormEvent) => { e.preventDefault(); setForm3Sent(true) }
   const handleSubmit4 = (e: React.FormEvent) => { e.preventDefault(); setForm4Sent(true) }
 
-  const scrollToForm = (tabIndex: number) => {
-    setActiveTab(tabIndex)
+  const scrollToForm = (type?: string) => {
     const el = document.getElementById('inquiry-form')
     if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
@@ -45,96 +44,55 @@ export default function ContactPage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="bg-[#F8F9FA] pt-32 pb-20">
+      {/* Hero + 種別カード（統合） */}
+      <section className="bg-[#0D1B2A] pt-36 pb-16 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">CONTACT</p>
-          <h1 className="h1-fluid font-bold text-navy mb-4">
+          <p className="text-gold text-xs tracking-[0.4em] uppercase mb-4">CONTACT</p>
+          <h1
+            className="text-white font-black mb-4"
+            style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.1 }}
+          >
             お問い合わせ
           </h1>
-          <div className="section-divider mt-3" />
-        </div>
-      </section>
+          <div className="section-divider mb-10" />
 
-      {/* Inquiry Type Cards */}
-      <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">SELECT TYPE</p>
-          <h2 className="h2-fluid font-bold text-navy mb-2">お問い合わせ種別</h2>
-          <div className="section-divider mt-3 mb-10" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-            {/* Card 1: サービス・導入のご相談 */}
+          {/* 種別カード3枚 */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <button
-              onClick={() => scrollToForm(2)}
-              className="card-hover text-left bg-white border border-gray-200 rounded-xl p-8 hover:border-gold hover:shadow-md transition-all group"
+              onClick={() => scrollToForm('service')}
+              className="group text-left p-8 border border-white/10 rounded-xl bg-white/5 hover:bg-white/10 transition-colors duration-200"
             >
-              <div className="text-gold mb-5">
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="5" y="14" width="30" height="22" />
-                  <polyline points="5,14 20,4 35,14" />
-                  <rect x="15" y="24" width="10" height="12" />
-                  <line x1="12" y1="20" x2="16" y2="20" />
-                  <line x1="24" y1="20" x2="28" y2="20" />
-                </svg>
-              </div>
-              <h3 className="text-navy font-bold text-lg mb-2">サービス・導入のご相談</h3>
-              <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                AI導入の検討、デモのご依頼、お見積もりなど
-              </p>
-              <div className="flex justify-end">
-                <span className="text-gold text-xl font-bold group-hover:translate-x-1 transition-transform inline-block">→</span>
-              </div>
+              <p className="text-gold text-xs tracking-[0.3em] uppercase mb-4">01</p>
+              <h3 className="text-white font-bold text-lg mb-3">サービス・導入のご相談</h3>
+              <p className="text-white/50 text-sm leading-relaxed">AI導入の検討、デモのご依頼、お見積もりなど</p>
+              <span className="text-gold text-sm font-semibold mt-6 inline-block group-hover:translate-x-1 transition-transform">→ フォームへ</span>
             </button>
 
-            {/* Card 2: 資料請求 */}
             <button
-              onClick={() => scrollToForm(2)}
-              className="card-hover text-left bg-white border border-gray-200 rounded-xl p-8 hover:border-gold hover:shadow-md transition-all group"
+              onClick={() => scrollToForm('document')}
+              className="group text-left p-8 border border-white/10 rounded-xl bg-white/5 hover:bg-white/10 transition-colors duration-200"
             >
-              <div className="text-gold mb-5">
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="8" y="4" width="24" height="32" rx="2" />
-                  <line x1="14" y1="13" x2="26" y2="13" />
-                  <line x1="14" y1="19" x2="26" y2="19" />
-                  <line x1="14" y1="25" x2="22" y2="25" />
-                </svg>
-              </div>
-              <h3 className="text-navy font-bold text-lg mb-2">資料請求</h3>
-              <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                会社資料・サービス詳細資料のご請求
-              </p>
-              <div className="flex justify-end">
-                <span className="text-gold text-xl font-bold group-hover:translate-x-1 transition-transform inline-block">→</span>
-              </div>
+              <p className="text-gold text-xs tracking-[0.3em] uppercase mb-4">02</p>
+              <h3 className="text-white font-bold text-lg mb-3">資料請求</h3>
+              <p className="text-white/50 text-sm leading-relaxed">会社資料・サービス詳細資料のご請求</p>
+              <span className="text-gold text-sm font-semibold mt-6 inline-block group-hover:translate-x-1 transition-transform">→ フォームへ</span>
             </button>
 
-            {/* Card 3: 採用エントリー */}
             <button
-              onClick={() => scrollToForm(3)}
-              className="card-hover text-left bg-white border border-gray-200 rounded-xl p-8 hover:border-gold hover:shadow-md transition-all group"
+              onClick={() => scrollToForm('recruit')}
+              className="group text-left p-8 border border-white/10 rounded-xl bg-white/5 hover:bg-white/10 transition-colors duration-200"
             >
-              <div className="text-gold mb-5">
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="20" cy="13" r="7" />
-                  <path d="M6 36 C6 27 12 22 20 22 C28 22 34 27 34 36" />
-                </svg>
-              </div>
-              <h3 className="text-navy font-bold text-lg mb-2">採用エントリー</h3>
-              <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                求人へのご応募、カジュアル面談のご希望
-              </p>
-              <div className="flex justify-end">
-                <span className="text-gold text-xl font-bold group-hover:translate-x-1 transition-transform inline-block">→</span>
-              </div>
+              <p className="text-gold text-xs tracking-[0.3em] uppercase mb-4">03</p>
+              <h3 className="text-white font-bold text-lg mb-3">採用エントリー</h3>
+              <p className="text-white/50 text-sm leading-relaxed">求人へのご応募、カジュアル面談のご希望</p>
+              <span className="text-gold text-sm font-semibold mt-6 inline-block group-hover:translate-x-1 transition-transform">→ フォームへ</span>
             </button>
-
           </div>
         </div>
       </section>
 
       {/* Forms Section */}
-      <section id="inquiry-form" className="bg-[#F8F9FA] py-20">
+      <section id="inquiry-form" className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">INQUIRY FORM</p>
           <h2 className="h2-fluid font-bold text-navy mb-2">
