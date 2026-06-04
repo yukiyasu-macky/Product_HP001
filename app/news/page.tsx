@@ -7,11 +7,16 @@ export default function NewsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#F8F9FA] pt-32 pb-20">
+      <section className="bg-[#0D1B2A] pt-36 pb-16 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">NEWS</p>
-          <h1 className="h1-fluid font-bold text-navy mb-2">ニュース</h1>
-          <div className="section-divider mt-3" />
+          <p className="text-gold text-xs tracking-[0.4em] uppercase mb-4">NEWS</p>
+          <h1
+            className="text-white font-black mb-4"
+            style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.1 }}
+          >
+            ニュース
+          </h1>
+          <div className="section-divider mb-0" />
         </div>
       </section>
 
