@@ -104,7 +104,7 @@ export default function AboutPage() {
             <div className="section-divider mt-3 mb-10" />
             <div className="grid md:grid-cols-2 gap-12 items-start">
               {/* LEFT: Building image */}
-              <div className="relative min-h-[400px] rounded-xl overflow-hidden sticky top-8">
+              <div className="relative min-h-[400px] rounded-xl overflow-hidden">
                 <Image
                   src="/about-building.jpg"
                   alt="ビジネス街のビル群"
