@@ -94,8 +94,9 @@ export default function ContactPage() {
           {activeTab === 0 && (
             <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm max-w-2xl">
               {form0Sent ? (
-                <div className="text-navy bg-green-50 border border-green-200 p-4 rounded">
-                  送信しました。ありがとうございます。
+                <div className="text-navy bg-green-50 border border-green-200 p-4 rounded leading-relaxed">
+                  <p className="font-semibold mb-1">お問い合わせ誠にありがとうございます。</p>
+                  <p className="text-sm text-gray-600">ご返信にはお時間をいただく場合がございます。今しばらくお待ちください。</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit0} className="space-y-6">
