@@ -90,29 +90,7 @@ export default function AboutPage() {
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <div className="max-w-2xl">
-              <p className="text-gold text-xs tracking-[0.4em] uppercase mb-3">代表者メッセージ</p>
-              <h2 className="text-navy font-bold mb-1" style={{ fontSize: '1.5rem' }}>内海 暢介</h2>
-              <div className="section-divider mt-4 mb-6" />
-              <p className="text-gray-700 leading-relaxed mb-6">
-                日本の地方には、優れた技術や豊富な経験を持ちながらも、
-                人材不足や業務負荷の増加に苦しむ企業が数多く存在します。
-                私はこれまで100件を超える経営・事業支援の現場に携わり、
-                「本当に必要なのは、現場で使われる仕組みである」と確信してきました。
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                Arcrise Labsは、最先端AIを地方中堅企業の実務へ落とし込み、
-                経営成果へ直結させるために創業しました。
-                私たちは単なるシステム導入会社ではありません。
-                現場と経営を理解し、企業の未来を共に創るパートナーです。
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                地方から日本を変える。その挑戦を、私たちは本気で実現していきます。
-              </p>
-              <p className="text-navy font-semibold text-sm tracking-wider mt-6">
-                代表取締役 CEO　内海 暢介
-              </p>
-            </div>
+            <img src="/images/ceo-message.svg" alt="" className="w-full max-w-2xl" />
           </FadeIn>
         </div>
       </section>
@@ -137,23 +115,7 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/30 to-transparent" />
               </div>
               {/* RIGHT: Table */}
-              <dl>
-                {[
-                  { dt: '商号', dd: 'Arcrise Labs株式会社' },
-                  { dt: '設立', dd: '2026年6月' },
-                  { dt: '所在地', dd: '東京都港区六本木5-2-1' },
-                  { dt: '代表者', dd: '代表取締役CEO 内海暢介' },
-                  { dt: '事業内容', dd: '業界特化型AIプラットフォームの開発・提供、AI導入コンサルティング' },
-                ].map(({ dt, dd }, i) => (
-                  <div
-                    key={dt}
-                    className={`flex flex-col md:flex-row py-4 px-3 gap-1 md:gap-2 rounded ${i % 2 === 0 ? 'bg-gray-50' : ''}`}
-                  >
-                    <dt className="text-navy text-xs font-semibold tracking-wide md:text-sm md:w-40 md:shrink-0 md:pt-0.5">{dt}</dt>
-                    <dd className="text-gray-700 text-sm md:text-base">{dd}</dd>
-                  </div>
-                ))}
-              </dl>
+              <img src="/images/company-info.svg" alt="" className="w-full" />
             </div>
           </FadeIn>
         </div>
