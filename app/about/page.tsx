@@ -90,7 +90,7 @@ export default function AboutPage() {
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <img src="/images/ceo-message.svg" alt="" className="w-full max-w-2xl" />
+            <img src="/images/ceo-message.svg" alt="" className="w-full max-w-2xl block" style={{ height: 'auto' }} />
           </FadeIn>
         </div>
       </section>
@@ -115,7 +115,7 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/30 to-transparent" />
               </div>
               {/* RIGHT: Table */}
-              <img src="/images/company-info.svg" alt="" className="w-full" />
+              <img src="/images/company-info.svg" alt="" className="w-full block" style={{ height: 'auto' }} />
             </div>
           </FadeIn>
         </div>
