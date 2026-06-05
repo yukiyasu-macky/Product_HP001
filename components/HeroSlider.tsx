@@ -106,13 +106,6 @@ export default function HeroSlider() {
 
       </div>
 
-      {/* 下スクロール誘導 */}
-      <div className="absolute bottom-8 right-10 flex flex-col items-center gap-2 animate-bounce" style={{ zIndex: 2 }}>
-        <span className="text-white/30 text-xs tracking-widest rotate-90 origin-center" style={{ writingMode: 'vertical-rl' }}>SCROLL</span>
-        <svg width="16" height="24" viewBox="0 0 16 24" fill="none" className="text-white/30">
-          <path d="M8 4v16M2 14l6 6 6-6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
-        </svg>
-      </div>
 
     </section>
   )
