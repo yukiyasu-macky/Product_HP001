@@ -11,15 +11,19 @@ export default function ContactPage() {
     industry: '', industryOther: '', employeeSize: '', message: ''
   })
   const [form0Sent, setForm0Sent] = useState(false)
+  const [form0Sending, setForm0Sending] = useState(false)
 
   const handleSubmit0 = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (form0Sending) return
+    setForm0Sending(true)
     await fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form0),
     })
     setForm0Sent(true)
+    setForm0Sending(false)
   }
 
   const scrollToForm = (type?: string) => {
@@ -149,8 +153,8 @@ export default function ContactPage() {
                     <label className={labelClass}>お問い合わせ内容</label>
                     <textarea className={textareaClass} value={form0.message} onChange={(e) => setForm0({ ...form0, message: e.target.value })} required />
                   </div>
-                  <button type="submit" className="w-full bg-navy text-white font-semibold py-3.5 rounded text-sm hover:bg-[#1a2f45] transition-colors">
-                    送信する
+                  <button type="submit" disabled={form0Sending} className="w-full bg-navy text-white font-semibold py-3.5 rounded text-sm hover:bg-[#1a2f45] transition-colors disabled:opacity-50">
+                    {form0Sending ? '送信中...' : '送信する'}
                   </button>
                 </form>
               )}
