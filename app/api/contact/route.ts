@@ -8,7 +8,7 @@ export async function POST(req: Request) {
   const { company, name, email, industry, industryOther, employeeSize, message } = await req.json()
 
   await resend.emails.send({
-    from: 'noreply@arcrise.ai',
+    from: 'contact@arcrise.ai',
     to: process.env.CONTACT_EMAIL!,
     subject: `【お問い合わせ】${company} / ${name}`,
     html: `
