@@ -3,8 +3,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-export const dynamic = 'force-static'
-
 export default function ContactPage() {
   const [activeTab, setActiveTab] = useState(0)
 
@@ -14,7 +12,15 @@ export default function ContactPage() {
   })
   const [form0Sent, setForm0Sent] = useState(false)
 
-  const handleSubmit0 = (e: React.FormEvent) => { e.preventDefault(); setForm0Sent(true) }
+  const handleSubmit0 = async (e: React.FormEvent) => {
+    e.preventDefault()
+    await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(form0),
+    })
+    setForm0Sent(true)
+  }
 
   const scrollToForm = (type?: string) => {
     if (type === 'service') setActiveTab(0)
