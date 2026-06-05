@@ -1,17 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 230" width="560" height="230">
-  <rect width="560" height="230" fill="transparent"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 250" width="640" height="250">
+  <rect width="640" height="250" fill="transparent"/>
   <text x="0" y="28" font-family="'Hiragino Kaku Gothic Pro', 'Noto Sans JP', sans-serif" font-size="12" font-weight="600" fill="#0D1B2A" letter-spacing="1">商号</text>
   <text x="160" y="28" font-family="'Hiragino Kaku Gothic Pro', 'Noto Sans JP', sans-serif" font-size="14" fill="#374151">Arcrise Labs株式会社</text>
-  <line x1="0" y1="40" x2="560" y2="40" stroke="#E5E7EB" stroke-width="1"/>
+  <line x1="0" y1="40" x2="640" y2="40" stroke="#E5E7EB" stroke-width="1"/>
   <text x="0" y="68" font-family="'Hiragino Kaku Gothic Pro', 'Noto Sans JP', sans-serif" font-size="12" font-weight="600" fill="#0D1B2A" letter-spacing="1">設立</text>
   <text x="160" y="68" font-family="'Hiragino Kaku Gothic Pro', 'Noto Sans JP', sans-serif" font-size="14" fill="#374151">2026年6月</text>
-  <line x1="0" y1="80" x2="560" y2="80" stroke="#E5E7EB" stroke-width="1"/>
+  <line x1="0" y1="80" x2="640" y2="80" stroke="#E5E7EB" stroke-width="1"/>
   <text x="0" y="108" font-family="'Hiragino Kaku Gothic Pro', 'Noto Sans JP', sans-serif" font-size="12" font-weight="600" fill="#0D1B2A" letter-spacing="1">所在地</text>
   <text x="160" y="108" font-family="'Hiragino Kaku Gothic Pro', 'Noto Sans JP', sans-serif" font-size="14" fill="#374151">東京都港区六本木5-2-1</text>
-  <line x1="0" y1="120" x2="560" y2="120" stroke="#E5E7EB" stroke-width="1"/>
+  <line x1="0" y1="120" x2="640" y2="120" stroke="#E5E7EB" stroke-width="1"/>
   <text x="0" y="148" font-family="'Hiragino Kaku Gothic Pro', 'Noto Sans JP', sans-serif" font-size="12" font-weight="600" fill="#0D1B2A" letter-spacing="1">代表者</text>
   <text x="160" y="148" font-family="'Hiragino Kaku Gothic Pro', 'Noto Sans JP', sans-serif" font-size="14" fill="#374151">代表取締役CEO 内海暢介</text>
-  <line x1="0" y1="160" x2="560" y2="160" stroke="#E5E7EB" stroke-width="1"/>
+  <line x1="0" y1="160" x2="640" y2="160" stroke="#E5E7EB" stroke-width="1"/>
   <text x="0" y="188" font-family="'Hiragino Kaku Gothic Pro', 'Noto Sans JP', sans-serif" font-size="12" font-weight="600" fill="#0D1B2A" letter-spacing="1">事業内容</text>
-  <text x="160" y="188" font-family="'Hiragino Kaku Gothic Pro', 'Noto Sans JP', sans-serif" font-size="14" fill="#374151">業界特化型AIプラットフォームの開発・提供、AI導入コンサルティング</text>
+  <text x="160" y="188" font-family="'Hiragino Kaku Gothic Pro', 'Noto Sans JP', sans-serif" font-size="14" fill="#374151">業界特化型AIプラットフォームの開発・提供、</text>
+  <text x="160" y="212" font-family="'Hiragino Kaku Gothic Pro', 'Noto Sans JP', sans-serif" font-size="14" fill="#374151">AI導入コンサルティング</text>
 </svg>
